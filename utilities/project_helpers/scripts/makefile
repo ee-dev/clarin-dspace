@@ -15,6 +15,7 @@
 #
 
 SHELL=/bin/bash
+export JAVA_HOME=/opt/oracle-jdk_1.8/
 #export JAVA_HOME=/usr/lib/jvm/jdk1.7.0
 ifeq ("${MAVEN_OPTS}","")
 export MAVEN_OPTS=-Xmx6g -Xms1g -XX:+UseG1GC
@@ -22,6 +23,10 @@ endif
 ifeq ("${MAVEN_OPTS}","")
 $(error MAVEN_OPTS not set)
 endif
+
+export ANT_HOME=/opt/apache-ant-1.9.9/
+export MVN_HOME=/opt/rh/maven30/root/usr/bin/
+export PATH := $(ANT_HOME)/bin:$(MVN_HOME):$(PATH)
 
 #======================================================
 # Basic dirs
@@ -250,8 +255,6 @@ ifeq ("${CI}", "true")
 			psql --username postgres  --set=utildir="$(DIR_UTILITIES)" -p $(DB_PORT) $(UTILITIES_DATABASE_NAME) < $(DIR_UTILITIES)/utilities.sql
 			@echo "DONE"
 else
-			@echo "CREATING DSpace DATABASE .."
-			sudo -u postgres createdb -p $(DB_PORT) "$(DATABASE_NAME)" --owner $(DSPACE_USER) --encoding "UTF-8" --template=template0
 			@echo "CREATING UTILITIES DATABASE ..."
 			sudo -u postgres createdb -p $(DB_PORT) "$(UTILITIES_DATABASE_NAME)" --owner $(DSPACE_USER) --encoding "UTF-8" --template=template0
 			sudo -u postgres psql --set=utildir="$(DIR_UTILITIES)" -p $(DB_PORT) $(UTILITIES_DATABASE_NAME) < $(DIR_UTILITIES)/utilities.sql
