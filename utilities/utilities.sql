@@ -440,8 +440,7 @@ COPY user_registration (eperson_id, email, organization, confirmation) FROM stdi
 -- Data for Name: license_definition; Type: TABLE DATA; Schema: public; Owner: dspace
 --
 
-\set afile :utildir '/license_definition.txt'
-copy license_definition(name, definition,eperson_id, label_id, created_on, confirmation, required_info) from :'afile';
+copy license_definition(name, definition,eperson_id, label_id, created_on, confirmation, required_info) from '/opt/lindat-dspace/source/utilities/license_definition.txt';
 
 --
 -- Data for Name: license_label; Type: TABLE DATA; Schema: public; Owner: dspace
