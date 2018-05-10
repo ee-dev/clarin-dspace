@@ -221,7 +221,7 @@ public class AllBitstreamZipArchiveReader extends AbstractReader implements Recy
 			return;
 		}
 
-         String name = item.getName() + ".zip";
+         String name = "ota_" + item.getHandle() + ".zip";
 
          try
             {
@@ -252,7 +252,7 @@ public class AllBitstreamZipArchiveReader extends AbstractReader implements Recy
                 }
                 catch (UnsupportedEncodingException see)
                 {
-                    name = "item_" + item.getID() + ".zip";
+                    name = "item_" + item.getHandle() + ".zip";
                 }
                 response.setHeader("Content-Disposition", String.format("attachment;filename=\"%s\"",name));
                 response.setContentType("application/zip");
