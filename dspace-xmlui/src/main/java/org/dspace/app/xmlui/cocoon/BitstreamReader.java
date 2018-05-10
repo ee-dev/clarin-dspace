@@ -376,6 +376,15 @@ public class BitstreamReader extends AbstractReader implements Recyclable
             }
 
             this.bitstreamMimeType = bitstream.getFormat().getMIMEType();
+            // Force primary text types to utf-8
+            // If we were java 7 we could use switch() here
+            if(this.bitstreamMimeType.equals("text/xml") | 
+            	this.bitstreamMimeType.equals("text/html") | 
+            	this.bitstreamMimeType.equals("text/plain"))
+            	{
+					this.bitstreamMimeType=this.bitstreamMimeType +"; charset=utf-8";
+				}
+  
             this.bitstreamName = bitstream.getName();
             this.bitstreamID = bitstream.getID();
             if (context.getCurrentUser() == null)
