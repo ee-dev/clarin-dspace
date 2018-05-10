@@ -234,6 +234,7 @@ public class SimpleSearch extends AbstractSearch implements CacheableProcessingC
 
     protected void addFilterRow(java.util.List<DiscoverySearchFilter> filterFields, int index, Row row, String selectedFilterType, String relationalOperator, String value) throws WingException {
         Select select = row.addCell("", Cell.ROLE_DATA, "selection").addSelect("filtertype_" + index);
+        select.setEvtBehavior("simpleSearchFieldChanged"); // See function simpleSearchFieldChange() in dspace-xmlui/src/main/webapp/themes/UFAL/lib/bootstrap/js/ufal.min.js
 
         //For each field found (at least one) add options
         for (DiscoverySearchFilter searchFilter : filterFields)
@@ -241,6 +242,7 @@ public class SimpleSearch extends AbstractSearch implements CacheableProcessingC
             select.addOption(StringUtils.equals(searchFilter.getIndexFieldName(), selectedFilterType), searchFilter.getIndexFieldName(), message("xmlui.ArtifactBrowser.SimpleSearch.filter." + searchFilter.getIndexFieldName()));
         }
         Select typeSelect = row.addCell("", Cell.ROLE_DATA, "selection").addSelect("filter_relational_operator_" + index);
+
         typeSelect.addOption(StringUtils.equals(relationalOperator, "contains"), "contains", T_filter_contain);
         typeSelect.addOption(StringUtils.equals(relationalOperator, "equals"), "equals", T_filter_equals);
         //typeSelect.addOption(StringUtils.equals(relationalOperator, "authority"), "authority", T_filter_authority);
