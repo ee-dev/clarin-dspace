@@ -95,6 +95,19 @@
 
                 <field>
                     <dc-schema>dc</dc-schema>
+                    <dc-element>relation</dc-element>
+                    <dc-qualifier>isreferencedby</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>input_forms.field.dc.relation.isreferencedby.label</label>
+                    <input-type>onebox</input-type>
+                    <hint>input_forms.field.dc.relation.isreferencedby.hint</hint>
+                    <required/>
+                    <regexp>http.*</regexp>
+                    <regexp-warning>input_forms.field.dc.relation.isreferencedby.regexp-warning</regexp-warning>
+                </field>
+
+                <field>
+                    <dc-schema>dc</dc-schema>
                     <dc-element>date</dc-element>
                     <dc-qualifier>issued</dc-qualifier>
                     <repeatable>false</repeatable>
@@ -382,13 +395,10 @@
                     <label>input_forms.field.dc.relation.replaces.label</label>
                     <input-type>onebox</input-type>
                     <hint>input_forms.field.dc.relation.replaces.hint</hint>
-                    <autocomplete>solr-handle</autocomplete>
+                    <autocomplete>solr-handle_title_ac</autocomplete>
                     <required/>
                     <component-label> </component-label>
                     <collapsible>Special fields</collapsible>
-                    <acl>
-                        policy=deny,action=read,grantee-type=user,grantee-id=*
-                    </acl>
                 </field>
 
                 <!-- DC.Relation.IsReplacedBy -->
@@ -400,7 +410,7 @@
                     <label>input_forms.field.dc.relation.isreplacedby.label</label>
                     <input-type>onebox</input-type>
                     <hint>input_forms.field.dc.relation.isreplacedby.hint</hint>
-                    <autocomplete>solr-handle</autocomplete>
+                    <autocomplete>solr-handle_title_ac</autocomplete>
                     <required/>
                     <component-label> </component-label>
                     <acl>
@@ -970,9 +980,6 @@
             <input name="2_surname" type="text" label="input_forms.complex_definitions.contact_person.2_surname.label" help="input_forms.complex_definitions.contact_person.2_surname.help" required="true"/>
             <input name="3_email" type="text" label="input_forms.complex_definitions.contact_person.3_email.label" regexp="[^@]+@[^\.@]+\.[^@]+" required="true"/>
             <input name="4_affiliation" type="text" label="input_forms.complex_definitions.contact_person.4_affiliation.label" autocomplete="solr-publisher_ac" required="true"/>
-
-            <input name="4_affiliation" type="text" label="input_forms.complex_definitions.contact_person.4_affiliation.label" autocomplete="solr-publisher_ac" required="true"/>
-
         </definition>
 
         <definition name="funding">

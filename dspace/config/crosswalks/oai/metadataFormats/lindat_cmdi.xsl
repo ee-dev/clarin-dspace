@@ -10,6 +10,7 @@
     xmlns:ms="http://www.ilsp.gr/META-XMLSchema"
     xmlns:olac="http://experimental.loc/olac"
     xmlns:cmd="http://www.clarin.eu/cmd/"
+    xmlns:lindat="http://lindat.mff.cuni.cz/ns/experimental/cmdi"
     exclude-result-prefixes="doc xalan itemUtil isocodes configuration ms"
     version="1.0">
     <xsl:import href="metadataFormats/metasharev2.xsl"/>
@@ -100,7 +101,7 @@
 					</cmd:ResourceRef>
 				</cmd:ResourceProxy>
 				<xsl:call-template name="ProcessSourceURI"/>
-				<!-- xsl:call-template name="ProcessBitstreams"/ -->
+				<xsl:call-template name="ProcessBitstreams"/>
 			</cmd:ResourceProxyList>
 			<cmd:JournalFileProxyList/>
 			<cmd:ResourceRelationList/>
@@ -113,7 +114,7 @@
 	       <cmd:ResourceProxy>
 	                   <xsl:attribute name="id">_<xsl:value-of select="./doc:field[@name='id']/text()"/></xsl:attribute>
                        <cmd:ResourceType><xsl:attribute name="mimetype"><xsl:value-of select="./doc:field[@name='format']/text()"/></xsl:attribute>Resource</cmd:ResourceType>
-                       <cmd:ResourceRef><xsl:value-of select="concat($dsURL,'/bitstream/handle/',$handle,'/',./doc:field[@name='name']/text(),'?sequence=',./doc:field[@name='sid']/text())"/></cmd:ResourceRef>
+			   <cmd:ResourceRef><xsl:attribute name="lindat:md5_checksum"><xsl:value-of select="./doc:field[@name='checksum']/text()"/></xsl:attribute><xsl:value-of select="concat($dsURL,'/bitstream/handle/',$handle,'/',./doc:field[@name='name']/text(),'?sequence=',./doc:field[@name='sid']/text())"/></cmd:ResourceRef>
            </cmd:ResourceProxy>
 	   </xsl:for-each>
 	</xsl:template>
@@ -132,9 +133,11 @@
 		<cmd:Components>
 			<cmd:data>
 				<xsl:call-template name="OLAC_DCMI"/>
-				<xsl:call-template name="ResourceInfo">
-					<xsl:with-param name="ns" select='"http://www.clarin.eu/cmd/"'/>
-				</xsl:call-template>
+				<xsl:if test="doc:metadata/doc:element[@name='metashare']/doc:element[@name='ResourceInfo#IdentificationInfo']/doc:element[@name='resourceName']/doc:element/doc:field[@name='value']">
+                    <xsl:call-template name="ResourceInfo">
+                        <xsl:with-param name="ns" select='"http://www.clarin.eu/cmd/"'/>
+                    </xsl:call-template>
+				</xsl:if>
 			</cmd:data>
 		</cmd:Components>
 	</xsl:template>
@@ -174,11 +177,13 @@
 			<cmd:identifiers>
 				<cmd:identifier type="Handle"><xsl:value-of select="$dc_identifier_uri"/></cmd:identifier>
 			</cmd:identifiers>
-			<cmd:funds>
-				<xsl:for-each select="doc:metadata/doc:element[@name='local']/doc:element[@name='sponsor']/doc:element/doc:field[@name='value']">
-					<xsl:copy-of select="itemUtil:getFunding(.)"/>
-				</xsl:for-each>
-			</cmd:funds>
+			<xsl:if test="doc:metadata/doc:element[@name='local']/doc:element[@name='sponsor']/doc:element/doc:field[@name='value']">
+                <cmd:funds>
+                    <xsl:for-each select="doc:metadata/doc:element[@name='local']/doc:element[@name='sponsor']/doc:element/doc:field[@name='value']">
+                        <xsl:copy-of select="itemUtil:getFunding(.)"/>
+                    </xsl:for-each>
+                </cmd:funds>
+            </xsl:if>
 			<xsl:copy-of select="itemUtil:getContact(doc:metadata/doc:element[@name='local']/doc:element[@name='contact']/doc:element[@name='person']/doc:element/doc:field[@name='value'])"/>
 			<cmd:publishers>
 				<cmd:publisher>
