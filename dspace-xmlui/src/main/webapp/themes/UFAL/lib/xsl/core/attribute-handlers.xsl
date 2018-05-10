@@ -273,6 +273,9 @@
         <xsl:if test="normalize-space($behavior)='submitOnChange'">
             <xsl:attribute name="onchange">this.form.submit();</xsl:attribute>
                 </xsl:if>
+        <xsl:if test="normalize-space($behavior)='simpleSearchFieldChanged'">
+            <xsl:attribute name="onchange">simpleSearchFieldChange(this.id);</xsl:attribute>
+                </xsl:if>
     </xsl:template>
 
     <xsl:template match="@maxlength">
