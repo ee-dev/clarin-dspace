@@ -27,10 +27,12 @@ and searching the repository.
             <map:transformer name="BrowseFacet" src="org.dspace.app.xmlui.aspect.discovery.BrowseFacet"/>
             <map:transformer name="SearchFacetFilter" src="org.dspace.app.xmlui.aspect.discovery.SearchFacetFilter"/>
             <map:transformer name="FrontPageFeeds" src="org.dspace.app.xmlui.aspect.discovery.SiteViewer"/>
+            <map:transformer name="SiteHighlights" src="uk.ac.ox.bodleian.ota.dspace.app.xmlui.aspect.discovery.HilightsRecentSubmissions"/>
             <map:transformer name="SiteRecentSubmissions" src="org.dspace.app.xmlui.aspect.discovery.SiteRecentSubmissions"/>
             <map:transformer name="SidebarFacetsTransformer" src="org.dspace.app.xmlui.aspect.discovery.SidebarFacetsTransformer"/>
             <map:transformer name="BrowseGlobal" src="cz.cuni.mff.ufal.dspace.app.xmlui.aspect.artifactbrowser.BrowseGlobal"/>
 
+            <map:transformer name="CommunityBrowser" src="org.dspace.app.xmlui.aspect.artifactbrowser.CommunityBrowser"/>
 
             <map:transformer name="CommunitySearch" src="org.dspace.app.xmlui.aspect.discovery.CommunitySearch"/>
             <map:transformer name="CommunityRecentSubmissions" src="org.dspace.app.xmlui.aspect.discovery.CommunityRecentSubmissions"/>
@@ -86,8 +88,10 @@ and searching the repository.
                 <map:transform type="SidebarFacetsTransformer"/>
                 <map:transform type="FrontPageFeeds"/>
 
-                <map:transform type="SiteRecentSubmissions"/>
-
+                <map:transform type="SiteHighlights"/>
+    <map:transform type="CommunityBrowser">
+                    <map:parameter name="depth" value="999"/>
+                </map:transform>
                 <map:serialize type="xml"/>
             </map:match>
 
