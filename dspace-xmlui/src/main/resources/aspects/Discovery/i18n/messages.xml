@@ -44,7 +44,7 @@
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_mediatype">Medium Type</message>
 
 
-    <!-- Site Leve Recently Added Content -->
+    <!-- Site Level Recently Added Content -->
     <message key="xmlui.ArtifactBrowser.SiteViewer.head_recent_submissions">Recently Added</message>
 
     <message key="xmlui.ArtifactBrowser.AbstractRecentSubmissionTransformer.recent_submissions_more">View more</message>

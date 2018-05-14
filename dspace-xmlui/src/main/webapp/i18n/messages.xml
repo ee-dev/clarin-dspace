@@ -24,7 +24,7 @@
 		-->
 
 	<!-- General keys -->
-    <message key="xmlui.general.dspace_home">LINDAT/CLARIN Repository Home</message>
+    <message key="xmlui.general.dspace_home">OTA Home</message>
 	<message key="xmlui.general.search">Search</message>
 	<message key="xmlui.general.go">Go</message>
     <message key="xmlui.general.go_home">Back to repository homepage</message>
@@ -66,15 +66,15 @@
 	<!--
 	   The "utils" non-aspect
        -->
-    <message key="xmlui.utils.AuthenticationUtil.onlyAdmins">Only site administrators may assume login as another user.</message>
-    <message key="xmlui.utils.AuthenticationUtil.onlyAuthenticatedAdmins">Only authenticated users who are administrators may assume the login as another user.</message>
-    <message key="xmlui.utils.AuthenticationUtil.notAnotherAdmin">You may not assume the login as another administrator.</message>
+    <message key="xmlui.utils.AuthenticationUtil.onlyAdmins">Only site administrators may log in as another user.</message>
+    <message key="xmlui.utils.AuthenticationUtil.onlyAuthenticatedAdmins">Only authenticated users who are administrators may log in as another user.</message>
+    <message key="xmlui.utils.AuthenticationUtil.notAnotherAdmin">You may not log in as another administrator.</message>
 
 
 	<!--
 		This section is for feed syndication (RSS, atom, etc)
 	-->
-    <message key="xmlui.feed.general_description">The LINDAT/CLARIN digital repository system captures, stores, indexes, preserves, and distributes digital research material.</message>
+    <message key="xmlui.feed.general_description">The OTA digital repository system captures, stores, indexes, preserves, and distributes digital research material.</message>
     <message key="xmlui.feed.header">RSS Feeds</message>
 	<message key="xmlui.feed.logo_title">The Channel Image</message>
 	<message key="xmlui.feed.untitled">Untitled</message>
@@ -433,9 +433,9 @@
     <message key="xmlui.ArtifactBrowser.ItemRequestForm.login_para">Users of this system, can login to view this document.</message>
     <message key="xmlui.ArtifactBrowser.ItemRequestForm.login">Login</message>
     <message key="xmlui.ArtifactBrowser.ItemRequestForm.para1">Enter the following information to request a copy of the document from the responsible person.</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterEmail">Your e-mail address</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterEmail">Your email address</message>
 	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterEmail_help">This email address is used for sending the document.</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterEmail.error">E-mail is mandatory</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterEmail.error">Email is mandatory</message>
 	<message key="xmlui.ArtifactBrowser.ItemRequestForm.message">Message</message>
 	<message key="xmlui.ArtifactBrowser.ItemRequestForm.message.error">Message is mandatory</message>
 	<message key="xmlui.ArtifactBrowser.ItemRequestForm.files">Files</message>
@@ -449,7 +449,7 @@
 	<message key="xmlui.ArtifactBrowser.ItemRequestSent.title">Your request has been sent.</message>
 	<message key="xmlui.ArtifactBrowser.ItemRequestSent.trail">Your request has been sent.</message>
 	<message key="xmlui.ArtifactBrowser.ItemRequestSent.head">Your request has been sent.</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestSent.para1">Your request has been sent to the author or responsible person.</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestSent.para1">Your request has been sent to the person responsible.</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.ItemRequestResponseDecisionForm.java -->
 	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.title">Document copy request</message>
@@ -488,9 +488,9 @@
 	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.head">Change permissions request</message>
 	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.para1">You may use this occasion to reconsider the access restrictions on the document (to avoid having to respond to these requests), if there is no reason to keep it restricted. To do so, after inserting your name and e-mail (for authentication), click the button "Change to Open Access".</message>
 	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.name">Name</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.email">E-mail</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.email">Email</message>
     <message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.name.error">The name is required</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.email.error">The e-mail address is required</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.email.error">The email address is required</message>
 	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.changeToOpen">Change to open access</message>
 	        
 	<!-- org.dspace.app.xmlui.artifactbrowser.ItemRequestResponseFalseForm.java -->
@@ -568,8 +568,8 @@
 	<message key="xmlui.EPerson.EditProfile.telephone">Contact Telephone</message>
         <message key="xmlui.EPerson.EditProfile.language">Language</message>
 	<message key="xmlui.EPerson.EditProfile.subscriptions">Subscriptions</message>
-	<message key="xmlui.EPerson.EditProfile.subscriptions_help">You may subscribe to collections to receive daily e-mail alerts of new items added. You can subscribe to as many or as few collections as you wish. Another alternative to daily e-mail alerts is to use the RSS feeds available for all collections.</message>
-    <message key="xmlui.EPerson.EditProfile.signatures">Signed Licenses</message>
+	<message key="xmlui.EPerson.EditProfile.subscriptions_help">You may subscribe to collections to receive daily email alerts of new items added. You can subscribe to as many or as few collections as you wish. Another alternative to daily e-mail alerts is to use the RSS feeds available for all collections.</message>
+    <message key="xmlui.EPerson.EditProfile.signatures">Signed Licences</message>
 	<message key="xmlui.EPerson.EditProfile.email_subscriptions">Email Subscriptions</message>
 	<message key="xmlui.EPerson.EditProfile.select_collection">( Select Collection )</message>
 	<message key="xmlui.EPerson.EditProfile.update_password_instructions">Optionally, you can enter a new password in the box below, and confirm it by typing it again into the second box. It should be at least six characters long.</message>
@@ -585,7 +585,7 @@
 	<message key="xmlui.EPerson.EditProfile.invalid_item">Invalid item</message>
 	<message key="xmlui.EPerson.EditProfile.head_identify">Identify</message>
 	<message key="xmlui.EPerson.EditProfile.head_security">Security</message>
-	<message key="xmlui.EPerson.EditProfile.signed_licenses">Licenses you signed</message>
+	<message key="xmlui.EPerson.EditProfile.signed_licenses">Licences you signed</message>
 
 	<!-- org.dspace.app.xmlui.eperson.EPersonUtils.java -->
 	<message key="xmlui.EPerson.EPersonUtils.register_verify_email">Verify Email</message>
@@ -611,10 +611,13 @@
 	<message key="xmlui.EPerson.Navigation.my_account">My Account</message>
 	<message key="xmlui.EPerson.Navigation.profile">Profile</message>
 	<message key="xmlui.EPerson.Navigation.logout">Logout</message>
-    <message key="xmlui.EPerson.Navigation.login">eduID.cz Login</message>
-    <message key="xmlui.EPerson.Navigation.discojuice.login">Login</message>
-	<message key="xmlui.EPerson.Navigation.register">Register</message>
-    <message key="xmlui.EPerson.Navigation.helpdesk">Help Desk</message>
+<!-- guessing this needs to be changed: MW
+         <message key="xmlui.EPerson.Navigation.login">eduID.cz Login</message> 
+-->
+       <message key="xmlui.EPerson.Navigation.login">Shibboleth Login</message>
+       <message key="xmlui.EPerson.Navigation.discojuice.login">Login</message>
+       <message key="xmlui.EPerson.Navigation.register">Register</message>
+       <message key="xmlui.EPerson.Navigation.helpdesk">Help Desk</message>
 
     <!-- org.dspace.app.xmlui.eperson.Navigation.java -->
     <message key="xmlui.EPerson.Navigation.about-head">General Information</message>
@@ -629,7 +632,7 @@
 	<message key="xmlui.EPerson.PasswordLogin.title">Sign in</message>
 	<message key="xmlui.EPerson.PasswordLogin.trail">Sign in</message>
     <message key="xmlui.EPerson.PasswordLogin.head1">Sign in to Repository</message>
-	<message key="xmlui.EPerson.PasswordLogin.email_address">E-Mail Address</message>
+	<message key="xmlui.EPerson.PasswordLogin.email_address">Email Address</message>
 	<message key="xmlui.EPerson.PasswordLogin.error_bad_login">The email address and/or password supplied were not valid.</message>
 	<message key="xmlui.EPerson.PasswordLogin.password">Password</message>
 	<message key="xmlui.EPerson.PasswordLogin.forgot_link"> Forgot your password?</message>
@@ -641,10 +644,10 @@
     <!-- org.dspace.app.xmlui.eperson.WelcomeLogin.java -->
     <message key="xmlui.EPerson.WelcomeLogin.title">Welcome message</message>
     <message key="xmlui.EPerson.WelcomeLogin.trail">Welcome message</message>
-    <message key="xmlui.EPerson.WelcomeLogin.head1">Welcome to LINDAT/CLARIN Repository</message>
+    <message key="xmlui.EPerson.WelcomeLogin.head1">Welcome to the OTA Repository</message>
     <message key="xmlui.EPerson.WelcomeLogin.head2">Privacy Statement</message>
-    <message key="xmlui.EPerson.WelcomeLogin.para1">The information released by your IdP (home organisation) is shown below.</message>
-    <message key="xmlui.EPerson.WelcomeLogin.warn1"><div class="bold text-error">We use only the required attributes as stated in <a href="http://lindat.mff.cuni.cz/privacypolicy.html" target="_blank" class="bold">http://lindat.mff.cuni.cz/privacypolicy.html</a>.<BR />However, we may log the attributes and keep them for a time period.</div></message>
+    <message key="xmlui.EPerson.WelcomeLogin.para1">The information released by your IdP (home organisation) is shown below. This information is routinely passed through secure channels by your IdP to trusted servers (although most websites don't usually show it to you).</message>
+    <message key="xmlui.EPerson.WelcomeLogin.warn1"><div class="bold text-error">We use only the required attributes as stated in <a href="/privacypolicy.html" target="_blank" class="bold">the privacy policy</a>.<BR />However, we may log the attributes and keep them for a time period.</div></message>
     <message key="xmlui.EPerson.WelcomeLogin.buttonok">Return to Home</message>
 
 	<!-- org.dspace.app.xmlui.eperson.LDAPLogin.java -->
@@ -661,11 +664,12 @@
 	<message key="xmlui.EPerson.LoginChooser.trail">Choose Login</message>
     <message key="xmlui.EPerson.LoginChooser.head1">Login Methods Available</message>
 	<message key="xmlui.EPerson.LoginChooser.para1">Log in via:</message>
-    <message key="xmlui.EPerson.LoginChooser.discojuiceComment">Use this to login with credentials of your "home" institution (e.g. eduGAIN institutions, members of eduID.cz, accounts at clarin.eu, ...). A window where you can select the institution should appear.</message>
+    <message key="xmlui.EPerson.LoginChooser.discojuiceComment">Use this to login with credentials of your "home" institution (e.g. eduGAIN institutions, members of the UK or CLARIN Federation, accounts at clarin.eu, ...). A window where you can select the institution should appear.</message>
+<!-- suppress and change lines below? -->
     <message key="xmlui.EPerson.LoginChooser.eduidComment">If you have an account at one of the Czech universities (e.g. CUNI, MUNI, ZCU, ...)</message>
     <message key="xmlui.EPerson.LoginChooser.otherwiseComment">If you have registered manually use the following link </message>
-    <message key="org.dspace.authenticate.ShibAuthentication.title">Shibboleth Authentication - login from CUNI, MUNI, ZCU</message>
-    <message key="org.dspace.authenticate.ShibAuthenticationEduid.title">Shibboleth Authentication (login via eduID.cz federation - Czech users)</message>
+    <message key="org.dspace.authenticate.ShibAuthentication.title">Shibboleth Authentication</message>
+    <message key="org.dspace.authenticate.ShibAuthenticationEduid.title">Shibboleth Authentication (eduID)</message>
 	<message key="org.dspace.eperson.LDAPAuthentication.title">LDAP Authentication</message>
 	<message key="org.dspace.eperson.PasswordAuthentication.title">Password Authentication</message>
 	<message key="org.dspace.eperson.X509Authentication.title">Web Certificate Authentication</message>
@@ -854,8 +858,8 @@
     <message key="xmlui.Submission.submit.progressbar.additional2">Note</message>
 	<message key="xmlui.Submission.submit.progressbar.verify">Review</message>
 	<message key="xmlui.Submission.submit.progressbar.creative-commons">Creative Commons</message>
-	<message key="xmlui.Submission.submit.progressbar.CClicense">CC License</message>
-    <message key="xmlui.Submission.submit.progressbar.license">License</message>
+	<message key="xmlui.Submission.submit.progressbar.CClicense">CC Licence</message>
+    <message key="xmlui.Submission.submit.progressbar.license">Licence</message>
 	<message key="xmlui.Submission.submit.progressbar.complete">Complete</message>
 
 	<!-- org.dspace.app.xmlui.Submission.submit.ResumeStep -->
@@ -943,32 +947,32 @@
     <!-- org.dspace.app.xmlui.Submission.submit.UFALLicenseStep -->
     <message key="xmlui.Submission.submit.UFALLicenseStep.define.head">Define new licence</message>
     <message key="xmlui.Submission.submit.UFALLicenseStep.delete.head">Delete your licence</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.license_detail">See more details for the licenses</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.license_detail">See more details for the licences</message>
     <message key="xmlui.Submission.submit.UFALLicenseStep.no_file_uploaded">No file has been uploaded, please skip this step.</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.define.name">License name</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.define.url">License definition URL</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.define.confirmation">License requires confirmation</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.define.name">Licence name</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.define.url">Licence definition URL</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.define.confirmation">This licence requires confirmation</message>
     <message key="xmlui.Submission.submit.UFALLicenseStep.define.no_confirmation">None</message>
     <message key="xmlui.Submission.submit.UFALLicenseStep.define.once_confirmation">Only once</message>
     <message key="xmlui.Submission.submit.UFALLicenseStep.define.always_confirmation">Always</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.define.noadd">Cancel license</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.define.add">Store license</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.define">Define new license</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.delete">Delete one of your license(s)</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.notselect_error">No license was selected. Please, select one of the items or use guided selection.</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.license_select_help">Specify the license under which we will distribute your work.</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.license_select_delete_help">Select license to delete.</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.license_select">License</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.define.noadd">Cancel licence</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.define.add">Store licence</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.define">Define new licence</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.delete">Delete one of your licence(s)</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.notselect_error">No licence was selected. Please, select one of the items or use guided selection.</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.license_select_help">Specify the licence under which we will distribute your work.</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.license_select_delete_help">Select licence to delete.</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.license_select">Licence</message>
     <message key="xmlui.Submission.submit.UFALLicenseStep.define.nourl">No url specified.</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.define.noname">No license name specified.</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.define.error">There was a problem while adding your license. Probably, you do not have appropriate access rights. Please, go back and/or contact the administrator.</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.delete.error">There was a problem while deleting a license. Probably, you do not have appropriate access rights. Please, go back and/or contact the administrator.</message>        
+    <message key="xmlui.Submission.submit.UFALLicenseStep.define.noname">No licence name specified.</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.define.error">There was a problem while adding your licence. Probably, you do not have appropriate access rights. Please, go back and/or contact the administrator.</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.delete.error">There was a problem while deleting a licence. Probably, you do not have appropriate access rights. Please, go back and/or contact the administrator.</message>        
     <message key="xmlui.Submission.submit.UFALLicenseStep.define.empty_label">Empty label</message>
-    <message key="xmlui.Submission.submit.UFALLicenseStep.license_not_supported">The selected license is not supported at the moment. Please follow the procedure described under section "None of these licenses suits your needs".</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.license_not_supported">The selected licence is not supported at the moment. Please follow the procedure described under section "None of these licences suits your needs".</message>
     <message key="xmlui.Submission.submit.UFALLicenseStep.review_no_file">No file was uploaded in the upload step. There is no restriction on the metadata.</message>    
-    <message key="xmlui.Submission.submit.UFALLicenseStep.review_license_error">License specified by you was not found in the database. This is most likely due to an error please contact administrators.</message>
-	<message key="xmlui.Submission.submit.UFALLicenseStep.option_placeholder">Select a License ...</message>
-	<message key="xmlui.Submission.submit.UFALLicenseStep.select_head">Select the resource license</message>
+    <message key="xmlui.Submission.submit.UFALLicenseStep.review_license_error">Licence specified by you was not found in the database. This is most likely due to an error please contact administrators.</message>
+	<message key="xmlui.Submission.submit.UFALLicenseStep.option_placeholder">Select a Licence ...</message>
+	<message key="xmlui.Submission.submit.UFALLicenseStep.select_head">Select the resource licence</message>
 	<message key="xmlui.Submission.submit.UFALLicenseStep.or_label">- OR -</message>
 
     
@@ -993,7 +997,7 @@
     <message key="xmlui.ufal.UFALLicenceAgreementAgreed.functionality_blocked">UFALLicenceAgreement functionality has been blocked at configuration file.</message>
     <message key="xmlui.ufal.UFALLicenceAgreementAgreed.signer_message">By following this link I, SIGNER with above ID, agree with the <b>LICENSE</b> restricting the usage of the this BITSTREAM.</message>
     <message key="xmlui.ufal.UFALLicenceAgreementAgreed.user_login_error">User not logged in: UFALLicenceAgreement cannot continue!</message>
-    <message key="xmlui.ufal.UFALLicenceAgreementAgreed.successful_signed_message">{0} License for bitstream {1} successfully signed by {2}.</message>
+    <message key="xmlui.ufal.UFALLicenceAgreementAgreed.successful_signed_message">{0} Licence for bitstream {1} successfully signed by {2}.</message>
 	<message key="xmlui.ufal.UFALLicenceAgreementAgreed.continue_message">If your download doesn't start automatically, please click here.</message>
 	<message key="xmlui.ufal.UFALLicenceAgreementAgreed.technical_problem">A technical problem was encountered. Please contact the Help Desk</message>
 
@@ -1071,7 +1075,7 @@
 	<message key="xmlui.Submission.submit.UploadStep.checksum">File checksum:</message>
 	<message key="xmlui.Submission.submit.UploadStep.submit_remove">Remove selected files</message>
     <!-- UFAL -->
-    <message key="xmlui.Submission.submit.UploadStep.inform_about_licences">Please note, that you can select licences in the License step of this submission after you upload at least one file.</message>
+    <message key="xmlui.Submission.submit.UploadStep.inform_about_licenses">Please note, that you can select licences in the Licence step of this submission after you upload at least one file.</message>
 	<message key="xmlui.Submission.submit.UploadStep.submit_remove_all">Remove All Files</message>
 	<message key="xmlui.Submission.submit.UploadStep.column_checksum">Checksum</message>
 	<message key="xmlui.Submission.submit.UploadStep.column_order">Order</message>
@@ -1143,11 +1147,11 @@
 	<!-- org.dspace.app.xmlui.Submission.submit.CCLicenseStep -->
         <message key="xmlui.Submission.submit.CCLicenseStep.ccws_error">An error occurred ... {0}</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.head">License Your Work</message>
-        <message key="xmlui.Submission.submit.CCLicenseStep.info1">If you wish, you may add a <a href="http://creativecommons.org/">Creative Commons</a> License to your item. <strong>Creative Commons licenses govern what people who read your work may then do with it.</strong></message>
-        <message key="xmlui.Submission.submit.CCLicenseStep.submit_choose_creative_commons">Choose a license</message>
-        <message key="xmlui.Submission.submit.CCLicenseStep.submit_to_creative_commons">Proceed to Creative Commons website to select a license</message>
+        <message key="xmlui.Submission.submit.CCLicenseStep.info1">If you wish, you may add a <a href="http://creativecommons.org/">Creative Commons</a> License to your item. <strong>Creative Commons licences govern what people who read your work may then do with it.</strong></message>
+        <message key="xmlui.Submission.submit.CCLicenseStep.submit_choose_creative_commons">Choose a licence</message>
+        <message key="xmlui.Submission.submit.CCLicenseStep.submit_to_creative_commons">Proceed to Creative Commons website to select a licence</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.license">License Type</message>
-        <message key="xmlui.Submission.submit.CCLicenseStep.select_change">Select or modify your license ...</message>
+        <message key="xmlui.Submission.submit.CCLicenseStep.select_change">Select or modify your licence ...</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.no_license">No Creative Commons License</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.save_changes">You must click Next to save your changes.</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.submit_remove">Remove this Creative Commons License</message>
@@ -1159,22 +1163,22 @@
     <message key="xmlui.Submission.submit.LicenseStep.info3">If you have questions regarding this licence please contact the <a class="helpdesk-tolink">Help Desk</a>.</message>
     <message key="xmlui.Submission.submit.LicenseStep.decision_label">Distribution agreement</message>
 	<message key="xmlui.Submission.submit.LicenseStep.decision_checkbox">By checking this box, you agree to the Distribution License Agreement for this repository to reproduce, translate and distribute your submissions worldwide.</message>
-	<message key="xmlui.Submission.submit.LicenseStep.decision_error">You must grant this license to complete your submission. If you are unable to grant this license at this time you may save your work and return later or remove the submission by clicking the 'Save &amp; Exit' button below.</message>
+	<message key="xmlui.Submission.submit.LicenseStep.decision_error">You must grant this licence to complete your submission. If you are unable to grant this licence at this time you may save your work and return later or remove the submission by clicking the 'Save &amp; Exit' button below.</message>
 
 
-    <message key="xmlui.Submission.submit.LicenseStep.morelicense_head">None of these licenses suits your needs</message>
-    <message key="xmlui.Submission.submit.LicenseStep.morelicense_line1">If you need to use a license we currently do not offer, proceed as follows:</message>
-    <message key="xmlui.Submission.submit.LicenseStep.morelicense_line2">Obtain a link (or a copy) to the license.</message>
-    <message key="xmlui.Submission.submit.LicenseStep.morelicense_line3">Send an email to <a class="helpdesk-tolink">Help Desk</a> with the license details.</message>
-    <message key="xmlui.Submission.submit.LicenseStep.morelicense_line4">Save the unfinished submission and wait. We will add the license to the selection list and contact you.</message>
+    <message key="xmlui.Submission.submit.LicenseStep.morelicense_head">None of these licences suits your needs</message>
+    <message key="xmlui.Submission.submit.LicenseStep.morelicense_line1">If you need to use a licence we currently do not offer, proceed as follows:</message>
+    <message key="xmlui.Submission.submit.LicenseStep.morelicense_line2">Obtain a link (or a copy) to the licence.</message>
+    <message key="xmlui.Submission.submit.LicenseStep.morelicense_line3">Send an email to <a class="helpdesk-tolink">Help Desk</a> with the licence details.</message>
+    <message key="xmlui.Submission.submit.LicenseStep.morelicense_line4">Save the unfinished submission and wait. We will add the licence to the selection list and contact you.</message>
     <message key="xmlui.Submission.submit.LicenseStep.morelicense_line5">You will be able to continue the submission afterwards.</message>
 
     <message key="xmlui.Submission.submit.LicenseStep.distribution_license_head">Read and accept the </message>
     <message key="xmlui.Submission.submit.LicenseStep.distribution_license_head_link">Distribution License Agreement</message>
-    <message key="xmlui.Submission.submit.LicenseStep.license_list_alert">For the list of all supported licenses and their details visit </message>
+    <message key="xmlui.Submission.submit.LicenseStep.license_list_alert">For the list of all supported licences and their details visit </message>
     <message key="xmlui.Submission.submit.LicenseStep.license_list_alert_link">License List Page</message>
-    <message key="xmlui.Submission.submit.LicenseStep.resource_license_text"><i class='fa fa-3x fa-crosshairs  pull-left'> </i>The License Selector will provide you visual assistance to select the most appropriate license for your data or software.</message>
-    <message key="xmlui.Submission.submit.LicenseStep.resource_license_text2">If you already know under which license you want to distribute your work, please select from the dropdown below.</message>    
+    <message key="xmlui.Submission.submit.LicenseStep.resource_license_text"><i class='fa fa-3x fa-crosshairs  pull-left'> </i>The License Selector will provide you visual assistance to select the most appropriate licence for your data or software.</message>
+    <message key="xmlui.Submission.submit.LicenseStep.resource_license_text2">If you already know under which licence you want to distribute your work, please select from the dropdown below.</message>    
     <message key="xmlui.Submission.submit.LicenseStep.license_selector_button">OPEN License Selector</message>
 
 
@@ -1649,7 +1653,7 @@
 	<message key="xmlui.administrative.authorization.EditItemPolicies.trail">Policies List</message>
 	<message key="xmlui.administrative.authorization.EditItemPolicies.main_head">Policies for Item {0} (ID={1})</message>
 	<message key="xmlui.administrative.authorization.EditItemPolicies.main_para1">With this editor you can view and alter the policies of an item, plus alter policies of individual item components: bundles and bitstreams. Briefly, an item is a container of bundles, and bundles are containers of bitstreams. Containers usually have ADD/REMOVE/READ/WRITE policies, while bitstreams only have READ/WRITE policies.</message>
-	<message key="xmlui.administrative.authorization.EditItemPolicies.main_para2">You will notice an extra bundle and bitstream for each item containing the license text for the item.</message>
+	<message key="xmlui.administrative.authorization.EditItemPolicies.main_para2">You will notice an extra bundle and bitstream for each item containing the licence text for the item.</message>
 	<message key="xmlui.administrative.authorization.EditItemPolicies.subhead_item">Item Policies</message>
 	<message key="xmlui.administrative.authorization.EditItemPolicies.subhead_bundle">Policies for Bundle {0} ({1})</message>
 	<message key="xmlui.administrative.authorization.EditItemPolicies.subhead_bitstream">Bitstream {0} ({1})</message>
@@ -1931,9 +1935,9 @@
     <message key="xmlui.administrative.item.EditItemLicenseForm.title">Item License</message>
     <message key="xmlui.administrative.item.EditItemLicenseForm.trail">License</message>
     <message key="xmlui.administrative.item.EditItemLicenseForm.head1">Current License</message>
-    <message key="xmlui.administrative.item.EditItemLicenseForm.no_license">No license is attached with this item.</message>
+    <message key="xmlui.administrative.item.EditItemLicenseForm.no_license">No licence is attached with this item.</message>
     <message key="xmlui.administrative.item.EditItemLicenseForm.remove_license">Remove License</message>
-    <message key="xmlui.administrative.item.EditItemLicenseForm.help">If you want to change the license, select a new license from the list and press update.</message>
+    <message key="xmlui.administrative.item.EditItemLicenseForm.help">If you want to change the licence, select a new licence from the list and press update.</message>
     <message key="xmlui.administrative.item.EditItemLicenseForm.updated_successfully">License updated successfully.</message>
     <message key="xmlui.administrative.item.EditItemLicenseForm.select_license">Please select a licence!</message>
     <message key="xmlui.administrative.item.DefineLicenseForm.license_labels">License Labels</message>
@@ -1941,7 +1945,7 @@
     <message key="xmlui.administrative.item.DefineLicenseForm.login_error">Please login to perform this operation.</message>
     <message key="xmlui.administrative.item.DefineLicenseForm.success_message">New License added successfully.</message>
     <message key="xmlui.administrative.item.DefineLicenseForm.already_exists">License already exists.</message>
-    <message key="xmlui.administrative.item.DefineLicenseForm.unknown_error">Unable to add the license.</message>
+    <message key="xmlui.administrative.item.DefineLicenseForm.unknown_error">Unable to add the licence.</message>
 
     <!-- cz.cuni.mff.ufal.administrative.EditItemServicesForm -->
     <message key="xmlui.administrative.item.EditItemServicesForm.title">Services</message>
@@ -1952,7 +1956,7 @@
     <message key="xmlui.administrative.LicenseForm.trail">Licenses</message>
     <message key="xmlui.administrative.LicenseForm.head1">Manage Licenses</message>
 
-    <!-- These keys will map to the labels for extra license fields in LicenseForm -->
+    <!-- These keys will map to the labels for extra licence fields in LicenseForm -->
     <message key="xmlui.ExtraLicenseField.LicenseForm.SEND_TOKEN">The user will receive an email with download instructions.</message>
     <message key="xmlui.ExtraLicenseField.LicenseForm.NAME">User Name</message>
     <message key="xmlui.ExtraLicenseField.LicenseForm.DOB">Date of Birth</message>
@@ -1963,7 +1967,7 @@
 	<message key="xmlui.ExtraLicenseField.LicenseForm.REQUIRED_ORGANIZATION">Ask user for organization (mandatory).</message>
 	<message key="xmlui.ExtraLicenseField.LicenseForm.INTENDED_USE">Ask user for his intentions with the item.</message>
 
-    <!-- These keys will map to the labels for extra license fields during LicenseStep in submission -->
+    <!-- These keys will map to the labels for extra licence fields during LicenseStep in submission -->
     <message key="xmlui.ExtraLicenseField.submission.SEND_TOKEN">You will receive an email with download instructions.</message>
     <message key="xmlui.ExtraLicenseField.submission.NAME">Name (given name and surname)</message>
     <message key="xmlui.ExtraLicenseField.submission.DOB">Date of Birth</message>
@@ -2033,7 +2037,7 @@
 	<message key="xmlui.administrative.mapper.MapperMain.title">Item Mapper</message>
 	<message key="xmlui.administrative.mapper.MapperMain.head1">Item Mapper - Map Items from Other Collections</message>
 	<message key="xmlui.administrative.mapper.MapperMain.para1">Collection: "<strong>{0}</strong>"</message>
-	<message key="xmlui.administrative.mapper.MapperMain.para2">This is the item mapper tool that allows collection administrators to map items from other collections into this collection. You can search for items from other collections and map them, or browse the list of currently mapped items.</message>
+	<message key="xmlui.administrative.mapper.MapperMain.para2">This is the item mapper tool that allows collection administrators to map items from other collections into this collection. You can search for items from other collections and map them, or browse the list of currently mapped items.<br /> <strong>NOTE</strong>: You should also add (or remove) <em>dc.relation.ispartof</em> metadata when mapping items to an additional collection.</message>
 	<message key="xmlui.administrative.mapper.MapperMain.stat_label">Statistics</message>
 	<message key="xmlui.administrative.mapper.MapperMain.stat_info"><strong>{0} of {1}</strong> items in this collection are mapped in from other collections</message>
 	<message key="xmlui.administrative.mapper.MapperMain.search_label">Search</message>
@@ -2661,10 +2665,15 @@
     <message key="xmlui.dri2xhtml.METS-1.0.item-type">Type</message>
     <message key="xmlui.dri2xhtml.METS-1.0.item-size-info">Size</message>
 
+    <message key="xmlui.dri2xhtml.METS-1.0.item-date-created">Date of original publication</message>
+    <message key="xmlui.dri2xhtml.METS-1.0.item-id-ota">OTA identifier</message>
+    <message key="xmlui.dri2xhtml.METS-1.0.item-id_swift">Swift Archive identifier</message>
+    <message key="xmlui.dri2xhtml.METS-1.0.item-isformatof">Images</message>
+
     <message key="xmlui.dri2xhtml.METS-1.0.item-langs">Language(s)</message>
     <message key="xmlui.dri2xhtml.METS-1.0.item-no-langs">There are no language(s) associated with this item.</message>
 
-	<message key="xmlui.dri2xhtml.METS-1.0.item-files-head">Files in this item</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-files-head">Files for this item</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-files-file">Files</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-files-name">Name</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-files-size">Size</message>
@@ -2684,8 +2693,8 @@
     <message key="xmlui.dri2xhtml.METS-1.0.size-megabytes">MB</message>
     <message key="xmlui.dri2xhtml.METS-1.0.size-gigabytes">GB</message>
 
-	<message key="xmlui.dri2xhtml.METS-1.0.license-text">The following license files are associated with this item:</message>
-    <message key="xmlui.dri2xhtml.METS-1.0.cc-license-text">Except where otherwise noted, this item's license is described as </message>
+	<message key="xmlui.dri2xhtml.METS-1.0.license-text">The following licence files are associated with this item:</message>
+    <message key="xmlui.dri2xhtml.METS-1.0.cc-license-text">Except where otherwise noted, this item's licence is described as </message>
 
 	<message key="xmlui.dri2xhtml.METS-1.0.collection-not-implemented">
 		The summaryView of a collection is not currently used or implemented. This can be fixed
@@ -2732,6 +2741,8 @@
   <message key="xmlui.dri2xhtml.mimetype.application/msword">Microsoft Word</message>
   <message key="xmlui.dri2xhtml.mimetype.application/octet-stream">Unknown</message>
   <message key="xmlui.dri2xhtml.mimetype.application/pdf">PDF</message>
+  <message key="xmlui.dri2xhtml.mimetype.application/epub+zip">EPUB</message> <!-- added by OTA -->
+  <message key="xmlui.dri2xhtml.mimetype.application/x-mobipocket-ebook">Mobipocket</message> <!-- added by OTA -->
   <message key="xmlui.dri2xhtml.mimetype.application/postscript">Postscript</message>
   <message key="xmlui.dri2xhtml.mimetype.application/sgml">SGML</message>
   <message key="xmlui.dri2xhtml.mimetype.application/vnd.ms-excel">Microsoft Excel</message>
@@ -2980,9 +2991,11 @@
   <message key="xmlui.UFAL.artifactbrowser.filters.selected">Selected Filters</message>
   <message key="xmlui.UFAL.artifactbrowser.search.limit">Limit your search</message>
   <message key="xmlui.UFAL.artifactbrowser.item_list.authors">Author(s):</message>
+  <message key="xmlui.UFAL.artifactbrowser.item_list.swiftid">Swift Archive identifier:</message>
+  <message key="xmlui.UFAL.artifactbrowser.item_list.datecreated">Date of original publication:</message>
 
   <!-- UFAL/lib/xsl/aspect/artifactbrowser/item-view.xsl -->
-  <message key="xmlui.UFAL.artifactbrowser.item-download-all-files">Download all files in item ({0})</message>
+  <message key="xmlui.UFAL.artifactbrowser.item-download-all-files">Download all local files for this item ({0})</message>
   <message key="xmlui.UFAL.artifactbrowser.item-download-file">Download file</message>
   <message key="xmlui.UFAL.artifactbrowser.acknowledgement">Acknowledgement</message>
   <message key="xmlui.UFAL.artifactbrowser.authors">Authors</message>
@@ -3019,7 +3032,9 @@
 
 	<!-- input-forms.xml -->
 	<message key="input_forms.field.dc.type.label">Select type of your resource</message>
-	<message key="input_forms.field.dc.type.hint">Type of the resource: "Corpus" refers to text, speech and multimodal corpora.
+	<message key="input_forms.field.dc.type.hint">Type of the resource: 
+                "Text" refers a textual resource, such as a digital edition of a published work.
+                "Corpus" refers to text, speech and multimodal corpora.
 		"Lexical Conceptual Resource" includes lexica, ontologies, dictionaries, word lists etc.
 		"language Description" covers language models and grammars.
 		"Technology / Tool / Service" is used for tools, systems, system components etc.
@@ -3030,20 +3045,18 @@
 	<message key="input_forms.field.dc.title.required">You must enter a main title for this item.</message>
 	<message key="input_forms.field.dc.source.uri.label">Project URL</message>
 	<message key="input_forms.field.dc.source.uri.hint">Enter the project url.</message>
-	<message key="input_forms.field.dc.source.uri.regexp-warning">The supplied url must start with http/https</message>
+	<message key="input_forms.field.dc.source.uri.regexp-warning">The supplied url must start with http or https</message>
 	<message key="input_forms.field.local.demo.uri.label">Demo URL</message>
-	<message key="input_forms.field.local.demo.uri.hint">A url with samples of the resource or, in the case of tools,
-		of samples of the output.
+	<message key="input_forms.field.local.demo.uri.hint">A url with samples of the resource or, in the case of tools,of samples of the output.
 	</message>
-	<message key="input_forms.field.local.demo.uri.regexp-warning">The supplied url must start with http/https</message>
+	<message key="input_forms.field.local.demo.uri.regexp-warning">The supplied url must start with http or https</message>
 	<message key="input_forms.field.dc.date.issued.label">Date issued</message>
 	<message key="input_forms.field.dc.date.issued.hint">Please give the date when the submission data were issued if any e.g., 2014-01-21 or at least
 		the year.
 	</message>
 	<message key="input_forms.field.dc.date.issued.required">You must enter the date or at least the year in a valid format.</message>
-	<message key="input_forms.field.local.hidden.label">Should this item be hidden from browse/search?</message>
-	<message key="input_forms.field.local.hidden.hint">Indicate whether you want to hide this item from browse and search. Combine with "Upload cmdi"
-		for weblicht submissions.
+	<message key="input_forms.field.local.hidden.label">Should this item be hidden from browse and search?</message>
+	<message key="input_forms.field.local.hidden.hint">Indicate whether you want to hide this item from browse and search.
 	</message>
 	<message key="input_forms.field.local.hasMetadata.label">Are you going to upload cmdi file?</message>
 	<message key="input_forms.field.local.hasMetadata.hint">Indicate whether you will upload cmdi file in the next step. Combine with "hide" for weblicht
@@ -3051,7 +3064,7 @@
 	</message>
 	<message key="input_forms.field.dc.contributor.author.label">Authors</message>
 	<message key="input_forms.field.dc.contributor.author.hint">Enter the names of the authors of this item. Start typing the author's last name and use
-		autocomplete form that will appear if applicable. End your input by pressing ESC if you don't
+		the autocomplete form that will appear if applicable. End your input by pressing ESC if you don't
 		want to use the preselected value.
 	</message>
 	<message key="input_forms.field.dc.contributor.author.required">Please add author(s)</message>
@@ -3065,7 +3078,7 @@
 	<message key="input_forms.field.local.contact.person.hint">Person to contact in case of any issues with this submission.</message>
 	<message key="input_forms.field.local.contact.person.required">Please fill all the fields for the contact person.</message>
 	<message key="input_forms.field.local.sponsor.label">Funding</message>
-	<message key="input_forms.field.local.sponsor.hint">Acknowledge sponsors and funding that supported work described by this submission.</message>
+	<message key="input_forms.field.local.sponsor.hint">Acknowledge sponsors and funders that supported work described by this submission.</message>
 	<message key="input_forms.field.dc.description.label">Description</message>
 	<message key="input_forms.field.dc.description.hint">Enter a description of the submitted data.</message>
 	<message key="input_forms.field.dc.description.required">Please give us a description</message>
@@ -3119,17 +3132,19 @@
 	<message key="input_forms.field.dc.relation.isreplacedby.label">Is replaced by</message>
 	<message key="input_forms.field.dc.relation.isreplacedby.hint">A related resource that supplants, displaces, or supersedes the described resource.</message>
 	<message key="input_forms.field.local.embargo.termslift.label">Embargo lift date</message>
-	<message key="input_forms.field.local.embargo.termslift.hint">Date that the resource will become available e.g., 2014-01-21</message>
-	<message key="input_forms.field.local.embargo.termslift.regexp-warning">The supplied date does not follow our date pattern \d\d\d\d-\d\d-\d\d e.g.,
+	<message key="input_forms.field.local.embargo.termslift.hint">Date that the resource will become available e.g., 2037-01-21</message>
+	<message key="input_forms.field.local.embargo.termslift.regexp-warning">The supplied date does not follow our date pattern \y\y\y\y-\m\m-\d\d e.g.,
 		2014-01-21
 	</message>
 	<message key="input_forms.value_pairs.common_identifiers.issn">ISSN</message>
 	<message key="input_forms.value_pairs.common_identifiers.other">Other</message>
 	<message key="input_forms.value_pairs.common_identifiers.ismn">ISMN</message>
-	<message key="input_forms.value_pairs.common_identifiers.govdoc">Gov't Doc #</message>
+	<message key="input_forms.value_pairs.common_identifiers.govdoc">Official Government Document id</message>
 	<message key="input_forms.value_pairs.common_identifiers.uri">URI</message>
 	<message key="input_forms.value_pairs.common_identifiers.isbn">ISBN</message>
 	<message key="input_forms.value_pairs.common_types.N/A">N/A</message>
+<!-- added relevant type -->
+       <message key="input_forms.value_pairs.common_types.text">Text</message>
 	<message key="input_forms.value_pairs.common_types.corpus">Corpus</message>
 	<message key="input_forms.value_pairs.common_types.lexicalConceptualResource">Lexical conceptual</message>
 	<message key="input_forms.value_pairs.common_types.languageDescription">Language description</message>
@@ -3180,7 +3195,7 @@
 	<message key="input_forms.value_pairs.metashare_detailed_languageDescription.grammar">grammar</message>
 	<message key="input_forms.value_pairs.metashare_detailed_languageDescription.other">other</message>
 	<message key="input_forms.value_pairs.metashare_funding.N/A">N/A</message>
-	<message key="input_forms.value_pairs.metashare_funding.euFunds">EU</message>
+	<message key="input_forms.value_pairs.metashare_funding.euFunds">European Commission or European Union funding body</message>
 	<message key="input_forms.value_pairs.metashare_funding.ownFunds">Own funds</message>
 	<message key="input_forms.value_pairs.metashare_funding.nationalFunds">National</message>
 	<message key="input_forms.value_pairs.metashare_funding.Other">other</message>
@@ -3222,10 +3237,10 @@
 	<message key="input_forms.value_pairs.metashare_sizeunit.syllables">syllables</message>
 	<message key="input_forms.value_pairs.metashare_sizeunit.frames">frames</message>
 	<message key="input_forms.value_pairs.metashare_sizeunit.images">images</message>
-	<message key="input_forms.value_pairs.metashare_sizeunit.kb">kb</message>
-	<message key="input_forms.value_pairs.metashare_sizeunit.mb">mb</message>
-	<message key="input_forms.value_pairs.metashare_sizeunit.gb">gb</message>
-	<message key="input_forms.value_pairs.metashare_sizeunit.rb">rb</message>
+	<message key="input_forms.value_pairs.metashare_sizeunit.kb">KB</message>
+	<message key="input_forms.value_pairs.metashare_sizeunit.mb">MB</message>
+	<message key="input_forms.value_pairs.metashare_sizeunit.gb">GB</message>
+	<message key="input_forms.value_pairs.metashare_sizeunit.rb">RB</message>
 	<message key="input_forms.value_pairs.metashare_sizeunit.shots">shots</message>
 	<message key="input_forms.value_pairs.metashare_sizeunit.unigrams">unigrams</message>
 	<message key="input_forms.value_pairs.metashare_sizeunit.bigrams">bigrams</message>
@@ -3246,7 +3261,7 @@
 	<message key="input_forms.complex_definitions.contact_person.4_affiliation.label">Contact person's institution name</message>
 	<message key="input_forms.complex_definitions.funding.4_type.label">Funding type</message>
 	<message key="input_forms.complex_definitions.funding.2_code.placeholder">Start typing the name/number of the grant...</message>
-	<message key="input_forms.complex_definitions.funding.2_code.label">Grant no. or funding project code</message>
+	<message key="input_forms.complex_definitions.funding.2_code.label">Grant number or funding project code</message>
 	<message key="input_forms.complex_definitions.funding.1_orgname.label">Funding organization</message>
 	<message key="input_forms.complex_definitions.funding.3_projname.label">Funding project name</message>
 	<message key="input_forms.complex_definitions.funding.5_openaire_id.label">EU Project Identifier (OpenAIRE)</message>
@@ -3256,9 +3271,9 @@
 	<message key="input_forms.field.dc.relation.isreferencedby.regexp-warning">The supplied url must start with http/https</message>
 
 	<!-- cz.cuni.mff.ufal.ContractPage -->
-	<message key="xmlui.ContractPage.title">Distribution License Agreement</message>
-	<message key="xmlui.ContractPage.trail">Distribution License Agreement</message>
-	<message key="xmlui.ContractPage.head">Distribution License Agreement</message>
+	<message key="xmlui.ContractPage.title">Distribution Licence Agreement</message>
+	<message key="xmlui.ContractPage.trail">Distribution Licence Agreement</message>
+	<message key="xmlui.ContractPage.head">Distribution Licence Agreement</message>
 	<message key="xmlui.ContractPage.collection_name">{0}</message>
 
 </catalogue>
