@@ -100,7 +100,7 @@
 	<!-- org.dspace.app.xmlui.artifactbrowser.AbstractSearch.java -->
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.head1_community">Search Results for Community: {0}</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.head1_collection">Search Results for Collection: {0}</message>
-    <message key="xmlui.ArtifactBrowser.AbstractSearch.head1_none">Showing {0} through {1} out of {2} results</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.head1_none">Showing {0} to {1} out of {2} results</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.result_query">Your query "{0}" produced {1} result(s).</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.head2">Communities or Collections matching your query</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.head3">Items matching your query</message>
@@ -130,9 +130,14 @@
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_author">Author</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_title">Title</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subject">Subject</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subjectFilter">LCSH Subject filter</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subjectFacet">LCSH Subject facet</message>
+<!-- added MJW 13.2.18 -->
+	    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.created">Date of original publication</message>
+        <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_created">Date of original publication</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_abstract">Abstract</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_series">Series</message>
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_sponsor">Sponsor</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_sponsor">Funder</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_identifier">Identifier</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_language">Language (ISO)</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_keyword">Keyword</message>
@@ -181,9 +186,31 @@
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.order.asc">ascending</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.order.desc">descending</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.author.column_heading">Authors Name</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.author.column_heading">Author's Name</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.subject.column_heading">Subject</message>
     <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.rights.column_heading">Rights Label</message>
+
+	<!-- OTA Collection -->
+    <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.ota_collection.column_heading">Collection</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.ota_collection">Browsing {0} by Collection {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.ota_collection">Browsing {0} by Collection</message>
+  <!--  this could (should?) be in source/dspace-xmlui/src/main/resources/aspects/Discovery/i18n/messages.xml but i want to keep all messages together-->
+  <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.ota_collection">Collection</message>
+
+  <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_ota_collection">Collection</message><!-- Header on the home page for the 3col lists -->
+
+<!-- Date Created -->
+	<!-- Side bar label -->
+    <message key="xmlui.ArtifactBrowser.Navigation.browse_created">Date of original publication</message>
+    <!-- breadcrumb label at top of page -->
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.created">Date of original publication</message>
+	<!-- Main page title (also used for html <title> -->
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.created">Date of original publication</message>
+	<!-- result list header-->
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.created.column_heading">Date of original publication</message>
+	<!-- sort options -->
+	<message key="xmlui.Discovery.AbstractSearch.sort_by.dc.date.created_dt_asc">Date of original publication Asc</message>
+	<message key="xmlui.Discovery.AbstractSearch.sort_by.dc.date.created_dt_desc">Date of original publication Desc</message>
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.author">Browsing {0} by Author {1}</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.author">Browsing {0} by Author</message>
@@ -309,6 +336,7 @@
         <message key="xmlui.ArtifactBrowser.ItemViewer.withdrawn">This item has been withdrawn and is no longer available.</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.Navigation.java -->
+	<!-- Labels for the side bar browse list -->
 	<message key="xmlui.ArtifactBrowser.Navigation.head_browse">Browse</message>
     <message key="xmlui.ArtifactBrowser.Navigation.head_all_of_dspace">All of the Repository</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.communities_and_collections">Communities &amp; Collections</message>
@@ -318,12 +346,13 @@
     <message key="xmlui.ArtifactBrowser.Navigation.browse_dateissued">Issue Date</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_dateaccessioned">By Submit Date</message>
     <message key="xmlui.ArtifactBrowser.Navigation.browse_rights">Rights Label</message>
+    <message key="xmlui.ArtifactBrowser.Navigation.browse_ota_collection">Collection</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.head_this_collection">This Collection</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.head_this_community">This Community</message>
 
     <message key="xmlui.ArtifactBrowser.Navigation.browse_publisher">Publisher</message>
     <message key="xmlui.ArtifactBrowser.Navigation.browse_language">Language</message>
-    <message key="xmlui.ArtifactBrowser.Navigation.browse_type">Type</message>
+    <message key="xmlui.ArtifactBrowser.Navigation.browse_type">Resource Type</message>
     <message key="xmlui.ArtifactBrowser.Navigation.browse_mediatype">Medium Type</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.SimpleSearch.java -->
