@@ -23,6 +23,8 @@ public class DiscoveryConfigurationParameters {
     public static final String TYPE_STANDARD = "standard";
     public static final String TYPE_RAW = "raw_values";
     public static final String TYPE_ISO_LANG = "iso_language";
+    public static final String TYPE_OTA_IDENTIFIER = "ota_identifier";
+    public static final String TYPE_STC_IDENTIFIER = "stc_identifier";
 
     public static enum SORT {VALUE, COUNT}
 
