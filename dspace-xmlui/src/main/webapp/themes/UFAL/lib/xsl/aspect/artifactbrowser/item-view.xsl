@@ -233,9 +233,10 @@
 				</xsl:call-template>
 			</xsl:when>
 
+
 			<!-- Project URL(s) row -->
 			<xsl:when
-				test="$clause = 4 and dim:field[@element='source'][@qualifier='uri']">
+				test="$clause = 5 and dim:field[@element='source'][@qualifier='uri']">
 						<dl id="project-url" class="dl-horizontal">
 							<dt style="text-align: left">
 								<i class="fa fa-link">&#160;</i>
@@ -268,7 +269,7 @@
 
 			<!-- Demo URL(s) row -->
 			<xsl:when
-				test="$clause = 5 and dim:field[@mdschema='local' and @element='demo' and @qualifier='uri']">
+				test="$clause = 6 and dim:field[@mdschema='local' and @element='demo' and @qualifier='uri']">
 						<dl id="demo-url" class="dl-horizontal">
 							<dt style="text-align: left">
 								<i class="fa fa-external-link">&#160;</i>
@@ -299,19 +300,19 @@
 				</xsl:call-template>
 			</xsl:when>
 
-			<!-- date.issued row -->
+			<!--OTA  date.created row -->
 			<xsl:when
-				test="$clause = 6 and (dim:field[@element='date' and @qualifier='issued'])">
+				test="$clause = 7 and (dim:field[@element='date' and @qualifier='created'])">
 				<dl id="date-issued" class="dl-horizontal">
 					<dt style="text-align: left">
 						<i class="fa fa-calendar">&#160;</i>					
-						<i18n:text>xmlui.dri2xhtml.METS-1.0.item-date</i18n:text>
+						<i18n:text>xmlui.dri2xhtml.METS-1.0.item-date-created</i18n:text>
 					</dt>
 					<dd>
-						<xsl:for-each select="dim:field[@element='date' and @qualifier='issued']">							
-							<xsl:copy-of select="substring(./node(),1,10)" />
+						<xsl:for-each select="dim:field[@element='date' and @qualifier='created']">							
+							<xsl:copy-of select="./node()" />
 							<xsl:if
-								test="count(following-sibling::dim:field[@element='date' and @qualifier='issued']) != 0">
+								test="count(following-sibling::dim:field[@element='date' and @qualifier='created']) != 0">
 								<br />
 							</xsl:if>
 						</xsl:for-each>
@@ -325,7 +326,7 @@
 
 			<!-- type row -->
 			<xsl:when
-				test="$clause = 7 and (dim:field[@element='type' and not(@qualifier)])">
+				test="$clause = 8 and (dim:field[@element='type' and not(@qualifier)])">
 					<dl id="item-type" class="dl-horizontal">
 					<dt style="text-align: left">
 						<i class="fa fa-tag">&#160;</i>
@@ -345,7 +346,7 @@
 			</xsl:when>				
 
 			<!-- size row -->
-			<xsl:when test="$clause = 8">
+			<xsl:when test="$clause = 9">
 					<xsl:variable name="sizeInfo">
 						<xsl:choose>
 							<xsl:when test="dim:field[@mdschema='local' and @element='size' and @qualifier='info'][1]/node()">
@@ -388,7 +389,7 @@
 
 			<!-- type languages -->
 			<xsl:when
-				test="$clause = 9 and (dim:field[@element='language' and @qualifier='iso'])">
+				test="$clause = 10 and (dim:field[@element='language' and @qualifier='iso'])">
 					<dl id="item-languages" class="dl-horizontal">
 					<dt style="text-align: left">
 						<i class="fa fa-flag ">&#160;</i>
@@ -425,8 +426,8 @@
 				</xsl:call-template>
 			</xsl:when>
 
-			<!-- Abstract row -->
-			<!-- xsl:when
+			<!-- Abstract row [LINDAT version] -->
+			<!--xsl:when
 				test="$clause = 10 and (dim:field[@element='description' and @qualifier='abstract' and descendant::text()])">
 				<div class="simple-item-view-description">
 					<h3>
@@ -464,9 +465,8 @@
 					<xsl:with-param name="phase" select="$otherPhase" />
 				</xsl:call-template>
 			</xsl:when-->
-
 			<!-- Description row -->
-			<xsl:when
+			<!--xsl:when
 				test="$clause = 10 and (dim:field[@element='description' and not(@qualifier)])">
 				<dl id="item-description" class="dl-horizontal linkify">
 					<dt style="text-align: left">
@@ -496,32 +496,19 @@
 					<xsl:with-param name="clause" select="($clause + 1)" />
 					<xsl:with-param name="phase" select="$otherPhase" />
 				</xsl:call-template>
-			</xsl:when>
-			
-			<!-- Publisher row -->
+			</xsl:when-->
+
+			<!-- OTA Identifier row -->
 			<xsl:when
-				test="$clause = 11 and (dim:field[@element='publisher' and not(@qualifier)])">
+				test="$clause = 12 and (dim:field[@element='identifier' and not(@qualifier)])">
 				<dl id="item-publisher" class="dl-horizontal">
 					<dt style="text-align: left">
 						<i class="fa fa-copy">&#160;</i>
-						<i18n:text>xmlui.dri2xhtml.METS-1.0.item-publisher</i18n:text>
+						<i18n:text>xmlui.dri2xhtml.METS-1.0.item-id-ota</i18n:text>
 					</dt>
 					<dd>
-						<xsl:if
-							test="count(dim:field[@element='publisher' and not(@qualifier)]) = 0">
-							<div class="spacer">&#160;</div>
-						</xsl:if>						
-						<xsl:for-each
-							select="dim:field[@element='publisher' and not(@qualifier)]">
-							<a>
-								<xsl:attribute name="href"><xsl:copy-of select="$contextPath"/>/browse?value=<xsl:copy-of select="./node()" />&amp;type=publisher</xsl:attribute>
-								<xsl:copy-of select="./node()" />									
-							</a>													
-							<xsl:if
-								test="count(following-sibling::dim:field[@element='publisher' and not(@qualifier)]) != 0">
-								<div class="spacer">&#160;</div>
-							</xsl:if>
-						</xsl:for-each>						
+						<xsl:value-of select="dim:field[@element='identifier' and not(@qualifier)]/node()" />
+											
 					</dd>
 				</dl>
 				<xsl:call-template name="itemSummaryView-DIM-fields">
@@ -530,9 +517,62 @@
 				</xsl:call-template>
 			</xsl:when>
 
+			
+<!-- Swift Archive identifier -->
+			<xsl:when
+				test="$clause = 13 and (dim:field[@mdschema='local' and @element='identifier' and @qualifier='swift'])">
+				<dl id="item-publisher" class="dl-horizontal">
+					<dt style="text-align: left">
+						<i class="fa fa-copy">&#160;</i>
+						<i18n:text>xmlui.dri2xhtml.METS-1.0.item-id_swift</i18n:text>
+					</dt>
+					<dd>
+						<xsl:value-of select="dim:field[@mdschema='local' and @element='identifier' and @qualifier='swift']/node()" />
+											
+					</dd>
+				</dl>
+				<xsl:call-template name="itemSummaryView-DIM-fields">
+					<xsl:with-param name="clause" select="($clause + 1)" />
+					<xsl:with-param name="phase" select="$otherPhase" />
+				</xsl:call-template>
+			</xsl:when>
+
+<!-- Image URL(s) row -->
+			<xsl:when
+				test="$clause = 14 and dim:field[@element='relation' and @qualifier='isformatof']">
+						<dl id="demo-url" class="dl-horizontal">
+							<dt style="text-align: left">
+								<i class="fa fa-external-link">&#160;</i>
+								<i18n:text>xmlui.dri2xhtml.METS-1.0.item-isformatof</i18n:text>
+							</dt>
+							<dd>
+								<xsl:for-each
+									select="dim:field[@element='relation' and @qualifier='isformatof']">
+								<xsl:if test="self::node()[text()!='']">
+									<a target="_blank">
+										<xsl:attribute name="href">
+		                            <xsl:copy-of select="./node()" />
+		                        </xsl:attribute>
+										<xsl:copy-of select="./node()" />
+									</a>
+									<xsl:if
+										test="count(following-sibling::dim:field[@mdschema='local' and @element='demo' and @qualifier='uri']) != 0">
+										<br />
+									</xsl:if>
+								</xsl:if>
+								</xsl:for-each>
+							</dd>
+						</dl>
+
+				<xsl:call-template name="itemSummaryView-DIM-fields">
+					<xsl:with-param name="clause" select="($clause + 1)" />
+					<xsl:with-param name="phase" select="$otherPhase" />
+				</xsl:call-template>
+			</xsl:when>
+
 			<!-- Sponsors row -->
 			<xsl:when
-				test="$clause = 12 and ((dim:field[@element='sponsor' and not(@qualifier)]) or (dim:field[@element='ResourceInfo#ResourceCreationInfo#FundingInfo#ProjectInfo'] and dim:field[@qualifier='projectName']))">
+				test="$clause = 15 and ((dim:field[@element='sponsor' and not(@qualifier)]) or (dim:field[@element='ResourceInfo#ResourceCreationInfo#FundingInfo#ProjectInfo'] and dim:field[@qualifier='projectName']))">
 				<dl id="item-sponsor" class="dl-horizontal">
 					<dt style="text-align: left">
 						<i class="fa fa-money">&#160;</i>
@@ -603,7 +643,7 @@
 			
 			<!-- Subject keywords -->
 			<xsl:when
-				test="$clause = 13 and (dim:field[@element='subject' and not(@qualifier)])">
+				test="$clause = 16 and (dim:field[@element='subject' and not(@qualifier)])">
 				<dl id="item-subject" class="dl-horizontal">
 					<dt style="text-align: left">
 						<i class="fa fa-tags">&#160;</i>
@@ -629,7 +669,7 @@
 			
 			<!-- Collections -->
   			<xsl:when
-				test="$clause = 14 and $ufal-collection-references">
+				test="$clause = 17 and $ufal-collection-references">
 				<dl id="item-subject" class="dl-horizontal">
 					<dt style="text-align: left">
 						<i class="fa fa-sitemap">&#160;</i>
@@ -654,7 +694,7 @@
 				</xsl:call-template>
 			</xsl:when>
 
-			<xsl:when test="$clause = 15 and $ds_item_view_toggle_url != ''">
+			<xsl:when test="$clause = 18 and $ds_item_view_toggle_url != ''">
 
                 <!-- replacedby info -->
                 <xsl:if test="count(dim:field[@element='relation' and @qualifier='isreplacedby' and @mdschema='dc']) &gt;= 1">
@@ -701,7 +741,7 @@
 			<!-- recurse without changing phase if we didn't output anything -->
 			<xsl:otherwise>
 				<!-- IMPORTANT: This test should be updated if clauses are added! -->
-				<xsl:if test="$clause &lt; 15">
+				<xsl:if test="$clause &lt; 19">
 					<xsl:call-template name="itemSummaryView-DIM-fields">
 						<xsl:with-param name="clause" select="($clause + 1)" />
 						<xsl:with-param name="phase" select="$phase" />
@@ -791,21 +831,111 @@
 	<xsl:template match="mets:fileGrp[@USE='CONTENT']">
 		<xsl:param name="context" />
 		<xsl:param name="primaryBitstream" select="-1" />			
+
+	<!-- Generate UFAL licenses -->
+	<xsl:apply-templates select="//mets:mdWrap[@OTHERMDTYPE='UFAL_LICENSES']/mets:xmlData/license" />
+
 		<div id="files_section">			
 			<h4>
 				<i class="fa fa-paperclip">&#160;</i>
-				<i18n:text>xmlui.dri2xhtml.METS-1.0.item-files-head</i18n:text>			
-				<xsl:if test="/mets:METS/@OBJID">							
-					<xsl:variable name="download-all-url"><xsl:value-of select="concat(/mets:METS/@OBJID,'/allzip')" /></xsl:variable>
-					<xsl:call-template name="download-all">
-						<xsl:with-param name="download-all-url" select="$download-all-url" />
-					</xsl:call-template>
-				</xsl:if>						   			
-			</h4>				
-					
-			<!-- Generate UFAL licenses -->
-			<xsl:apply-templates select="//mets:mdWrap[@OTHERMDTYPE='UFAL_LICENSES']/mets:xmlData/license" />
-			<div class="thumbnails">
+				<i18n:text>xmlui.dri2xhtml.METS-1.0.item-files-head</i18n:text>
+			</h4>			
+
+       <div class="thumbnails">
+
+<!-- Do we have an external url for the file download-->
+<xsl:if test="//mets:xmlData/dim:dim/dim:field[@mdschema='local' and @element='relation' and @qualifier='uri']">
+<xsl:variable name="externalURI"><xsl:value-of select="//dim:field[@mdschema='local' and @element='relation' and @qualifier='uri']" /></xsl:variable>
+<xsl:variable name="externalName">
+	<xsl:call-template name="substring-after-last">
+		<xsl:with-param name="string" select="$externalURI" />
+		<xsl:with-param name="delimiter" select="'/'" />
+	</xsl:call-template>
+</xsl:variable>
+<xsl:variable name="MIMETYPE_FULL">
+	<xsl:choose>
+		<xsl:when test="//dim:field[@mdschema='dc' and @element='format' and @qualifier='mimetype']">
+			<xsl:value-of select="//dim:field[@mdschema='dc' and @element='format' and @qualifier='mimetype']" />
+		</xsl:when>
+		<xsl:otherwise><xsl:text>unknown</xsl:text></xsl:otherwise>
+	</xsl:choose>
+</xsl:variable>
+	<xsl:variable name="MIMETYPE">
+		<xsl:choose>
+			<xsl:when test="contains($MIMETYPE_FULL,';')"><xsl:value-of select="substring-before($MIMETYPE_FULL,';')"/></xsl:when>
+			<xsl:otherwise><xsl:value-of select="$MIMETYPE_FULL" /></xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+	<xsl:variable name="mime-type" select="translate($MIMETYPE,'/','-')" />
+
+	<div class="thumbnail" style="margin-bottom: 10px;">
+		<a>
+			<xsl:attribute name="href">
+				<xsl:value-of select="//dim:field[@mdschema='local' and @element='relation' and @qualifier='uri']" />
+			</xsl:attribute>
+			<img class="pull-right" alt="Icon" src="{$theme-path}/images/mime/{$mime-type}.png" onerror="this.src='{$theme-path}/images/mime/application-octet-stream.png'" style="height: {$thumbnail.maxheight}px;" />
+		</a>
+		<dl class="dl-horizontal">
+			<dt>
+				<i18n:text>xmlui.dri2xhtml.METS-1.0.item-files-name</i18n:text>
+			</dt>
+			<dd>
+				<xsl:attribute name="title"><xsl:value-of
+					select="$externalName" /></xsl:attribute>
+				<xsl:value-of
+					select="$externalName" />
+			</dd>
+			<dt>
+				<i18n:text>xmlui.dri2xhtml.METS-1.0.item-files-format</i18n:text>
+			</dt>
+			<dd>
+				<xsl:value-of select="$MIMETYPE"/>
+			</dd>
+			<dt>
+				<i18n:text>xmlui.dri2xhtml.METS-1.0.item-files-description</i18n:text>
+			</dt>
+			<dd>
+				<xsl:value-of select="//dim:field[@mdschema='local' and @element='bitstream' and @qualifier='info']" />
+			</dd>
+			<dt>
+				Note
+			</dt>
+			<dd>
+				This file is hosted on an external server
+			</dd>
+			<dt>
+				<i18n:text>xmlui.dri2xhtml.METS-1.0.item-uri</i18n:text>
+			</dt>
+			<dd>
+				<a>
+					<xsl:attribute name="href"><xsl:value-of select="$externalURI" /></xsl:attribute>
+					<xsl:value-of select="$externalURI" />
+				</a>
+			</dd>
+		</dl>
+						<a class="filebutton label label-info">
+					<xsl:attribute name="href">
+                        <xsl:value-of select="$externalURI" />
+                    </xsl:attribute>				
+                    <i class="fa fa-chevron-circle-down">&#160;</i>
+                    <i18n:translate>
+                        <i18n:text>xmlui.UFAL.artifactbrowser.item-download-file</i18n:text>
+                        <i18n:param>external file</i18n:param>
+                    </i18n:translate>
+				</a>
+
+	</div>
+
+
+</xsl:if>
+
+			<xsl:if test="/mets:METS/@OBJID">							
+				<xsl:variable name="download-all-url"><xsl:value-of select="concat(/mets:METS/@OBJID,'/allzip')" /></xsl:variable>
+				<xsl:call-template name="download-all">
+					<xsl:with-param name="download-all-url" select="$download-all-url" />
+				</xsl:call-template>
+			</xsl:if>
+
 <!-- 			<xsl:choose>
 					If one exists and it's of text/html MIME type, only display the 
 						primary bitstream
@@ -833,6 +963,12 @@
 	<xsl:template match="mets:file">
 		<xsl:param name="context" select="." />
 		<xsl:variable name="admid" select="@ADMID" />
+        <xsl:variable name="MIMETYPE">
+            <xsl:choose>
+                <xsl:when test="contains(@MIMETYPE,';')"><xsl:value-of select="substring-before(@MIMETYPE,';')"/></xsl:when>
+                <xsl:otherwise><xsl:value-of select="@MIMETYPE" /></xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:variable name="formatted-file-size">
             <xsl:call-template name="format-size">                   
                 <xsl:with-param name="size" select="@SIZE" />
@@ -852,7 +988,7 @@
 							</img>
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:variable name="mime-type" select="translate(self::node()/@MIMETYPE,'/','-')" />
+							<xsl:variable name="mime-type" select="translate($MIMETYPE,'/','-')" />
 							<img class="pull-right" alt="Icon" src="{$theme-path}/images/mime/{$mime-type}.png" onerror="this.src='{$theme-path}/images/mime/application-octet-stream.png'" style="height: {$thumbnail.maxheight}px;" />				
 						</xsl:otherwise>
 					</xsl:choose>
@@ -891,9 +1027,9 @@
 					<dd>
 						<xsl:call-template name="getFileTypeDesc">
 							<xsl:with-param name="mimetype">
-								<xsl:value-of select="substring-before(@MIMETYPE,'/')" />
+								<xsl:value-of select="substring-before($MIMETYPE,'/')" />
 								<xsl:text>/</xsl:text>
-								<xsl:value-of select="substring-after(@MIMETYPE,'/')" />
+								<xsl:value-of select="substring-after($MIMETYPE,'/')" />
 							</xsl:with-param>
 						</xsl:call-template>
 					</dd>
@@ -955,7 +1091,7 @@
 						</div>
 					</div>					
 				</xsl:if>
-				<xsl:if test="@MIMETYPE='text/html'" >
+				<xsl:if test="substring(@MIMETYPE,1,9)='text/html'" >
 					<a class="filebutton label label-info" role="button" data-toggle="collapse">
 						<xsl:attribute name="href">
 							<xsl:text>#file_</xsl:text><xsl:value-of select="@ID" />
@@ -1028,8 +1164,8 @@
 
    		<xsl:if test="$file-count &gt; $lr.download.all.limit.min.file.count and $file-size &lt; $lr.download.all.limit.max.file.size">
             <!-- download all only under certain conditions (number and size of files) -->     
-                               
-            <a id="download-all-button" class="label label-info pull-right">
+            <p>                   
+            <a id="ota-download-all-button" class="btn btn-primary btn-md">
                 <xsl:choose>
                     <xsl:when test="$file-size &gt; $lr.download.all.alert.min.file.size">
                         <!-- display alert before downloading large files -->
@@ -1047,7 +1183,7 @@
                     <i18n:param><xsl:copy-of select="$formatted-file-size" /></i18n:param>
                 </i18n:translate>
             </a>
-
+	</p>
             <div id="download_all_alert" class="alert alert-warning" style="margin-top: 20px; display: none;">
 			<button type="button" class="close" onclick="$('#download_all_alert').hide();">&#215;</button>
 			<p>Large Size</p>
@@ -1058,6 +1194,21 @@
 
         </xsl:if>
 
+	</xsl:template>
+
+	<!-- XSLT 1 doesn't have tokenize() --> 
+	<xsl:template name="substring-after-last">
+		<xsl:param name="string" />
+		<xsl:param name="delimiter" />
+		<xsl:choose>
+			<xsl:when test="contains($string, $delimiter)">
+				<xsl:call-template name="substring-after-last">
+					<xsl:with-param name="string" select="substring-after($string, $delimiter)" />
+					<xsl:with-param name="delimiter" select="$delimiter" />
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise><xsl:value-of select="$string" /></xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	<xsl:variable name="smallcase" select="'abcdefghijklmnopqrstuvwxyz'" />

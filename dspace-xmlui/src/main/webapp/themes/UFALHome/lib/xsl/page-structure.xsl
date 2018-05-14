@@ -282,8 +282,8 @@
 				<!-- Top banner with lindat logo -->
 				<xsl:call-template name="top-banner" />
 				
-				<!-- A line with lindat branding colors -->
-				<div class="row hidden-xs" style="background: url('{$theme-path}/images/lindat_color_line.png'); height: 3px;">&#160;</div>
+				<!-- A line with  Oxford branding colors -->
+				<div class="row hidden-xs" style="background: url('{$theme-path}/images/oxford_color_line.png'); height: 3px;">&#160;</div>
 
 		       	<div class="visible-xs text-center" style="margin-top: 5px; ">
 					<button id="showhidemenu" type="button" class="btn btn-default btn-sm" style="border-radius: 30px; width: 100%;">
@@ -308,11 +308,14 @@
 							</xsl:otherwise>
 						</xsl:choose>
 
-						<xsl:choose>
+					<!--
+					DROP Most Viewed Items from homepage
+						 <xsl:choose>
 							<xsl:when test="count(dri:div[@n='home']/dri:div[@n='stats']//dri:table[@n='list-table']/dri:row) > 1">
 								<xsl:call-template name="top-items" />
 							</xsl:when>
 						</xsl:choose>
+						-->
 					</div>
 					<!-- sidebar -->
 					<xsl:apply-templates select="/dri:document/dri:options" />
@@ -361,6 +364,38 @@
 						</ul>
 					</div>
 				</xsl:for-each>
+			<div>	
+				<xsl:attribute name="class">
+						<xsl:text>col-md-3 text-left</xsl:text>					
+				</xsl:attribute>
+						<ul class="nav nav-list">
+						<li style="margin: 10px;">
+						<strong>Collections
+						</strong>
+						<ul class="sublist">
+
+<xsl:for-each select="/dri:document/dri:body/dri:div[@n='comunity-browser']/dri:list/dri:list/dri:item">
+
+								<li>
+									<a>										
+										<xsl:attribute name="href">
+											<xsl:value-of select="dri:xref/@target" />
+										</xsl:attribute>
+										<span>
+											<strong class="truncate">
+												<xsl:apply-templates select="dri:xref/node()"/>
+											</strong>
+										</span>
+									</a>
+								</li>
+							</xsl:for-each>
+		
+						</ul>
+						</li>
+						</ul>
+</div>
+
+
 			</div>
 	</xsl:template>
 
@@ -377,7 +412,7 @@
 		<xsl:for-each
 			select="/dri:document/dri:body/dri:div[@n='site-home']/dri:div[@n='site-recent-submission']">
 			<div class="well well-lg" id="recent-submissions">
-				<h3 class="recent-submissions-head"><i18n:text i18n:key="homepage.whatsnew">What's New</i18n:text></h3>
+				<h3 class="recent-submissions-head"><i18n:text i18n:key="homepage.highlights">Highlights</i18n:text></h3>
 				<xsl:for-each select="dri:referenceSet">
 					<xsl:for-each select="dri:reference">
 						<xsl:if test="position() &lt; 4">
@@ -551,7 +586,7 @@
 		</div>
 		<xsl:choose>
 			<xsl:when
-				test="dim:field[@element = 'description' and @qualifier='abstract']">
+				test="dim:field[@element = 'description' and @qualifier='abstract'] and dim:field[@element = 'description' and @qualifier='abstract']/node()">
 				<xsl:variable name="abstract"
 					select="dim:field[@element = 'description' and @qualifier='abstract']/node()" />
 				<div class="artifact-abstract-head">
@@ -832,45 +867,122 @@
 				<div class="item active">
 					<div style="position: relative; height: 180px;">
 						<img style="width: 100px; position: absolute; left: 22%; top: 20%" src="{$context-path}/themes/UFALHome/lib/images/glass.png" />
-						<h3 style="left: 34%; position: absolute; top: 25%;"><i18n:text i18n:key="homepage.carousel.data_tools">Linguistic Data and NLP Tools</i18n:text></h3>
-						<h5 style="left: 40%; position: absolute; top: 15%;"><i18n:text i18n:key="homepage.carousel.find">Find</i18n:text></h5>
-						<h5 style="left: 54%; position: absolute; top: 45%;"><i18n:text i18n:key="homepage.carousel.citation_support">Citation Support (with Persistent IDs)</i18n:text></h5>
+						<h3 style="left: 34%; position: absolute; top: 15%;"><i18n:text i18n:key="homepage.carousel.data_tools">Literary and linguistic resources</i18n:text></h3>
+						<h5 style="left: 40%; position: absolute; top: 40%;"><i18n:text i18n:key="homepage.carousel.find">Full text</i18n:text></h5>
+						<h5 style="left: 44%; position: absolute; top: 50%;"><i18n:text i18n:key="homepage.carousel.citation_support">Persistent and easy to cite</i18n:text></h5>
 					</div>
 				</div>
+
+                                <div class="item">
+                                        <div style="position: relative; height: 180px;">
+                                                <div style="position: absolute; width: 65%; top: 20%; left: 20%; line-height: 20px;">
+                                                        <blockquote>
+                                                                <strong>
+                                                                        <i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
+                                                                        <i18n:text i18n:key="homepage.carousel.quote">Truth is compared in Scripture to a streaming fountain; if her waters flow not in a perpetual progression, they into a muddy pool of conformity and tradition.”</i18n:text>
+                                                                </strong>
+                                                                <small>John Milton, Areopagitica, 1644</small>
+                                                        </blockquote>
+                                                </div>
+                                        </div>
+                                </div>
+
+
+                                <div class="item">
+                                        <div style="position: relative; height: 180px;">
+                                                <div style="position: absolute; width: 65%; top: 20%; left: 20%; line-height: 20px;">
+                                                        <blockquote>
+                                                                <strong>
+                                                                        <i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
+										<i18n:text i18n:key="homepage.carousel.quote">.........to make the best that has been thought and known in the world current everywhere; to make all men live in an atmosphere of sweetness and light...</i18n:text>
+									</strong>
+                                                                <small>Matthew Arnold, 1869</small>
+                                                        </blockquote>
+                                                </div>
+                                        </div>
+                                </div>
+
 				<div class="item">
 					<div style="position: relative; height: 180px;">
-						<h3 style="left: 40%; position: absolute; top: 10%;"><i18n:text i18n:key="homepage.carousel.deposit">Deposit Free and Safe</i18n:text></h3>
-						<h5 style="left: 28%; position: absolute; top: 30%;"><i18n:text i18n:key="homepage.carousel.license">License of your Choice (Open licenses encouraged)</i18n:text></h5>
-						<h5 style="left: 32%; position: absolute; top: 42%;"><i18n:text i18n:key="homepage.carousel.easy_find">Easy to Find</i18n:text></h5>
-						<h5 style="left: 36%; position: absolute; top: 54%;"><i18n:text i18n:key="homepage.carousel.easy_cite">Easy to Cite</i18n:text></h5>
+                                                <img style="width: 70px; position: absolute; left: 12%; top: 20%" src="{$context-path}/themes/UFALHome/lib/images/winebeertobacco.png" />
+						<h3 style="left: 30%; position: absolute; top: 10%;"><i18n:text i18n:key="homepage.carousel.deposit">Full Text</i18n:text></h3>
+						<h5 style="left: 34%; position: absolute; top: 36%;"><i18n:text i18n:key="homepage.carousel.license">No trigger warnings</i18n:text></h5>
+						<h5 style="left: 38%; position: absolute; top: 48%;"><i18n:text i18n:key="homepage.carousel.easy_find">No safe spaces</i18n:text></h5>
+						<h5 style="left: 42%; position: absolute; top: 60%;"><i18n:text i18n:key="homepage.carousel.easy_cite">Just the text, from the historical sources</i18n:text></h5>
 					</div>
 				</div>
+
+                                <div class="item">
+                                        <div style="position: relative; height: 180px;">
+                                                <div style="position: absolute; width: 80%; top: 10%; left: 20%; line-height: 20px;">
+                                                        <blockquote>
+                                                                <strong>
+                                                                        <i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
+                                                                        <i18n:text i18n:key="homepage.carousel.quote">There are many short intervals in the day, between studies and pleasures; instead of sitting idle and yawning, in those intervals, snatch up some valuable book, and continue the reading of that book till you have got through it”</i18n:text>
+                                                                </strong>
+                                                                <small>Lord Chesterfield's advice to his son</small>
+                                                        </blockquote>
+                                                </div>
+                                        </div>
+                                </div>
+
+
 				<div class="item">
 					<div style="position: relative; height: 180px;">
-						<div style="position: absolute; width: 65%; top: 20%; left: 20%; line-height: 20px;">
+                                                <img style="width: 100px; position: absolute; left: 12%; top: 20%" src="{$context-path}/themes/UFALHome/lib/images/glass.png" />
+						<h3 style="left: 30%; position: absolute; top: 10%;"><i18n:text i18n:key="homepage.carousel.deposit">Free and Open Access to Scholarship</i18n:text></h3>
+						<h5 style="left: 34%; position: absolute; top: 36%;"><i18n:text i18n:key="homepage.carousel.license">Thousands of historical texts</i18n:text></h5>
+						<h5 style="left: 38%; position: absolute; top: 48%;"><i18n:text i18n:key="homepage.carousel.easy_find">Easy to Find</i18n:text></h5>
+						<h5 style="left: 42%; position: absolute; top: 60%;"><i18n:text i18n:key="homepage.carousel.easy_cite">Easy to Cite</i18n:text></h5>
+					</div>
+				</div>
+<!--
+				<div class="item">
+					<div style="position: relative; height: 180px;">
+						<div style="position: absolute; width: 80%; top: 10%; left: 20%; line-height: 20px;">
 							<blockquote>
 								<strong>
 									<i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
-									<i18n:text i18n:key="homepage.carousel.quote">“There ought to be only one grand dépôt of art in the world, to
-									which the artist might repair with his works, and on presenting them
-									receive what he required... ”</i18n:text>
+									<i18n:text i18n:key="homepage.carousel.quote">“BEFORE we poll, the town I wiſh to ſound,
+And canvaſs for your votes and int'reſt round:
+No bribes I bring, to influence your voice,
+Our Candidate aims at, being Freedom's choice;
+If unſucceſsful, he aſſures this borough,
+He'll call no critic ſcrutiny to-morrow;
+The public judgment, he abides with awe,
+And owns your right to give the drama law.”</i18n:text>
 								</strong>
-								<small>Ludwig van Beethoven, 1801</small>
+								<small>The humours of an election: A farce, F. Pilon, 1780</small>
+							</blockquote>
+						</div>
+					</div>
+-->
+				<div class="item">
+					<div style="position: relative; height: 180px;">
+						<div style="position: absolute; width: 80%; top: 10%; left: 20%; line-height: 20px;">
+							<blockquote>
+								<strong>
+									<i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
+									<i18n:text i18n:key="homepage.carousel.quote">It has been ſo long the practice to repreſent literature as declining, that every renewal of this complaint now comes with diminiſh'd influence..”</i18n:text>
+								</strong>
+								<small>Oliver Goldsmith, An enquiry into the present state of polite learning in Europe, 1759</small>
 							</blockquote>
 						</div>
 					</div>
 				</div>
+
+
 			</div>
 		</div>
 		<div class="col-md-5 col-lg-4 hidden-xs hidden-sm">
 			<div class="row">
 				<div style="height: 160px; position: relative;" class="col-md-7 col-lg-7">
 				  <a href="/lindat">
-			            <img src="{$context-path}/themes/UFAL/images/lindat/lindat-logo.png" style="position: absolute; height: 60%; top: 0px; bottom: 0px; margin: auto;" class="logo" alt="LINDAT/CLARIN logo" /></a>
+			            <img src="{$context-path}/themes/UFAL/images/lindat/bodleian_libraries_logo.jpg" style="position: absolute; height: 60%; top: 0px; bottom: 0px; margin: auto;" class="logo" alt="LINDAT/Bodley logo" /></a>
 				</div>
 		                <div style="height: 160px; position: relative;" class="col-md-5 col-lg-5">
-				    <a href="http://www.clarin.eu/">
-		                    <img src="{$context-path}/themes/UFAL/images/lindat/clarin-logo.png" style="position: absolute; height: 70%; top: 0px; bottom: 0px; margin: auto;" class="logo" alt="LINDAT/CLARIN logo" /></a>
+				    <a href="http://www.ox.ac.uk/">
+		                    <img src="{$context-path}/themes/UFAL/images/lindat/oxford-logo.png" style="position: absolute; height: 70%; top: 0px; bottom: 0px; margin: auto;" class="logo" alt="University of Oxford logo" /></a>
 		                </div>
 			</div>
         </div>		

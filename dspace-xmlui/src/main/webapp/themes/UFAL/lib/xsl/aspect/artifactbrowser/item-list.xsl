@@ -208,8 +208,15 @@
                     <xsl:value-of select="dim:field[@element='type'][1]/node()"/>
             </div>
         </xsl:if>
-        
-        <xsl:if test="dim:field[@mdschema='local' and @element='branding']">
+      <!-- SWAP local.branding for dc.relation.ispartof 
+      Ideally should be a link using the collection handle as on home page -->  
+<xsl:if test="dim:field[@element = 'relation' and @qualifier='ispartof']">
+	<div class="item-branding label">
+		<xsl:value-of select="dim:field[@element = 'relation' and @qualifier='ispartof'][1]/node()"/>
+	</div>
+</xsl:if>
+
+<!--        <xsl:if test="dim:field[@mdschema='local' and @element='branding']">
         				<div class="item-branding label">
 					<a>
 					<xsl:attribute name="href">
@@ -220,7 +227,7 @@
 					</a>
 					</div>
         </xsl:if>
-        
+-->        
         <img class="artifact-icon pull-right" alt="{dim:field[@element='type'][1]/node()}" onerror="this.src='{$theme-path}/images/mime/application-x-zerosize.png'">
             <xsl:attribute name="src">
                 <xsl:value-of select="$context-path" />
@@ -236,7 +243,7 @@
                         <xsl:value-of select="$href" />
                     </xsl:attribute>
                 <xsl:choose>
-                    <xsl:when test="dim:field[@element='title']">
+                    <xsl:when test="dim:field[@element='title'] and dim:field[@element='title'][1]/node()">
                         <xsl:value-of select="dim:field[@element='title'][1]/node()" />
                     </xsl:when>
                     <xsl:otherwise>
@@ -245,7 +252,17 @@
                 </xsl:choose>
             </xsl:element>
         </div>
-        <xsl:if test="dim:field[@element='date' and @qualifier='issued'] or dim:field[@element='publisher']">
+        <!-- SWAP publisher and date for dc.date.created-->
+        <xsl:if test="dim:field[@element='date' and @qualifier='created']">
+         <div class="publisher-date">
+         <xsl:element name="strong"><i18n:text>xmlui.UFAL.artifactbrowser.item_list.datecreated</i18n:text></xsl:element>
+             <br /><span class="date">	             				
+				<xsl:value-of select="dim:field[@element='date' and @qualifier='created']/node()"/>						            
+			</span>
+         </div>
+        </xsl:if>
+
+<!--        <xsl:if test="dim:field[@element='date' and @qualifier='issued'] or dim:field[@element='publisher']">
          <div class="publisher-date">
              <xsl:text>(</xsl:text>
              <xsl:if test="dim:field[@element='publisher']">
@@ -267,6 +284,7 @@
              <xsl:text>)</xsl:text>
          </div>
         </xsl:if>
+-->
         <div class="artifact-info">
             <span class="Z3988 hidden">
                 <xsl:attribute name="title">
@@ -314,8 +332,20 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </div>
-        </div>                
-        <!-- xsl:choose>
+        </div>      
+
+       <!-- Swift ID-->
+        <xsl:if test="dim:field[@mdschema='local' and @element='identifier' and @qualifier='swift']">
+         <div class="publisher-date">
+         <xsl:element name="strong"><i18n:text>xmlui.UFAL.artifactbrowser.item_list.swiftid</i18n:text></xsl:element>
+             <br /><span class="swiftid">	             				
+				<xsl:value-of select="dim:field[@mdschema='local' and @element='identifier' and @qualifier='swift']/node()" />						            
+			</span>
+         </div>
+        </xsl:if>
+
+       <!-- Description / Abstract -->           
+        <xsl:choose>
             <xsl:when
                 test="dim:field[@element = 'description' and @qualifier='abstract']">
                 <xsl:variable name="abstract"
@@ -337,7 +367,7 @@
                     <xsl:value-of select="util:shortenString($description, 220, 10)" />
                 </div>
             </xsl:when>
-        </xsl:choose-->
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="dri:list[@n='primary-search']" priority="10">
