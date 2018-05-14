@@ -151,6 +151,10 @@
 					</map:transform>
 				</map:act>
 
+                                <!-- Step 4b: Remove namespaces MR 2018-01-09 -->
+                                <map:transform type="NamespaceFilter" src="http://di.tamu.edu/DRI/1.0/"/>
+                                <map:transform type="NamespaceFilter" src="http://apache.org/cocoon/i18n/2.1"/>
+
 				<!-- Step 5: Serialize to the browser -->
 				<map:serialize type="xhtml"/>
 
