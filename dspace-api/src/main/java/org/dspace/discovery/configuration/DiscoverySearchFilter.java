@@ -73,4 +73,16 @@ public class DiscoverySearchFilter {
         return FILTER_TYPE_DEFAULT;
     }
 
+	public String getHash(){
+		// MR: I'm tring to stop duplicate entires in the solr index.
+		StringBuffer hash = new StringBuffer();
+		hash.append(this.indexFieldName+'|');
+		hash.append(this.type+"|fullAutoComplete:");
+		hash.append(this.fullAutoComplete);
+		for(String metaName: this.metadataFields)
+		{
+			hash.append('|'+metaName);
+		}
+		return hash.toString();
+	}
 }
