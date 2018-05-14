@@ -17,11 +17,7 @@ jQuery(document).ready(
             instance.target = instance.host + instance.port + instance.repoPath;
             //In order to use the discojuice store (improve score of used IDPs)
             //Works only with "verified" SPs - ie. ufal-point, displays error on ufal-point-dev
-            instance.responseUrl =
-                (window.location.hostname.search("ufal-point-dev") >= 0) ?
-                        "" :
-                        instance.host + instance.port + instance.repoPath +
-                            "themes/UFAL/lib/html/disco-juice.html?";
+            instance.responseUrl = "";
             instance.metadataFeed = instance.target + "discojuice/feeds";
             instance.serviceName = "OTA Repository";
             instance.localauth =
