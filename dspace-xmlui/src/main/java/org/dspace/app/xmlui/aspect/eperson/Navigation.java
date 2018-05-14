@@ -72,6 +72,8 @@ public class Navigation extends AbstractDSpaceTransformer implements CacheablePr
             message("xmlui.EPerson.Navigation.deposit");
     private static final Message T_cite =
             message("xmlui.EPerson.Navigation.cite");
+    private static final Message T_oxford =
+            message("xmlui.EPerson.Navigation.oxford");
     private static final Message T_lifecycle =
             message("xmlui.EPerson.Navigation.item-lifecycle");
     private static final Message T_faq =
@@ -252,6 +254,7 @@ public class Navigation extends AbstractDSpaceTransformer implements CacheablePr
         about.setHead( T_about_head );
         about.addItemXref( contextPath + "/page/deposit", T_deposit );
         about.addItemXref( contextPath + "/page/cite", T_cite);
+        about.addItemXref( contextPath + "/page/oxford", T_oxford);
         about.addItemXref( contextPath + "/page/item-lifecycle", T_lifecycle );
         about.addItemXref( contextPath + "/page/faq", T_faq);
         about.addItemXref( contextPath + "/page/about", T_about );
