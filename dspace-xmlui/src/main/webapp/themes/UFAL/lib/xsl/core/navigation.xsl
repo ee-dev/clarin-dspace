@@ -40,21 +40,21 @@
 					<li class="always-open hidden-xs">
 						<div style="background-color: #FFFFFF;" class="clearfix">
 							<div class="col-sm-7" style="height: 120px; position: relative;">
-								<a href="/lindat">
-									<img alt="LINDAT/CLARIN logo" class="img-responsive" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; padding: 20px;" src="{$context-path}/themes/UFAL/images/lindat/lindat-logo.png" />
+								<a href="/">
+									<img alt="OTA logo" class="img-responsive" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; padding: 20px;" src="{$context-path}/themes/UFAL/images/lindat/bodleian_libraries_logo.jpg" />
 								</a>
 							</div>
 							<div class="col-sm-5 text-center" style="height: 120px; position: relative;">
-								<a href="http://www.clarin.eu/">
-									<img alt="CLARIN logo" class="img-responsive" style="position: absolute; bottom: 0px; left: 0px; right: 0px; padding: 10px;" src="{$context-path}/themes/UFAL/images/lindat/clarin-logo.png" />
+								<a href="http://www.ota.ox.ac.uk/">
+									<img alt="University of Oxford logo" class="img-responsive" style="position: absolute; bottom: 0px; left: 0px; right: 0px; padding: 10px;" src="{$context-path}/themes/UFAL/images/lindat/oxford-logo.png" />
 								</a>
 							</div>
 						</div>					
 					</li>
 				</xsl:if>
-				<li class="always-open hidden-xs">
+				<!-- li class="always-open hidden-xs">
 					<xsl:call-template name="howto-panel" />
-				</li>
+				</li -->
 				<xsl:apply-templates select="dri:list[count(child::*)!=0]" />
 				<xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='feed']">
 					<li class="always-open">
