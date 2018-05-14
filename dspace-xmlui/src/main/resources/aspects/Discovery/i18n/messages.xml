@@ -92,18 +92,30 @@
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_department_browse">Browsing by: Department</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dateissued_dt_browse">Browsing by: Issue date</message>
 
+<!--
+	Java class is 'SimpleSearch' 
+	Used for 'Advanced Search - Filters' menu and the lozenge labels for selected filters
+	The name comes from the 'indexFieldName' in discovery.xml
+	e.g.  <property name="indexFieldName" value="subjectFacet"/>
+	would be xmlui.ArtifactBrowser.SimpleSearch.filter.subjectFacet
+	 -->
+
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author">Author</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.title">Title</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Subject</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued">Date issued</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.selected">Selected filters</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.rights">Rights</message>
+    <!-- OTA filters -->
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subjectFacet">LCSH Subject</message>
+    
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.stc_identifier">STC identifier</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.ota_identifier">OTA identifier</message>
     <!-- listbox -->
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.publisher">Publisher</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.language">Language</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type">Type</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.mediatype">Medium Type</message>
-
 
     <message key="xmlui.dri2xhtml.structural.pagination-info.nototal">Now showing items {0}-{1}</message>
 
