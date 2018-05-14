@@ -51,12 +51,13 @@ public class SearchUtils {
         DiscoveryConfigurationService configurationService = getConfigurationService();
 
         DiscoveryConfiguration result = null;
-        
+// The problem is we don't know which map we actually ended up with (site/handle/default/search etc)
         DSpace dspace = new DSpace();
         Request request = dspace.getRequestService().getCurrentRequest();
         if(request!=null && request.getHttpServletRequest()!=null) {
         	if(request.getHttpServletRequest().getRequestURI().contains("/discover")){
         		result = configurationService.getMap().get("search");
+        		result.setId("search");
         		return result;
         	}
         }
@@ -64,15 +65,22 @@ public class SearchUtils {
         
         if(dso == null){
             result = configurationService.getMap().get("site");
+			if(result != null) {
+				result.setId("site");
+			}
+
         }else{
             result = configurationService.getMap().get(dso.getHandle());
+			if(result != null) {
+				result.setId(dso.getHandle());
+			}
         }
 
         if(result == null){
             //No specific configuration, get the default one
             result = configurationService.getMap().get("default");
-        }
-
+			result.setId("default");
+	        }
         return result;
     }
 

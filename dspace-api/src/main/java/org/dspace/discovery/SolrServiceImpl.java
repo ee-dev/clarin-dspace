@@ -932,19 +932,30 @@ public class SolrServiceImpl implements SearchService, IndexingService {
                 for (int i = 0; i < discoveryConfiguration.getSearchFilters().size(); i++)
                 {
                     DiscoverySearchFilter discoverySearchFilter = discoveryConfiguration.getSearchFilters().get(i);
+// getMetadataFields returns list of String                  
                     for (int j = 0; j < discoverySearchFilter.getMetadataFields().size(); j++)
                     {
                         String metadataField = discoverySearchFilter.getMetadataFields().get(j);
                         List<DiscoverySearchFilter> resultingList;
                         if(searchFilters.get(metadataField) != null)
                         {
-                            resultingList = searchFilters.get(metadataField);
+                        	// is existing copy 'different'?
+                           String existingHash = searchFilters.get(metadataField).get(0).getHash();
+                           String newHash = discoverySearchFilter.getHash();
+							if(existingHash.equals(newHash))
+							{
+								resultingList = new ArrayList<DiscoverySearchFilter>();
+							}
+							else
+							{
+								resultingList = searchFilters.get(metadataField);
+                            }
                         }else{
                             //New metadata field, create a new list for it
                             resultingList = new ArrayList<DiscoverySearchFilter>();
                         }
                         resultingList.add(discoverySearchFilter);
-
+                        // Only add if we don't have this already (from another discoveryConfiguration)
                         searchFilters.put(metadataField, resultingList);
                     }
                 }
@@ -982,7 +993,11 @@ public class SolrServiceImpl implements SearchService, IndexingService {
                     }
                 }
             }
+/*
+	Map<String, List<DiscoverySearchFilter>> searchFilters = new HashMap<String, List<DiscoverySearchFilter>>();
+            Ok so searchFilters does NOT contain duplicates but each key is a LIST of type DiscoverySearchFilter
 
+*/
 
             List<String> toProjectionFields = new ArrayList<String>();
             String projectionFieldsString = new DSpace().getConfigurationService().getProperty("discovery.index.projection");
@@ -1095,14 +1110,27 @@ public class SolrServiceImpl implements SearchService, IndexingService {
 
                 if ((searchFilters.get(field) != null || searchFilters.get(unqualifiedField + "." + Item.ANY) != null))
                 {
+                
+                if(searchFilters.get(field) != null ) {log.info("Field is in searchFilters as "+field);}
+                if(searchFilters.get(unqualifiedField + "." + Item.ANY) != null ) {log.info("Field is in searchFilters as "+unqualifiedField+ "." + Item.ANY);}
+                
                     List<DiscoverySearchFilter> searchFilterConfigs = searchFilters.get(field);
                     if(searchFilterConfigs == null)
                     {
                         searchFilterConfigs = searchFilters.get(unqualifiedField + "." + Item.ANY);
                     }
+// At this point we have duplicate copies of a field in our searchFilterConfigs List but they may have different metadata fields?
 
+              for (DiscoverySearchFilter searchFilter : searchFilterConfigs)
+                    {
+						log.info("1109 searchFilters: "+searchFilter.getHash());
+                
+					}
+    
+    
                     for (DiscoverySearchFilter searchFilter : searchFilterConfigs)
                     {
+                           	log.info("searchFilter loop: "+searchFilter.getIndexFieldName());
                         Date date = null;
                         String separator = new DSpace().getConfigurationService().getProperty("discovery.solr.facets.split.char");
                         if(separator == null)
@@ -1332,7 +1360,14 @@ public class SolrServiceImpl implements SearchService, IndexingService {
                     doc.addField(field + "_mlt", value);
                 }
 
-                doc.addField(field, value);
+				// Only add base field if it hasn't already been done:
+				if(doc.getField(field) == null)
+				{
+					doc.addField(field, value); 
+				}
+				else
+				{
+				}
                 if (toProjectionFields.contains(field) || toProjectionFields.contains(unqualifiedField + "." + Item.ANY))
                 {
                     StringBuffer variantsToStore = new StringBuffer();
