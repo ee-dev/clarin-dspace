@@ -122,7 +122,7 @@
             </xsl:for-each>
 
             <!-- Add Lindat stylesheet -->
-            <link rel="stylesheet" href="{$theme-path}/lib/lindat/public/css/lindat.css" media="screen" />
+            <link rel="stylesheet" href="{$theme-path}/lib/css/lindat.css" media="screen" />
             
             <!-- Bootstrap stylesheets -->
             <link rel="stylesheet" href="{$theme-path}/lib/bootstrap/css/bootstrap.min.css" media="screen" />
