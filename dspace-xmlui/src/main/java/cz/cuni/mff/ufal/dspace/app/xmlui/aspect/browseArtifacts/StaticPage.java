@@ -36,7 +36,7 @@ public class StaticPage extends AbstractDSpaceTransformer {
 			RequestService.class.getName(), RequestService.class);
 	ConfigurationService cs = dspace.getServiceManager().getServiceByName(
 			ConfigurationService.class.getName(), ConfigurationService.class);
-	private static final String themePath = "/webapps/xmlui/themes/UFAL/lib/html/";
+	private static final String themePath = "/webapps/xmlui/themes/OTA/lib/html/";
 
 	@Override
 	public void addPageMeta(PageMeta pageMeta) throws SAXException,

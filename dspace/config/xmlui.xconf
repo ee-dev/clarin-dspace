@@ -202,6 +202,6 @@
     	<theme name="OTA Homepage" regex="^$" path="OTAHome/" />
     	
     	<!-- UFAL theme -->
-        <theme name="UFAL Theme" regex=".*" path="UFAL/" />
+        <theme name="OTA Theme" regex=".*" path="OTA/" />
     </themes>
 </xmlui>
