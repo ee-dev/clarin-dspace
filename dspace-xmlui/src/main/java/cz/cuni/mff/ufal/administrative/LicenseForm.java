@@ -450,7 +450,7 @@ public class LicenseForm extends AbstractDSpaceTransformer {
 			try {
 				InputStream is = filePart.getInputStream();
 				
-				FileOutputStream fos = new FileOutputStream(ConfigurationManager.getProperty("dspace.dir") + "/webapps/xmlui/themes/UFAL/images/licenses/" + label.toLowerCase() + ".png");
+				FileOutputStream fos = new FileOutputStream(ConfigurationManager.getProperty("dspace.dir") + "/webapps/xmlui/themes/OTA/images/licenses/" + label.toLowerCase() + ".png");
 				
 				Utils.bufferedCopy(is, fos);
 				
