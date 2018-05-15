@@ -134,7 +134,7 @@
 			</xsl:for-each>
 
 			<!-- Add Lindat stylesheet -->
-			<link rel="stylesheet" href="{$theme-path}/lib/lindat/public/css/lindat.css" />
+			<link rel="stylesheet" href="{$theme-path}/lib/css/lindat.css" />
 			
 			<!-- Bootstrap stylesheets -->
 			<link rel="stylesheet" href="{$theme-path}/lib/bootstrap/css/bootstrap.min.css" />
