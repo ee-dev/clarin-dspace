@@ -38,8 +38,8 @@
 	<xsl:import href="lib/xsl/aspect/artifactbrowser/community-view.xsl" />	
 	<xsl:import href="lib/xsl/aspect/artifactbrowser/ORE.xsl"/>
     <xsl:import href="lib/xsl/aspect/artifactbrowser/COinS.xsl"/>
-	<xsl:import href="lib/xsl/lindat/header.xsl" />
-	<xsl:import href="lib/xsl/lindat/footer.xsl" />
+	<xsl:import href="lib/xsl/core/header.xsl" />
+	<xsl:import href="lib/xsl/core/footer.xsl" />
 	<xsl:output indent="yes" />
 
 	<xsl:template match='//dri:list[@id="aspect.discovery.Navigation.list.discovery"]' />
