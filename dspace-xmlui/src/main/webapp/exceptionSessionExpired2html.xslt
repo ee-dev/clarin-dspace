@@ -252,7 +252,7 @@
                 </xsl:choose>
             </xsl:variable>
             <script type="text/javascript" src="{concat($protocol, 'ajax.googleapis.com/ajax/libs/jquery/', $jqueryVersion ,'/jquery.min.js')}">&#160;</script>
-            <script type="text/javascript" src="{$contextPath}/themes/UFAL/lib/js/jquery-ui.js">&#160;</script>
+            <script type="text/javascript" src="{$contextPath}/themes/OTA/lib/js/jquery-ui.js">&#160;</script>
 
             <script type="text/javascript" src="{concat($aaiURL, '/discojuice/discojuice-2.1.en.min.js')}">&#160;</script>
             <script type="text/javascript" src="{concat($aaiURL, '/aai.js')}">&#160;</script>
@@ -273,17 +273,17 @@
 
 
             <!-- Bootstrap stylesheets -->
-            <link rel="stylesheet" href="{$contextPath}/themes/UFAL/lib/bootstrap/css/bootstrap.min.css" />
-            <link rel="stylesheet" href="{$contextPath}/themes/UFAL/lib/bootstrap/css/font-awesome.min.css" />
-            <link rel="stylesheet" href="{$contextPath}/themes/UFAL/lib/bootstrap/css/ufal-theme.css" />
+            <link rel="stylesheet" href="{$contextPath}/themes/OTA/lib/bootstrap/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="{$contextPath}/themes/OTA/lib/bootstrap/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="{$contextPath}/themes/OTA/lib/bootstrap/css/ufal-theme.css" />
 
             <!-- Add Lindat stylesheet -->
             <link rel="stylesheet" type="text/css"
-                href="{$contextPath}/themes/UFAL/lib/lindat/public/css/lindat.css" />
+                href="{$contextPath}/themes/OTA/lib/css/lindat.css" />
 
 
-            <script type="text/javascript" src="{$contextPath}/themes/UFAL/lib/bootstrap/js/bootstrap.min.js">&#160;</script>
-            <script type="text/javascript" src="{$contextPath}/themes/UFAL/lib/bootstrap/js/ufal.min.js">&#160;</script>
+            <script type="text/javascript" src="{$contextPath}/themes/OTA/lib/bootstrap/js/bootstrap.min.js">&#160;</script>
+            <script type="text/javascript" src="{$contextPath}/themes/OTA/lib/bootstrap/js/ufal.min.js">&#160;</script>
 
             <!-- Add the title in -->
             <title>
