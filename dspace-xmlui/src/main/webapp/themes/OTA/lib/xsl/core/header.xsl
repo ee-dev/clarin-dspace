@@ -26,14 +26,14 @@
 
     <xsl:template name="buildHeader">
         <xsl:variable name="currentLocale" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='currentLocale']"/>
-        <xsl:variable name="localizedDiskPath" select="concat($theme-path-on-disk,'/lib/lindat/',$currentLocale,'/header.htm')" />
+        <xsl:variable name="localizedDiskPath" select="concat($theme-path-on-disk,'/lib/html/',$currentLocale,'/header.htm')" />
         <xsl:variable name="path" select="file:new($localizedDiskPath)"/>
       <xsl:choose>
           <xsl:when test="file:isFile($path)">
               <xsl:copy-of select="document($localizedDiskPath)" />
           </xsl:when>
           <xsl:otherwise>
-              <xsl:copy-of select="document('../../lindat/header.htm')" />
+              <xsl:copy-of select="document('../../html/header.htm')" />
           </xsl:otherwise>
       </xsl:choose>
     </xsl:template>

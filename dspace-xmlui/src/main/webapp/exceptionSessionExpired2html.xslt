@@ -23,8 +23,8 @@
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:ex="http://apache.org/cocoon/exception/1.0" >
 
-    <xsl:include href="themes/UFAL/lib/xsl/lindat/header.xsl" />
-    <xsl:include href="themes/UFAL/lib/xsl/lindat/footer.xsl" />
+    <xsl:include href="themes/OTA/lib/xsl/core/header.xsl" />
+    <xsl:include href="themes/OTA/lib/xsl/core/footer.xsl" />
 
     <xsl:param name="realPath" />
 
@@ -220,13 +220,13 @@
             <link rel="shortcut icon">
                 <xsl:attribute name="href">
                     <xsl:value-of select="$contextPath" />
-                    <xsl:text>/themes/UFAL/images/favicon.ico</xsl:text>
+                    <xsl:text>/themes/OTA/images/favicon.ico</xsl:text>
                 </xsl:attribute>
             </link>
             <link rel="apple-touch-icon">
                 <xsl:attribute name="href">
                     <xsl:value-of select="$contextPath" />
-                    <xsl:text>/themes/UFAL/images/apple-touch-icon.png</xsl:text>
+                    <xsl:text>/themes/OTA/images/apple-touch-icon.png</xsl:text>
                 </xsl:attribute>
             </link>
 

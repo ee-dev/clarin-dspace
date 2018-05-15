@@ -24,9 +24,9 @@
     xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ex="http://apache.org/cocoon/exception/1.0" >
 
-	<xsl:include href="themes/UFAL/lib/xsl/core/global-variables.xsl" />
-	<xsl:include href="themes/UFAL/lib/xsl/lindat/header.xsl" />
-	<xsl:include href="themes/UFAL/lib/xsl/lindat/footer.xsl" />
+	<xsl:include href="themes/OTA/lib/xsl/core/global-variables.xsl" />
+	<xsl:include href="themes/OTA/lib/xsl/core/header.xsl" />
+	<xsl:include href="themes/OTA/lib/xsl/core/footer.xsl" />
 
 	<xsl:param name="realPath" />
 

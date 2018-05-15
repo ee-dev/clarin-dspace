@@ -210,9 +210,7 @@ install_dspace:
 	@echo "INSTALLATION SUCCESSFUL ..."
 
 postinstall: 
-	# spring-social gdrive is experimental and enabled with this hack only if configured
-	@if [ "$(SOCIAL_ENABLED)" = "true" ];then sed -ie 's#.*</web-app>.*#<context-param>\n<param-name>spring.profiles.active</param-name>\n<param-value>drive-beta</param-value>\n</context-param>\n</web-app>#' "$(DIR_INSTALLATION)/webapps/xmlui/WEB-INF/web.xml";fi
-	@$(MAKE) update_lindat_common
+#	@$(MAKE) update_lindat_common
 	@$(MAKE) grant_rights
 	@if [[ -f $@.sh ]]; then echo "Running customised $@"; bash $@.sh; fi 
 	@echo "DEPLOYMENT (INSTALL + POSTINSTALL) SUCCESSFUL"
