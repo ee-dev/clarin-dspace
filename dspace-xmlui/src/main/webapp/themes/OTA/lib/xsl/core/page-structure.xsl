@@ -544,8 +544,8 @@
                 <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='currentLocale']"/>
             </xsl:variable>
             <xsl:attribute name="src">
-                <xsl:variable name="localizedContextPath" select="concat($theme-path,'/lib/lindat/public/js/',$currentLocale,'/lindat-refbox.js')" />
-                <xsl:variable name="localizedDiskPath" select="concat($theme-path-on-disk,'/lib/lindat/public/js/',$currentLocale,'/lindat-refbox.js')" />
+                <xsl:variable name="localizedContextPath" select="concat($theme-path,'/lib/js/',$currentLocale,'/lindat-refbox.js')" />
+                <xsl:variable name="localizedDiskPath" select="concat($theme-path-on-disk,'/lib/js/',$currentLocale,'/lindat-refbox.js')" />
                 <xsl:variable name="path" select="file:new($localizedDiskPath)"/>
                 <xsl:choose>
                     <xsl:when test="file:isFile($path)">
@@ -553,7 +553,7 @@
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="$theme-path" />
-                        <xsl:text>/lib/lindat/public/js/lindat-refbox.js</xsl:text>
+                        <xsl:text>/lib/js/lindat-refbox.js</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:attribute>&#160;</script>
