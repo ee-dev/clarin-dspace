@@ -34,14 +34,14 @@
                 </a>
 
       <xsl:variable name="currentLocale" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='currentLocale']"/>
-      <xsl:variable name="localizedDiskPath" select="concat($theme-path-on-disk,'/lib/lindat/',$currentLocale,'/footer.htm')" />
+      <xsl:variable name="localizedDiskPath" select="concat($theme-path-on-disk,'/lib/html/',$currentLocale,'/footer.htm')" />
       <xsl:variable name="path" select="file:new($localizedDiskPath)"/>
       <xsl:choose>
           <xsl:when test="file:isFile($path)">
               <xsl:copy-of select="document($localizedDiskPath)" />
           </xsl:when>
           <xsl:otherwise>
-              <xsl:copy-of select="document('../../lindat/footer.htm')" />
+              <xsl:copy-of select="document('../../html/footer.htm')" />
           </xsl:otherwise>
       </xsl:choose>
     </xsl:template>

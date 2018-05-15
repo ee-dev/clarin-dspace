@@ -207,7 +207,7 @@ install_dspace:
 	@echo "INSTALLATION SUCCESSFUL ..."
 
 postinstall: 
-	@$(MAKE) update_lindat_common
+#	@$(MAKE) update_lindat_common
 	@$(MAKE) grant_rights
 	@if [[ -f $@.sh ]]; then echo "Running customised $@"; bash $@.sh; fi 
 	@echo "DEPLOYMENT (INSTALL + POSTINSTALL) SUCCESSFUL"
