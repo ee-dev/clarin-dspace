@@ -263,6 +263,9 @@
 			<xsl:when test="$key='xmlui.EPerson.Navigation.faq'">
 				<i class="fa fa-question fa-lg">&#160;</i>
     		</xsl:when>
+			<xsl:when test="$key='xmlui.EPerson.Navigation.privacy'">
+				<i class="fa fa-file-text fa-lg">&#160;</i>
+    		</xsl:when>
 			<xsl:when test="$key='xmlui.EPerson.Navigation.about'">
 				<i class="fa fa-exclamation-circle fa-lg">&#160;</i>
     		</xsl:when>    		
