@@ -255,7 +255,7 @@
 				<i class="fa fa-quote-right fa-lg">&#160;</i>
     		</xsl:when>
 			<xsl:when test="$key='xmlui.EPerson.Navigation.oxford'">
-				<i class="fa fa-users fa-lg">&#160;</i>
+				<i class="fa fa-mortar-board fa-lg">&#160;</i>
     		</xsl:when>
 			<xsl:when test="$key='xmlui.EPerson.Navigation.item-lifecycle'">
 				<i class="fa fa-refresh fa-lg">&#160;</i>
