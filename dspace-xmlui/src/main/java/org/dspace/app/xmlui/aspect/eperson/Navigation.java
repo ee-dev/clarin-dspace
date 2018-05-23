@@ -80,6 +80,8 @@ public class Navigation extends AbstractDSpaceTransformer implements CacheablePr
             message("xmlui.EPerson.Navigation.faq");
     private static final Message T_about =
             message("xmlui.EPerson.Navigation.about");
+    private static final Message T_privacy =
+            message("xmlui.EPerson.Navigation.privacy");
     
     private static final Message T_profile =
         message("xmlui.EPerson.Navigation.profile");
@@ -259,7 +261,8 @@ public class Navigation extends AbstractDSpaceTransformer implements CacheablePr
         about.addItemXref( contextPath + "/page/faq", T_faq);
         about.addItemXref( contextPath + "/page/about", T_about );
         about.addItem().addXref("mailto:" + ConfigurationManager.getProperty("lr.help.mail"),T_helpdesk, "helpdesk");
-        
+        about.addItemXref( contextPath + "/page/privacy", T_privacy );
+
         //context
         // Context Administrative options
         DSpaceObject dso = HandleUtil.obtainHandle(objectModel);
