@@ -212,6 +212,9 @@
       Ideally should be a link using the collection handle as on home page -->  
 <xsl:if test="dim:field[@element = 'relation' and @qualifier='ispartof']">
 	<div class="item-branding label">
+	<xsl:if test="contains(dim:field[@element = 'relation' and @qualifier='ispartof'][1]/node(),'legacy')">
+		<xsl:attribute name="class"><xsl:text>legacy</xsl:text></xsl:attribute>
+	</xsl:if>
 		<xsl:value-of select="dim:field[@element = 'relation' and @qualifier='ispartof'][1]/node()"/>
 	</div>
 </xsl:if>

@@ -97,8 +97,8 @@
 	<!-- These are the facet displayed front and centre on the home page - MW 16.5.17 -->
         <property name="sidebarFacets">
             <list>
-                <ref bean="searchFilterSubject" />
-                <ref bean="searchFilterCreated" />
+                <ref bean="searchFacetSubject" />
+ <!-- Drop date column for now <ref bean="searchFilterCreated" /> -->
 <!-- the third column is provided by aspect.artifactbrowser.CommunityBrowser --> 
              </list>
         </property>
@@ -108,7 +108,7 @@
         <!-- These appear to be the facets displayed in the right-hand side bar - MW 16.5.17 -->
         <property name="searchFilters">
             <list>
-                <ref bean="searchFilterSubject" />
+                <ref bean="searchFacetSubject" />
   				<ref bean="searchFilterCreated" />
            </list>
         </property>
@@ -321,7 +321,7 @@
         <!-- List of tagclouds to appear, one for every search filter, one after the other -->
         <property name="tagCloudFacets">
             <list>
-                <ref bean="searchFilterSubject" />
+                <ref bean="searchFacetSubject" />
             </list>
         </property>
     </bean>
@@ -397,19 +397,21 @@
 		<property name="fullAutoComplete" value="true"/>
     </bean>
 
-    <bean id="searchFilterSubject" class="org.dspace.discovery.configuration.HierarchicalSidebarFacetConfiguration">
-        <property name="indexFieldName" value="subjectFilter"/>
+    <bean id="searchFacetSubject" class="org.dspace.discovery.configuration.HierarchicalSidebarFacetConfiguration">
+        <property name="indexFieldName" value="subjectFacet"/>
         <property name="metadataFields">
             <list>
-                <value>dc.subject.*</value>
+                <value>dc.subject.lcsh</value>
             </list>
         </property>
-        <property name="facetLimit" value="5"/>
+        <property name="facetLimit" value="20"/>
         <property name="sortOrder" value="COUNT"/>
-        <property name="splitter" value="--"/>
-		<property name="fullAutoComplete" value="true"/>
+ 		<property name="fullAutoComplete" value="true"/>
+       <property name="splitter" value="--"/>
 		<property name="skipFirstNodeLevel" value="false"/>
     </bean>
+
+
     <bean id="searchFilterRights" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">	
         <property name="indexFieldName" value="rights"/>
         <property name="metadataFields">
@@ -482,6 +484,7 @@
     </bean>
 
 <!-- Actuall date the item was created e.g. date book published, NOT date into OTA -->
+ <!-- Needs to be a special field to hold dates with era -->
    <bean id="searchFilterCreated" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
         <property name="indexFieldName" value="created"/>
         <property name="metadataFields">
@@ -489,7 +492,7 @@
                 <value>dc.date.created</value>
             </list>
         </property>
-        <property name="type" value="date"/>
+        <property name="type" value="era_date"/>
         <property name="facetLimit" value="20"/> 
         <property name="sortOrder" value="VALUE"/>
     </bean>
@@ -520,19 +523,6 @@
     </bean>
 
 <!-- Limits for side bar of search page -->
-    <bean id="searchFacetSubject" class="org.dspace.discovery.configuration.HierarchicalSidebarFacetConfiguration">
-        <property name="indexFieldName" value="subjectFacet"/>
-        <property name="metadataFields">
-            <list>
-                <value>dc.subject.*</value>
-            </list>
-        </property>
-        <property name="facetLimit" value="20"/>
-        <property name="sortOrder" value="COUNT"/>
- 		<property name="fullAutoComplete" value="true"/>
-       <property name="splitter" value="--"/>
-		<property name="skipFirstNodeLevel" value="false"/>
-    </bean>
  
     <bean id="searchFacetLLWSubject" class="org.dspace.discovery.configuration.HierarchicalSidebarFacetConfiguration">
         <property name="indexFieldName" value="subject"/>

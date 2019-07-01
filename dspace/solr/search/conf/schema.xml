@@ -606,6 +606,7 @@
 
      <!--Date matching-->
     <dynamicField name="*.year" type="sint" indexed="true" stored="true" multiValued="true" omitNorms="true" />
+    <dynamicField name="*_year_sort" type="sint" indexed="true" stored="true" multiValued="false" omitNorms="true" />
     <dynamicField name="*_dt" type="date" indexed="true" stored="true" multiValued="false" omitNorms="true"  docValues="true"/>
     
     <!-- catch "components" especially to copy them; but also split them to fields with componentFilter -->

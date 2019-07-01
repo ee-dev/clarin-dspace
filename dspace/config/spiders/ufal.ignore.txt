@@ -1,3 +1,5 @@
+#monitoring from Bodleian devops
+129.67.246.6
 # monitoring from ufal-point-dev
 ufal-point-dev.ms.mff.cuni.cz
 195.113.20.155

@@ -25,6 +25,7 @@ public class DiscoveryConfigurationParameters {
     public static final String TYPE_ISO_LANG = "iso_language";
     public static final String TYPE_OTA_IDENTIFIER = "ota_identifier";
     public static final String TYPE_STC_IDENTIFIER = "stc_identifier";
+    public static final String TYPE_ERA_DATE = "era_date";//int field to allow BCE dates for date_created
 
     public static enum SORT {VALUE, COUNT}
 
