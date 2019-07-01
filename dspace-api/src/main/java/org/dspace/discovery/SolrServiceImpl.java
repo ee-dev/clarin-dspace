@@ -26,6 +26,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Arrays;
+import java.util.ListIterator;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
@@ -1292,17 +1294,73 @@ public class SolrServiceImpl implements SearchService, IndexingService {
                             if(searchFilter.getType().equals(DiscoveryConfigurationParameters.TYPE_HIERARCHICAL))
                             {
                                 HierarchicalSidebarFacetConfiguration hierarchicalSidebarFacetConfiguration = (HierarchicalSidebarFacetConfiguration) searchFilter;
-                                String[] subValues = value.split(hierarchicalSidebarFacetConfiguration.getSplitter());
+                                
+                                /* MR remove splits from Kings and Queens */
+								value = value.replaceAll(" -- +([IVX]+), +-- +"," $1, ");
+                                /* MR remove ', --' so it isn't broken up */
+                                value = value.replaceAll(", -- ",", ");
+                                // MR remove trailing period from subject
+                                value = value.replaceFirst("\\.$","");
+                                
+                              log.info("Hierarchical "+value);
+        
+        
+        // MR Use a list not array so we can change it dynamically
+        
+        		List<String> allValues = new ArrayList<String>(Arrays.asList(value.split(hierarchicalSidebarFacetConfiguration.getSplitter())));
+				ListIterator<String> valueList = null;
+				valueList=allValues.listIterator();
+
+				while(valueList.hasNext()){
+					String thisValue = valueList.next().trim();
+					if(thisValue.length()>65)
+					{
+						valueList.remove();
+						continue;
+					}
+					if(thisValue.matches("^Early works.*"))
+					{
+					//	System.out.printf("remove "+thisValue+"\n");
+						valueList.remove();
+						continue;
+					}
+					if(thisValue.matches("^1[0-9]th [Cc]entury"))
+					{
+					//	System.out.printf("remove "+thisValue+"\n");
+						valueList.remove();
+						continue;
+					}
+					if(thisValue.matches("^\\[.*\\]$"))
+					{
+					//	System.out.printf("has []\n");
+						// Strip [ and ] from start/end
+						valueList.set(thisValue.substring(1, thisValue.length()-1));
+					}
+				}
+
+				 // Convert list to Array which ius what the rest of the code expects
+					String[] subValues = allValues.toArray(new String[0]);
+		  
+  //                              String[] subValues = value.split(hierarchicalSidebarFacetConfiguration.getSplitter());
                                 if(hierarchicalSidebarFacetConfiguration.isSkipFirstNodeLevel() && 1 < subValues.length)
                                 {
                                     //Remove the first element of our array
                                     subValues = (String[]) ArrayUtils.subarray(subValues, 1, subValues.length);
                                 }
+                                
                                 for (int i = 0; i < subValues.length; i++)
                                 {
                                     StringBuilder valueBuilder = new StringBuilder();
                                     for(int j = 0; j <= i; j++)
                                     {
+                                    // Skip non subjecty text…
+                                    if(subValues[j].matches(" Early works.*"))
+                                    {
+                                            log.info("  Drop 'Early works;");
+
+                                    	continue;
+                                    }
+                                    
                                         valueBuilder.append(subValues[j]);
                                         if(j < i)
                                         {
@@ -2234,6 +2292,10 @@ public class SolrServiceImpl implements SearchService, IndexingService {
         if(type.equals(DiscoveryConfigurationParameters.TYPE_DATE))
         {
             return metadataField + "_dt";
+        }else if(type.equals(DiscoveryConfigurationParameters.TYPE_ERA_DATE))
+        {
+			return metadataField + "_dt";
+            // return metadataField + "_year_sort";
         }else{
             return metadataField + "_sort";
         }
@@ -2250,6 +2312,14 @@ public class SolrServiceImpl implements SearchService, IndexingService {
                 return field + "_filter";
             }
         }else if(facetFieldConfig.getType().equals(DiscoveryConfigurationParameters.TYPE_DATE))
+        {
+            if(removePostfix)
+            {
+                return field.substring(0, field.lastIndexOf(".year"));
+            }else{
+                return field + ".year";
+            }
+        }else if(facetFieldConfig.getType().equals(DiscoveryConfigurationParameters.TYPE_ERA_DATE))
         {
             if(removePostfix)
             {

@@ -25,6 +25,16 @@ import org.dspace.discovery.configuration.DiscoverySearchFilterFacet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.dspace.util.MultiFormatDateParser;
+import org.apache.commons.lang.time.DateFormatUtils;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
+import java.util.Locale;
+
 import cz.cuni.mff.ufal.IsoLangCodes;
 
 /**
@@ -99,6 +109,7 @@ public class SolrServiceTweaksPlugin implements SolrServiceIndexPlugin,
                                     || type.equals(DiscoveryConfigurationParameters.TYPE_STC_IDENTIFIER)
                                     || type.equals(DiscoveryConfigurationParameters.TYPE_RAW)
                                     || type.equals(DiscoveryConfigurationParameters.TYPE_ISO_LANG)
+                                    || type.equals(DiscoveryConfigurationParameters.TYPE_ERA_DATE)
                                     )
                             {
                                 if (searchFilters.get(metadataField) != null)
@@ -213,7 +224,127 @@ public class SolrServiceTweaksPlugin implements SolrServiceIndexPlugin,
                                     document.addField( filter.getIndexFieldName() + "_keyword", value);
                                 }
                             }
-//MR always — even if not a facet, from lindat code
+//MR always — even if not a facet, based on lindat code IsoLangCodes
+                                if (filter
+                                        .getType()
+                                        .equals(DiscoveryConfigurationParameters.TYPE_ERA_DATE))
+                                {
+                                String indexField = filter.getIndexFieldName();
+									//For our search filters that are Created dates we need to handle BCE dates
+									log.info("process TYPE_ERA_DATE: "+indexField);
+
+									// remove existing field's values
+									// toSortFieldIndex returns '_year_sort' for TYPE_ERA_DATE not '_dt' as for 'real' dates
+									// Debug start -- did previous index add any values for TYPE_ERA_DATE 
+                                        if(document.getField(indexField) != null)
+										{
+											document.removeField(indexField);
+										}
+                                        if(document.getField(indexField + "_sort") != null)
+										{
+											document.removeField(indexField+"_sort");
+										}
+                                       if(document.getField(indexField + "_year_sort") != null)
+										{
+											document.removeField(indexField+"_year_sort");
+										}
+                                       if(document.getField(indexField + "_dt") != null)
+										{
+											document.removeField(indexField+"_dt");
+										}
+                                       if(document.getField(indexField + "_ac") != null)
+										{
+											document.removeField(indexField+"_ac");
+										}
+                                       if(document.getField(indexField + "_keyword") != null)
+										{
+											document.removeField(indexField+"_keyword");
+										}
+                                       if(document.getField(indexField + ".year") != null)
+										{
+											document.removeField(indexField+".year");
+										}
+									// Debug end
+
+									Date date = null;
+// Let's tidy up the date a bit here
+									// Strip enclosing square brackets
+									if(value.matches("^\\[.*\\]$"))
+									{
+									// Strip enclosing []
+										value = value.substring(1, value.length()-1);
+									}
+									
+
+									if(value.equals("unknown"))
+									{
+										value = null;
+									}
+									if(value.contains("BCE"))
+									{
+										value = null;
+										log.info("Date is BCE "+value);
+									}
+									if(value.matches("^(s\\.d|n\\.d|s\\.l)\\.?"))
+									{
+										value = null;
+									}
+									
+
+									date = MultiFormatDateParser.parse(value);
+									if(date != null)
+									{
+										String year = DateFormatUtils.formatUTC(date,"yyyy");
+										log.info("Date "+value+ " parsed as "+year);
+
+								/*
+										// Get the era
+										Calendar cal = Calendar.getInstance();
+										cal.setTime(date);
+										// Do we want to explicitly add 'CE' for current era dates?
+										String era = cal.get(Calendar.ERA)==0?" BCE":" CE";
+										String yearString = yearUTC  + era;
+										
+										Integer sign = cal.get(Calendar.ERA)==0?-1:1;
+										Integer year = Integer.parseInt(yearUTC);
+										year = year * sign;
+									*/	
+										document.addField(indexField + ".year", year);
+										
+
+										// Autocomplete without leading zeros
+										// default TYPE_DATE adds both leading zero and non-zero copies (ugh!), we don't.
+                                    	if (year.startsWith("0"))
+                                        {
+        									// add date without starting zeros for autocomplete e filtering
+											document.addField(indexField+ "_ac",year.replaceFirst("0*", ""));
+											document.addField(indexField+ "_keyword",year.replaceFirst("0*", ""));
+										}
+										else
+										{
+											document.addField(indexField + "_ac", year);
+											document.addField(indexField + "_keyword", year);
+										}
+
+                                    	//Also save a sort value of this year, this is required for determining the upper & lower bound year of our facet
+                                        if(document.getField(indexField + "__year_sort") == null)
+                                        {
+                                        	//We can only add one year so take the first one
+                                        	document.addField(indexField + "_year_sort", year);
+                                    	}
+
+										document.addField(indexField, year);
+										document.addField(indexField + "_dt", date);
+
+									}
+									else
+									{
+										log.info("Date parse failed for :"+value+"");
+
+									}
+
+                              }
+
                             if (filter
                                     .getType()
                                     .equals(DiscoveryConfigurationParameters.TYPE_ISO_LANG))

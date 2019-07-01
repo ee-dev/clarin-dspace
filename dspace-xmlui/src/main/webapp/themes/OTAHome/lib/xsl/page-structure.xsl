@@ -1,6 +1,6 @@
 <!--
-	/* Created for LINDAT/CLARIN */
-    Main structure of the UFAL-POINT home page
+	/* Created for LINDAT/CLARIN, adapted for OTA */
+    Main structure of the OTA home page
     header
     banner
     search-panel

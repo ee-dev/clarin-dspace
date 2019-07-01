@@ -22,7 +22,7 @@
           class='org.dspace.util.MultiFormatDateParser'>
         <property name='patterns'>
             <map>
-                <entry key='\d{1,4} BCE' value='yyyy G'/>
+                <entry key='\d{1,4} BCE.*' value='yyyy G'/>
                 <entry key='\d{8}' value='yyyyMMdd'/>
                 <entry key='\d{1,2}-\d{1,2}-\d{4}' value='dd-MM-yyyy'/>
                 <entry key='\d{4}-\d{1,2}-\d{1,2}' value='yyyy-MM-dd'/>
