@@ -1141,8 +1141,28 @@ public class SolrServiceImpl implements SearchService, IndexingService {
                         }
                         if(searchFilter.getType().equals(DiscoveryConfigurationParameters.TYPE_DATE))
                         {
+                        	log.info("1144 TYPE_DATE");
+							if(value != null && value.matches("^\\[.*\\]$"))
+							{
+							// Strip enclosing []
+								value = value.substring(1, value.length()-1);
+							}
+							if(value != null && value.equals("unknown"))
+							{
+								value = null;
+							}
+
+							if(value != null && value.matches("^(s\\.d|n\\.d|s\\.l)\\.?"))
+							{
+								value = null;
+							}
+
                             //For our search filters that are dates we format them properly
-                            date = MultiFormatDateParser.parse(value);
+							if(value != null)
+							{
+								date = MultiFormatDateParser.parse(value);
+							}
+
                             if(date != null)
                             {
                                 //TODO: make this date format configurable !

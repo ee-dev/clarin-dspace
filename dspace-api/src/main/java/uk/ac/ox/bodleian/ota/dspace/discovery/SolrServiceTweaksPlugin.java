@@ -269,31 +269,36 @@ public class SolrServiceTweaksPlugin implements SolrServiceIndexPlugin,
 									Date date = null;
 // Let's tidy up the date a bit here
 									// Strip enclosing square brackets
-									if(value.matches("^\\[.*\\]$"))
+									if(value != null && value.matches("^\\[.*\\]$"))
 									{
 									// Strip enclosing []
 										value = value.substring(1, value.length()-1);
 									}
 									
 
-									if(value.equals("unknown"))
+									if(value != null && value.equals("unknown"))
 									{
 										value = null;
 									}
-									if(value.contains("BCE"))
+									if(value != null && value.contains("BCE"))
 									{
-										value = null;
 										log.info("Date is BCE "+value);
+										value = null;
 									}
-									if(value.matches("^(s\\.d|n\\.d|s\\.l)\\.?"))
+
+									if(value != null && value.matches("^(s\\.d|n\\.d|s\\.l)\\.?"))
 									{
 										value = null;
 									}
 									
+									if(value != null)
+									{
+										date = MultiFormatDateParser.parse(value);
+									}
 
-									date = MultiFormatDateParser.parse(value);
 									if(date != null)
 									{
+										// can't parse a null date!
 										String year = DateFormatUtils.formatUTC(date,"yyyy");
 										log.info("Date "+value+ " parsed as "+year);
 
