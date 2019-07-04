@@ -374,6 +374,7 @@
 						<ul class="sublist">
 
 <xsl:for-each select="/dri:document/dri:body/dri:div[@n='comunity-browser']/dri:list/dri:list/dri:item">
+	<xsl:if test="not (dri:xref/text()='Highlights')">
 
 								<li>
 									<a>										
@@ -387,6 +388,7 @@
 										</span>
 									</a>
 								</li>
+								</xsl:if>
 							</xsl:for-each>
 		
 						</ul>
