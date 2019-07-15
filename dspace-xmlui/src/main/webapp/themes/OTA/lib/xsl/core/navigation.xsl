@@ -37,7 +37,9 @@
 		<div id="options-menu" class="sidebar col-sm-3 col-xs-12 hidden-xs">
 			<ul class="nav nav-list">
 				<xsl:if test="not(//dri:div[@n='site-home'])">
-					<li class="always-open hidden-xs">
+<li><div style="background-color: #FFFFFF">Oxford Text Archive</div></li>
+
+					<!-- li class="always-open hidden-xs">
 						<div style="background-color: #FFFFFF;" class="clearfix">
 							<div class="col-sm-7" style="height: 120px; position: relative;">
 								<a href="/">
@@ -50,7 +52,7 @@
 								</a>
 							</div>
 						</div>					
-					</li>
+					</li -->
 				</xsl:if>
 				<!-- li class="always-open hidden-xs">
 					<xsl:call-template name="howto-panel" />
