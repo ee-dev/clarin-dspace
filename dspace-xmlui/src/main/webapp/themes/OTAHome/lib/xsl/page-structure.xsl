@@ -344,7 +344,18 @@
 							<xsl:apply-templates select="dri:head" />
 						</strong>
 						<ul class="sublist">
+						<!-- Complex but we want to sort date_range facet ascending and solr 4 can't choose facet order -->
+						<xsl:variable name="facet_sort_order">
+							<xsl:choose>
+								<xsl:when test="@n='date_range'">descending</xsl:when>
+								<xsl:otherwise>ascending</xsl:otherwise>
+							</xsl:choose>
+						</xsl:variable>
+		
 							<xsl:for-each select="dri:item">
+
+							<xsl:sort select="position()" data-type="number" order="{$facet_sort_order}"/>
+					
 								<li>
 									<a>										
 										<xsl:attribute name="href">
@@ -358,6 +369,8 @@
 									</a>
 								</li>
 							</xsl:for-each>
+							
+							
 						</ul>
 						</li>
 						</ul>
