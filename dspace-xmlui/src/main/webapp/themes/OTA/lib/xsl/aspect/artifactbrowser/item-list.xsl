@@ -424,7 +424,9 @@
     <xsl:template match="dri:div[@id='aspect.discovery.SimpleSearch.div.search-filters']" />
     
     <xsl:template match="/dri:document//dri:div[@n='general-query']/dri:p[@n='hidden-fields']/dri:field" />
-        
+
+ 	<xsl:template match="/dri:document//dri:div[@n='browse-by-date_range']/dri:div[@id='aspect.artifactbrowser.ConfigurableBrowse.div.browse-navigation']" priority="15" />
+
     <xsl:template match="dri:div[@n='browse-navigation']/dri:p" priority="10">
         <div>
             <xsl:attribute name="class">
