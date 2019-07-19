@@ -131,8 +131,11 @@
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_author">Author</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_title">Title</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subject">Subject</message>
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subjectFilter">LCSH Subject filter</message>
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subjectFacet">LCSH Subject facet</message>
+<!-- MR remove filter  / facet suffix once we know where they are used -->
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subjectFilter">Subject filter</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subject">Subject</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Subject</message>
+
 <!-- added MJW 13.2.18 -->
 	    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.created">Date of original publication</message>
         <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_created">Date of original publication</message>
@@ -212,6 +215,14 @@
 	<!-- sort options -->
 	<message key="xmlui.Discovery.AbstractSearch.sort_by.dc.date.created_dt_asc">Date of original publication Asc</message>
 	<message key="xmlui.Discovery.AbstractSearch.sort_by.dc.date.created_dt_desc">Date of original publication Desc</message>
+<!-- Date Range -->
+        <message key="xmlui.ArtifactBrowser.Navigation.browse_date_range">Date range</message>
+        <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.date_range">Date range</message>
+        <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.date_range">Date range</message>
+        <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.date_range.column_heading">Date range</message>
+        <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_date_range">Date range</message>
+<!-- Drop down menu label on search page -->
+        <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.date_range">Date range</message>
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.author">Browsing {0} by Author {1}</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.author">Browsing {0} by Author</message>

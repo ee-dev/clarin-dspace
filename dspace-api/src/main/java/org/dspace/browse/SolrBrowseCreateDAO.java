@@ -29,6 +29,7 @@ import org.dspace.sort.SortException;
 import org.dspace.sort.SortOption;
 import org.dspace.storage.rdbms.DatabaseManager;
 import org.dspace.utils.DSpace;
+import uk.ac.ox.bodleian.ota.dspace.util.OTADate;
 
 /**
  * 
@@ -285,6 +286,18 @@ public class SolrBrowseCreateDAO implements BrowseCreateDAO,
                                     // put it in the browse index as if it
                                     // hasn't have an authority key
                                     {
+                                       String index_name =  bi.getName();
+									   log.info("BROWSE INDEXER:"+index_name);
+
+									   if(bi.getDataType().equals("date"))
+									   {
+										String val = OTADate.clean(values[x].value);
+                                        distFValues.add(val);
+                                        distFVal.add(val);
+                                        distValuesForAC.add(val);
+									   }
+										else
+										{
                                         // get the normalised version of the
                                         // value
                                         String nVal = OrderFormat
@@ -296,12 +309,17 @@ public class SolrBrowseCreateDAO implements BrowseCreateDAO,
                                         if(bi.getDataType().equals("iso_lang")){  
                                             val = nVal;
                                         }
+                                        if(index_name.equals("date_range") && val.equals("BCE"))
+                                        {
+                                            nVal="-BCE"; // sort this facet first
+                                        }
                                         distFValues
                                                 .add(nVal
                                                         + SolrServiceImpl.FILTER_SEPARATOR
                                                         + val);
                                         distFVal.add(val);
                                         distValuesForAC.add(val);
+                                        }
                                     }
                                 }
                             }

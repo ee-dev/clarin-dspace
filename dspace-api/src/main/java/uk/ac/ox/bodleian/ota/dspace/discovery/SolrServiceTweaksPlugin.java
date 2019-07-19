@@ -26,6 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.dspace.util.MultiFormatDateParser;
+import uk.ac.ox.bodleian.ota.dspace.util.OTADate;
 import org.apache.commons.lang.time.DateFormatUtils;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -268,7 +269,17 @@ public class SolrServiceTweaksPlugin implements SolrServiceIndexPlugin,
 
 									Date date = null;
 // Let's tidy up the date a bit here
-									// Strip enclosing square brackets
+
+
+									if(value != null)
+									{
+										log.info("Input Date: "+value);
+
+										value = OTADate.clean(value);
+										log.info("Clean Date: "+value);
+									}
+
+/*									// Strip enclosing square brackets
 									if(value != null && value.matches("^\\[.*\\]$"))
 									{
 									// Strip enclosing []
@@ -290,7 +301,7 @@ public class SolrServiceTweaksPlugin implements SolrServiceIndexPlugin,
 									{
 										value = null;
 									}
-									
+*/								
 									if(value != null)
 									{
 										date = MultiFormatDateParser.parse(value);
@@ -344,7 +355,21 @@ public class SolrServiceTweaksPlugin implements SolrServiceIndexPlugin,
 									}
 									else
 									{
+
 										log.info("Date parse failed for :"+value+"");
+										// Catch some special values
+										if(value != null && value.equals("Unknown"))
+										{
+											document.addField(indexField, "Unknown");
+											document.addField(indexField + "_keyword", "Unknown");
+                                        	document.addField(indexField + "_year_sort", 0);
+										}
+										else if(value != null && value.equals("BCE"))
+										{
+											document.addField(indexField, "BCE");
+											document.addField(indexField + "_keyword", "BCE");
+                                        	document.addField(indexField + "_year_sort", 0);
+										}
 
 									}
 

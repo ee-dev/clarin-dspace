@@ -1268,7 +1268,14 @@ public class SolrServiceImpl implements SearchService, IndexingService {
                             	}
                             	else
                             	{
-                                	doc.addField(searchFilter.getIndexFieldName() + "_filter", value.toLowerCase() + separator + value);
+                            		if(searchFilter.getIndexFieldName().equals("date_range") && value.equals("BCE"))
+                            		{
+										doc.addField(searchFilter.getIndexFieldName() + "_filter", "-bce" + separator + value);
+                            		}
+                            		else
+                            		{
+										doc.addField(searchFilter.getIndexFieldName() + "_filter", value.toLowerCase() + separator + value);
+                                	}
                             	}
                             }else
                                 if(searchFilter.getType().equals(DiscoveryConfigurationParameters.TYPE_DATE))
