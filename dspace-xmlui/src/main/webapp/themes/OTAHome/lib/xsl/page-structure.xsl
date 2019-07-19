@@ -990,13 +990,13 @@ And owns your right to give the drama law.”</i18n:text>
 		</div>
 		<div class="col-md-5 col-lg-4 hidden-xs hidden-sm">
 			<div class="row">
-				<div style="height: 160px; position: relative;" class="col-md-7 col-lg-7">
-				  <a href="https://www.bodleian.ox.ac.uk/">
-			            <img src="{$context-path}/themes/OTA/images/oxford/bodleian_libraries_logo.jpg" style="position: absolute; height: 60%; top: 0px; bottom: 0px; margin: auto;" class="logo" alt="LINDAT/Bodley logo" /></a>
+				<div style="height: 160px; position: relative;" class="col-md-5 col-lg-5">
+				  <a href="https://ota.bodleian.ox.ac.uk/">
+			            <img src="/images/OTA-logo_112.png" style="position: absolute; height: 60%; top: 0px; bottom: 0px; margin: auto;" class="logo" alt="Oxford Text Archive" /></a>
 				</div>
 		                <div style="height: 160px; position: relative;" class="col-md-5 col-lg-5">
-				    <a href="http://www.ox.ac.uk/">
-		                    <img src="{$context-path}/themes/OTA/images/oxford/oxford-logo.png" style="position: absolute; height: 70%; top: 0px; bottom: 0px; margin: auto;" class="logo" alt="University of Oxford logo" /></a>
+				    <a href="http://www.bodleian.ox.ac.uk/">
+		                    <img src="/images/bodleian_libraries_logo_140.png" style="position: absolute; height: 70%; top: 0px; bottom: 0px; margin: auto;" class="logo" alt="Bodliean Libraries" /></a>
 		                </div>
 			</div>
         </div>		

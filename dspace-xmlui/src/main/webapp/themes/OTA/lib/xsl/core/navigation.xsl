@@ -37,13 +37,18 @@
 		<div id="options-menu" class="sidebar col-sm-3 col-xs-12 hidden-xs">
 			<ul class="nav nav-list">
 				<xsl:if test="not(//dri:div[@n='site-home'])">
-<li><div style="background-color: #FFFFFF">Oxford Text Archive</div></li>
-
+					<li class="always-open hidden-xs">
+					<div style="background-color: #FFFFFF;" class="clearfix">
+					<div class="col-sm-7" style="height: 130px; position: relative;">
+					<img alt="OTA logo" class="img-responsive" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; padding: 0;" src="/images/OTA-logo_112.png" />
+					</div>
+					</div>
+					</li>
 					<!-- li class="always-open hidden-xs">
 						<div style="background-color: #FFFFFF;" class="clearfix">
 							<div class="col-sm-7" style="height: 120px; position: relative;">
 								<a href="/">
-									<img alt="OTA logo" class="img-responsive" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; padding: 20px;" src="{$context-path}/themes/OTA/images/oxford/bodleian_libraries_logo.jpg" />
+									<img alt="OTA logo" class="img-responsive" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; padding: 20px;" src="/images/OTA-logo_112.png" />
 								</a>
 							</div>
 							<div class="col-sm-5 text-center" style="height: 120px; position: relative;">
