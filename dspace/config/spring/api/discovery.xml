@@ -98,6 +98,7 @@
         <property name="sidebarFacets">
             <list>
                 <ref bean="searchFacetSubject" />
+                <ref bean="searchFacetDateRange" />
  <!-- Drop date column for now <ref bean="searchFilterCreated" /> -->
 <!-- the third column is provided by aspect.artifactbrowser.CommunityBrowser --> 
              </list>
@@ -109,7 +110,7 @@
         <property name="searchFilters">
             <list>
                 <ref bean="searchFacetSubject" />
-  				<ref bean="searchFilterCreated" />
+		<ref bean="searchFacetDateRange" />
            </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -117,10 +118,10 @@
             <bean class="org.dspace.discovery.configuration.DiscoverySortConfiguration">
                 <!--<property name="defaultSort" ref="sortDateIssued"/>-->
                 <!--DefaultSortOrder can either be desc or asc (desc is default)-->
-                <property name="defaultSortOrder" value="desc"/>
+                <property name="defaultSortOrder" value="asc"/>
                 <property name="sortFields">
                     <list>
-                        <ref bean="sortDateIssued" />
+                        <ref bean="sortDateCreated" />
                         <ref bean="sortTitle" />
                     </list>
                 </property>
@@ -206,9 +207,11 @@
         <property name="sidebarFacets">
             <list>
                 <ref bean="searchFacetSubject" />
-                <ref bean="searchFacetLLWSubject" />
-                <ref bean="searchFilterIssued" />
+                <!-- ref bean="searchFacetLLWSubject" /-->
+                <ref bean="searchFilterCreated" />
                 <ref bean="searchFilterAuthor" />
+                <ref bean="searchFilterDateRange" />
+
 				<ref bean="searchFilterLanguage" />
 
              </list>
@@ -221,7 +224,7 @@
             <list>
                 <ref bean="searchFilterTitle" />
                 <ref bean="searchFilterAuthor" />
-				<ref bean="searchFacetLLWSubject" />
+				<!-- ref bean="searchFacetLLWSubject" /-->
                 <ref bean="searchFacetSubject" />
                 <ref bean="searchFilterLanguage" />
                 <ref bean="searchFilterIssued" />
@@ -231,6 +234,8 @@
   				<ref bean="searchFilterSTCIdentifier" />
   				<ref bean="searchFilterOTAIdentifier" />
                 <ref bean="searchFilterRights" />
+                <ref bean="searchFilterDateRange" />
+
            </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -401,13 +406,13 @@
     </bean>
 
     <bean id="searchFacetSubject" class="org.dspace.discovery.configuration.HierarchicalSidebarFacetConfiguration">
-        <property name="indexFieldName" value="subjectFacet"/>
+        <property name="indexFieldName" value="subject"/>
         <property name="metadataFields">
             <list>
                 <value>dc.subject.lcsh</value>
             </list>
         </property>
-        <property name="facetLimit" value="20"/>
+        <property name="facetLimit" value="8"/>
         <property name="sortOrder" value="COUNT"/>
  		<property name="fullAutoComplete" value="true"/>
        <property name="splitter" value="--"/>
@@ -525,21 +530,33 @@
 		<property name="fullAutoComplete" value="false"/>
     </bean>
 
-<!-- Limits for side bar of search page -->
- 
-    <bean id="searchFacetLLWSubject" class="org.dspace.discovery.configuration.HierarchicalSidebarFacetConfiguration">
-        <property name="indexFieldName" value="subject"/>
+    <bean id="searchFacetDateRange" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+        <property name="indexFieldName" value="date_range"/>
         <property name="metadataFields">
             <list>
-                <value>dc.subject.other</value>
+                <value>otaterms.date.range</value>
             </list>
         </property>
         <property name="facetLimit" value="20"/>
-        <property name="sortOrder" value="COUNT"/>
- 		<property name="fullAutoComplete" value="true"/>
-       <property name="splitter" value="--"/>
-		<property name="skipFirstNodeLevel" value="false"/>
+        <property name="sortOrder" value="VALUE"/>
+		<property name="fullAutoComplete" value="false"/>
     </bean>
+
+   <bean id="searchFilterDateRange" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+        <property name="indexFieldName" value="date_range"/>
+        <property name="metadataFields">
+            <list>
+                <value>otaterms.date.range</value>
+            </list>
+        </property>
+        <property name="type" value="text"/>
+        <property name="facetLimit" value="20"/> 
+        <property name="sortOrder" value="VALUE"/>
+		<property name="fullAutoComplete" value="false"/>
+    </bean>
+
+
+<!-- Limits for side bar of search page -->
 
     <!--Sort properties-->
     <bean id="sortTitle" class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
