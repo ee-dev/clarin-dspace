@@ -278,30 +278,7 @@ public class SolrServiceTweaksPlugin implements SolrServiceIndexPlugin,
 										value = OTADate.clean(value);
 										log.info("Clean Date: "+value);
 									}
-
-/*									// Strip enclosing square brackets
-									if(value != null && value.matches("^\\[.*\\]$"))
-									{
-									// Strip enclosing []
-										value = value.substring(1, value.length()-1);
-									}
-									
-
-									if(value != null && value.equals("unknown"))
-									{
-										value = null;
-									}
-									if(value != null && value.contains("BCE"))
-									{
-										log.info("Date is BCE "+value);
-										value = null;
-									}
-
-									if(value != null && value.matches("^(s\\.d|n\\.d|s\\.l)\\.?"))
-									{
-										value = null;
-									}
-*/								
+						
 									if(value != null)
 									{
 										date = MultiFormatDateParser.parse(value);
@@ -343,13 +320,14 @@ public class SolrServiceTweaksPlugin implements SolrServiceIndexPlugin,
 										}
 
                                     	//Also save a sort value of this year, this is required for determining the upper & lower bound year of our facet
-                                        if(document.getField(indexField + "__year_sort") == null)
+                                        if(document.getField(indexField + "_year_sort") == null)
                                         {
                                         	//We can only add one year so take the first one
                                         	document.addField(indexField + "_year_sort", year);
                                     	}
 
 										document.addField(indexField, year);
+										document.addField(indexField + "_filter", year);
 										document.addField(indexField + "_dt", date);
 
 									}
@@ -362,12 +340,14 @@ public class SolrServiceTweaksPlugin implements SolrServiceIndexPlugin,
 										{
 											document.addField(indexField, "Unknown");
 											document.addField(indexField + "_keyword", "Unknown");
+											document.addField(indexField + "_filter", "Unknown");
                                         	document.addField(indexField + "_year_sort", 0);
 										}
 										else if(value != null && value.equals("BCE"))
 										{
 											document.addField(indexField, "BCE");
 											document.addField(indexField + "_keyword", "BCE");
+											document.addField(indexField + "_filter", "BCE");
                                         	document.addField(indexField + "_year_sort", 0);
 										}
 
