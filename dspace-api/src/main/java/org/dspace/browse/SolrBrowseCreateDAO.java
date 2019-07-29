@@ -292,7 +292,18 @@ public class SolrBrowseCreateDAO implements BrowseCreateDAO,
 									   if(bi.getDataType().equals("date"))
 									   {
 										String val = OTADate.clean(values[x].value);
-                                        distFValues.add(val);
+										String nVal = OTADate.sort(val);
+
+										if (val.startsWith("0"))
+										{
+											val = val.replaceFirst("0*", "");
+										}
+
+                                        distFValues
+                                                .add(nVal
+                                                        + SolrServiceImpl.FILTER_SEPARATOR
+                                                        + val);
+
                                         distFVal.add(val);
                                         distValuesForAC.add(val);
 									   }
@@ -309,10 +320,12 @@ public class SolrBrowseCreateDAO implements BrowseCreateDAO,
                                         if(bi.getDataType().equals("iso_lang")){  
                                             val = nVal;
                                         }
+                                        
                                         if(index_name.equals("date_range") && val.equals("BCE"))
                                         {
                                             nVal="-BCE"; // sort this facet first
                                         }
+                                        
                                         distFValues
                                                 .add(nVal
                                                         + SolrServiceImpl.FILTER_SEPARATOR
