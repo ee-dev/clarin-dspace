@@ -991,8 +991,9 @@ public abstract class AbstractSearch extends AbstractDSpaceTransformer implement
 
         Division searchControlsGear = div.addDivision("masked-page-control").addDivision("search-controls-gear", "controls-gear-wrapper");
         
-        String filterQueries = addFilterQueriesToUrl("discover?")+"&";
-
+		//include regular search query if present
+        String url = "discover?" + ( getQuery() != null ? "q="+getQuery() : "" );
+        String filterQueries = addFilterQueriesToUrl(url)+"&";
 
         /**
          * Add sort by options, the gear will be rendered by a combination of javascript & css
