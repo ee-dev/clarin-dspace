@@ -316,6 +316,7 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
             int currentPage = firstItemIndex/browseInfo.getResultsPerPage()+1;
             int pagesTotal = (int) Math.ceil((double)itemsTotal / browseInfo.getResultsPerPage());
             Map<String, String> parameters = new HashMap<String, String>();
+            parameters.put("order",params.scope.getOrder());
             parameters.put("page", "{pageNum}");
             String pageURLMask = generateURL(parameters);
         	results.setHead(T_head1_none.parameterize(firstItemIndex,lastItemIndex, itemsTotal));
@@ -590,6 +591,7 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
         org.dspace.app.xmlui.wing.element.List rppOptions = sortList.addList("rpp-selections");
         for (int i : RESULTS_PER_PAGE_PROGRESSION)
         {
+        	parameters.put("order",params.scope.getOrder());
     		parameters.put("page", 1+"");
         	parameters.put("rpp", Integer.toString(i));
             rppOptions.addItem(null, null).addXref(generateURL(parameters), Integer.toString(i), "gear-option" + (i == browseInfo.getResultsPerPage() ? " gear-option-selected" : ""));
