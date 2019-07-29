@@ -331,7 +331,7 @@
 						<xsl:attribute name="class">
 							<xsl:choose>
 								<xsl:when test="position() = 1">
-									<xsl:text>col-md-offset-2 col-md-3 text-left</xsl:text>
+									<xsl:text>col-md-offset-1 col-md-3 text-left</xsl:text>
 								</xsl:when>
 								<xsl:otherwise>
 									<xsl:text>col-md-3 text-left</xsl:text>
