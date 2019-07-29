@@ -34,8 +34,8 @@
 
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.subject_filter">Subject</message>
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.type_filter">Content Type</message>
-    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.date.issued">Date Issued</message>
-    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dateIssued">Date Issued</message>
+    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.date.issued">Date of Digitization</message>
+    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dateIssued">Date of Digitization</message>
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_rights">Rights</message>
     <!-- Discover menu -->
     <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_publisher">Publisher</message>
@@ -90,7 +90,7 @@
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_other_browse">Browsing by: Other Contributor</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_advisor_browse">Browsing by: Advisor</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.type_department_browse">Browsing by: Department</message>
-    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dateissued_dt_browse">Browsing by: Issue date</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.type_dateissued_dt_browse">Browsing by: Date of Digitization</message>
 
 <!--
 	Java class is 'SimpleSearch' 
@@ -103,7 +103,7 @@
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author">Author</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.title">Title</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Subject</message>
-    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued">Date issued</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued">Date of Digitization</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.selected">Selected filters</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.rights">Rights</message>
 
@@ -124,21 +124,19 @@
     <message key="xmlui.Discovery.AbstractSearch.type_subject">Filter by: Subject</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Subject</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject_filter">Subject</message>
-    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued.year">Date Issued</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued.year">Date of Digitization</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.rights_filter">Rights</message>
 
 
     <message key="xmlui.Discovery.AbstractSearch.startswith">Starts with</message>
     <message key="xmlui.Discovery.AbstractSearch.startswith.help">Or enter first few letters:</message>
 
-	<message key="xmlui.Discovery.AbstractSearch.sort_by.dc.title_sort_asc">Title Asc</message>
     <message key="xmlui.Discovery.AbstractSearch.sort_by.head">Sort Options:</message>
     <message key="xmlui.Discovery.AbstractSearch.sort_by.relevance">Relevance</message>
+	<message key="xmlui.Discovery.AbstractSearch.sort_by.dc.title_sort_asc">Title Asc</message>
     <message key="xmlui.Discovery.AbstractSearch.sort_by.dc.title_sort_desc">Title Desc</message>
-    <message key="xmlui.Discovery.AbstractSearch.sort_by.dc.date.issued_dt_desc">Issue Date Desc</message>
-
-    <message key="xmlui.Discovery.AbstractSearch.sort_by.dc.title_sort_asc">Title Asc</message>
-    <message key="xmlui.Discovery.AbstractSearch.sort_by.dc.date.issued_dt_asc">Issue Date Asc</message>
+    <message key="xmlui.Discovery.AbstractSearch.sort_by.dc.date.issued_dt_asc">Date of Digitization Asc</message>
+    <message key="xmlui.Discovery.AbstractSearch.sort_by.dc.date.issued_dt_desc">Date of Digitization Desc</message>
 	<message key="xmlui.Discovery.AbstractSearch.type_language">Filter by: Language</message>
 
     <message key="xmlui.Discovery.AbstractSearch.rpp">Results Per Page:</message>
@@ -157,7 +155,7 @@
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.mediatype_filter">Medium Type</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.has_file_b">Has Files</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.title_sort">Title</message>
-    <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.date.issued_dt">Issue Date</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.date.issued_dt">Date of Digitization</message>
     <message key="xmlui.discovery.SearchFacetFilter.no-results">No filter values found</message>
 
     <message key="xmlui.discovery.AbstractFiltersTransformer.filters.head">Discover</message>

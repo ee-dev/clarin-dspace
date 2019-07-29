@@ -110,7 +110,7 @@
         <property name="searchFilters">
             <list>
                 <ref bean="searchFacetSubject" />
-		<ref bean="searchFacetDateRange" />
+				<ref bean="searchFacetDateRange" />
            </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -203,39 +203,35 @@
  <!--The default configuration settings for discovery-->
     <bean id="defaultConfiguration" class="org.dspace.discovery.configuration.DiscoveryConfiguration" scope="prototype">
         <!--Which sidebar facets are to be displayed-->
-	<!-- These are the facets displayed in the side bar of search pages under the 'limit' heading-->
+	<!-- These are the facets displayed in the side bar of search pages under the 'Limit your search' heading -->
         <property name="sidebarFacets">
             <list>
-                <ref bean="searchFacetSubject" />
-                <!-- ref bean="searchFacetLLWSubject" /-->
-                <ref bean="searchFilterCreated" />
                 <ref bean="searchFilterAuthor" />
+                <ref bean="searchFacetSubject" />
+                <ref bean="searchFilterCreated" />
                 <ref bean="searchFilterDateRange" />
-
 				<ref bean="searchFilterLanguage" />
-
+ 				<ref bean="searchFilterOtaCollection" />
              </list>
         </property>
         <!-- Set TagCloud configuration per discovery configuration -->
         <property name="tagCloudFacetConfiguration" ref="defaultTagCloudFacetConfiguration"/>
         <!--The search filters which can be used on the discovery search page-->
-        <!-- These appear to be the facets displayed in the right-hand side bar - MW 16.5.17 -->
+        <!-- These appear as Advanced Search filters -->
         <property name="searchFilters">
             <list>
                 <ref bean="searchFilterTitle" />
                 <ref bean="searchFilterAuthor" />
-				<!-- ref bean="searchFacetLLWSubject" /-->
                 <ref bean="searchFacetSubject" />
+  				<ref bean="searchFilterCreated" />
+                <ref bean="searchFilterDateRange" />
                 <ref bean="searchFilterLanguage" />
-                <ref bean="searchFilterIssued" />
                 <ref bean="searchFilterType" />
  				<ref bean="searchFilterOtaCollection" />
-  				<ref bean="searchFilterCreated" />
+                <ref bean="searchFilterRights" />
   				<ref bean="searchFilterSTCIdentifier" />
   				<ref bean="searchFilterOTAIdentifier" />
-                <ref bean="searchFilterRights" />
-                <ref bean="searchFilterDateRange" />
-
+                <ref bean="searchFilterIssued" />
            </list>
         </property>
         <!--The sort filters for the discovery search-->

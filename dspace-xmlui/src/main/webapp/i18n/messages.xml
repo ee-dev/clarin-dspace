@@ -110,7 +110,7 @@
     <message key="xmlui.ArtifactBrowser.AbstractSearch.all_of_dspace">All of the Repository</message>
 
    <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.title">title</message>
-   <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateissued">issue date</message>
+   <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateissued">date of digitization</message>
    <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateaccessioned">submit date</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.relevance">Relevance</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by">Sort items by</message>
@@ -136,9 +136,6 @@
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subject">Subject</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Subject</message>
 
-<!-- added MJW 13.2.18 -->
-	    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.created">Date of original publication</message>
-        <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_created">Date of original publication</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_abstract">Abstract</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_series">Series</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_sponsor">Funder</message>
@@ -184,7 +181,8 @@
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.etal.all">All</message>
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.title">title</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.dateissued">issue date</message>
+
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.dateissued">date of digitization</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.dateaccessioned">submit date</message>
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.order.asc">ascending</message>
@@ -204,19 +202,22 @@
   <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_ota_collection">Collection</message><!-- Header on the home page for the 3col lists -->
 
 <!-- Date Created -->
-	<!-- Side bar label -->
-    <message key="xmlui.ArtifactBrowser.Navigation.browse_created">Date of original publication</message>
+	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.created">Date of publication</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_created">Date of publication</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.datecreated">Date of publication</message>
+
     <!-- breadcrumb label at top of page -->
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.created">Date of original publication</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.created">Date of publication</message>
 	<!-- Main page title (also used for html <title> -->
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.created">Date of original publication</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.created">Date of publication</message>
 	<!-- result list header-->
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.created.column_heading">Date of original publication</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.created.column_heading">Date of publication</message>
+	<!-- limit your search 'view more' list of all facet values -->
+	<message key="xmlui.Discovery.AbstractSearch.type_created">Date of publication</message>
 	<!-- sort options -->
-	<message key="xmlui.Discovery.AbstractSearch.sort_by.dc.date.created_dt_asc">Date of original publication Asc</message>
-	<message key="xmlui.Discovery.AbstractSearch.sort_by.dc.date.created_dt_desc">Date of original publication Desc</message>
+	<message key="xmlui.Discovery.AbstractSearch.sort_by.dc.date.created_dt_asc">Date of publication Asc</message>
+	<message key="xmlui.Discovery.AbstractSearch.sort_by.dc.date.created_dt_desc">Date of publication Desc</message>
 <!-- Date Range -->
-        <message key="xmlui.ArtifactBrowser.Navigation.browse_date_range">Date range</message>
         <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.date_range">Date range</message>
         <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.date_range">Date range</message>
         <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.date_range.column_heading">Date range</message>
@@ -236,8 +237,8 @@
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.title">Browsing {0} by Title {1}</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.title">Browsing {0} by Title</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.dateissued">Browsing {0} by Issue Date {1}</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.dateissued">Browsing {0} by Issue Date</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.dateissued">Browsing {0} by Date of Digitization {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.dateissued">Browsing {0} by Date of Digitization</message>
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.dateaccessioned">Browsing {0} by Submit Date {1}</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.dateaccessioned">Browsing {0} by Submit Date</message>
@@ -263,8 +264,8 @@
 	<message key="xmlui.Administrative.WithdrawnItems.title.item.title">Withdrawn Items by Title</message>
 	<message key="xmlui.Administrative.WithdrawnItems.trail.item.title">Withdrawn Items by Title</message>
 
-	<message key="xmlui.Administrative.WithdrawnItems.title.item.dateissued">Withdrawn Items by Issue Date</message>
-	<message key="xmlui.Administrative.WithdrawnItems.trail.item.dateissued">Withdrawn Items by Issue Date</message>
+	<message key="xmlui.Administrative.WithdrawnItems.title.item.dateissued">Withdrawn Items by Date of Digitization</message>
+	<message key="xmlui.Administrative.WithdrawnItems.trail.item.dateissued">Withdrawn Items by Date of Digitization</message>
 
 	<message key="xmlui.Administrative.WithdrawnItems.title.item.dateaccessioned">Withdrawn Items by Submit Date</message>
 	<message key="xmlui.Administrative.WithdrawnItems.trail.item.dateaccessioned">Withdrawn Items by Submit Date</message>
@@ -273,8 +274,8 @@
 	<message key="xmlui.Administrative.PrivateItems.title.item.title">Private Items by Title</message>
 	<message key="xmlui.Administrative.PrivateItems.trail.item.title">Private Items by Title</message>
 
-	<message key="xmlui.Administrative.PrivateItems.title.item.dateissued">Private Items by Issue Date</message>
-	<message key="xmlui.Administrative.PrivateItems.trail.item.dateissued">Private Items by Issue Date</message>
+	<message key="xmlui.Administrative.PrivateItems.title.item.dateissued">Private Items by Date of Digitization</message>
+	<message key="xmlui.Administrative.PrivateItems.trail.item.dateissued">Private Items by Date of Digitization</message>
 
 	<message key="xmlui.Administrative.PrivateItems.title.item.dateaccessioned">Private Items by Submit Date</message>
 	<message key="xmlui.Administrative.PrivateItems.trail.item.dateaccessioned">Private Items by Submit Date</message>
@@ -351,21 +352,24 @@
 	<!-- Labels for the side bar browse list -->
 	<message key="xmlui.ArtifactBrowser.Navigation.head_browse">Browse</message>
     <message key="xmlui.ArtifactBrowser.Navigation.head_all_of_dspace">All of the Repository</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.head_this_collection">This Collection</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.head_this_community">This Community</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.communities_and_collections">Communities &amp; Collections</message>
+	
+	<!-- Side bar browse list dspace.cfg webui.browse.index…… -->
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_title">Titles</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_author">Authors</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_subject">Subjects</message>
-    <message key="xmlui.ArtifactBrowser.Navigation.browse_dateissued">Issue Date</message>
+    <message key="xmlui.ArtifactBrowser.Navigation.browse_created">Dates of publication</message>
+    <message key="xmlui.ArtifactBrowser.Navigation.browse_dateissued">Dates of Digitization</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_dateaccessioned">By Submit Date</message>
-    <message key="xmlui.ArtifactBrowser.Navigation.browse_rights">Rights Label</message>
-    <message key="xmlui.ArtifactBrowser.Navigation.browse_ota_collection">Collection</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.head_this_collection">This Collection</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.head_this_community">This Community</message>
-
-    <message key="xmlui.ArtifactBrowser.Navigation.browse_publisher">Publisher</message>
-    <message key="xmlui.ArtifactBrowser.Navigation.browse_language">Language</message>
-    <message key="xmlui.ArtifactBrowser.Navigation.browse_type">Resource Type</message>
-    <message key="xmlui.ArtifactBrowser.Navigation.browse_mediatype">Medium Type</message>
+    <message key="xmlui.ArtifactBrowser.Navigation.browse_rights">Rights Labels</message>
+    <message key="xmlui.ArtifactBrowser.Navigation.browse_ota_collection">Collections</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_date_range">Date ranges</message>
+    <message key="xmlui.ArtifactBrowser.Navigation.browse_publisher">Publishers</message>
+    <message key="xmlui.ArtifactBrowser.Navigation.browse_language">Languages</message>
+    <message key="xmlui.ArtifactBrowser.Navigation.browse_type">Resource Types</message>
+    <message key="xmlui.ArtifactBrowser.Navigation.browse_mediatype">Medium Types</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.SimpleSearch.java -->
 	<message key="xmlui.ArtifactBrowser.SimpleSearch.title">Search</message>
@@ -2677,7 +2681,7 @@
     <message key="xmlui.dri2xhtml.METS-1.0.item-type">Type</message>
     <message key="xmlui.dri2xhtml.METS-1.0.item-size-info">Size</message>
 
-    <message key="xmlui.dri2xhtml.METS-1.0.item-date-created">Date of original publication</message>
+    <message key="xmlui.dri2xhtml.METS-1.0.item-date-created">Date of publication</message>
     <message key="xmlui.dri2xhtml.METS-1.0.item-id-ota">OTA identifier</message>
     <message key="xmlui.dri2xhtml.METS-1.0.item-id_swift">Swift Archive identifier</message>
     <message key="xmlui.dri2xhtml.METS-1.0.item-isformatof">Images</message>
@@ -3004,7 +3008,7 @@
   <message key="xmlui.UFAL.artifactbrowser.search.limit">Limit your search</message>
   <message key="xmlui.UFAL.artifactbrowser.item_list.authors">Author(s):</message>
   <message key="xmlui.UFAL.artifactbrowser.item_list.swiftid">Swift Archive identifier:</message>
-  <message key="xmlui.UFAL.artifactbrowser.item_list.datecreated">Date of original publication:</message>
+  <message key="xmlui.UFAL.artifactbrowser.item_list.datecreated">Date of publication:</message>
 
   <!-- UFAL/lib/xsl/aspect/artifactbrowser/item-view.xsl -->
   <message key="xmlui.UFAL.artifactbrowser.item-download-all-files">Download all local files for this item ({0})</message>
