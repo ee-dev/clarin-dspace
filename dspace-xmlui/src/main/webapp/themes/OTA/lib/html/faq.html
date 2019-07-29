@@ -4,6 +4,7 @@
 
     <hr />
 	<ul id="faqs-list">
+                <li><a href="#dates">What are the different dates that I can use to search for texts?</a></li>
                 <li><a href="#filesuffix">Why can't I open the file?</a></li>
                 <li><a href="#what-is-the-ota">What is the OTA?</a></li>
 		<li><a href="#what-is-the-repository">What is the repository?</a></li>
@@ -29,7 +30,15 @@
 		<li><a href="#searching">How do I get the most of my searches?</a></li>
 	</ul>
     <hr />
-
+        <div>
+        <h3 id="dates">What are the different dates that I can use to search for texts?</h3>
+        <h4>Date of publication</h4>
+        <p>This represents, as far as possible, the date when the content of the resource was created. So, for digitized versions of printed works, this is usually the date of original publication. The value of this element is taken from the 'dc.date.created' element, which can be seen in the 'full item record' view.</p>
+        <h4>Date of digitization</h4>
+        <p>The date of the creation of the digital resource. If it is born digital, then this is the same as the date of publication, but more often it will be a later date. For legacy resources, where we don't have sufficient information about exactly when a resource was created, the date when it was deposited in the OTA is used in this field, and its value should be interpreted as "created no later than". The value of this element is taken from the 'dc.date.issued' element, which can be seen in the 'full item record' view.</p>
+        <h4>Date range</h4>
+        <p>This is based on the date of publication, and gives a coarse-grained date range for the resource, for the purposes of grouping resources into larger periods of time. Where the date of publication of a resource is a range, the earlier date is used to assign a date range value.  The value of this element is taken from the 'otaterms.date.range' element, which can be seen in the 'full item record' view.</p>
+        </div>
         <div>
         <h3 id="filesuffix">Why can't my computer open the files that I have downloaded?</h3>
         <p>It sounds like you are relying on your computer to use file suffixes to decide what application should be used with them. You shouldn't expect your computer operating system to be able to identify the type of files and suggest an appropriate program to process it. This would require your computer to know all about the various practices that have been followed in the past 40 years of text encoding in the Humanities, and it would need to know how you wish to process the file. Resources in the OTA are made available for the purposes of scholarly research, so we assume some familiarity with electronic text, but we don't assume that we know what you want to do with the files.</p>
