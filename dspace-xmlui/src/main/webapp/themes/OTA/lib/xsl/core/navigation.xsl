@@ -39,25 +39,14 @@
 				<xsl:if test="not(//dri:div[@n='site-home'])">
 					<li class="always-open hidden-xs">
 					<div style="background-color: #FFFFFF;" class="clearfix">
-					<div class="col-sm-7" style="height: 130px; position: relative;">
-					<img alt="OTA logo" class="img-responsive" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; padding: 0;" src="/images/OTA-logo_112.png" />
+					<div class="col-sm-5" style="height: 130px; position: relative;">
+						<a href="/"><img alt="Oxford Text Archive" class="img-responsive" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; padding: 0;" src="/images/OTA-logo_112.png" /></a>
+					</div>
+					<div class="col-sm-5" style="height: 130px; position: relative;">
+						<a href="https://www.bodleian.ox.ac.uk/"><img alt="Bodleian Libraries" class="img-responsive" style="position: absolute; top: 15px; bottom: 0px; left: 0px; right: 0px; padding: 0;" src="/images/bodleian-logo.jpg" /></a>
 					</div>
 					</div>
 					</li>
-					<!-- li class="always-open hidden-xs">
-						<div style="background-color: #FFFFFF;" class="clearfix">
-							<div class="col-sm-7" style="height: 120px; position: relative;">
-								<a href="/">
-									<img alt="OTA logo" class="img-responsive" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; padding: 20px;" src="/images/OTA-logo_112.png" />
-								</a>
-							</div>
-							<div class="col-sm-5 text-center" style="height: 120px; position: relative;">
-								<a href="http://www.ota.ox.ac.uk/">
-									<img alt="University of Oxford logo" class="img-responsive" style="position: absolute; bottom: 0px; left: 0px; right: 0px; padding: 10px;" src="{$context-path}/themes/OTA/images/oxford/oxford-logo.png" />
-								</a>
-							</div>
-						</div>					
-					</li -->
 				</xsl:if>
 				<!-- li class="always-open hidden-xs">
 					<xsl:call-template name="howto-panel" />
