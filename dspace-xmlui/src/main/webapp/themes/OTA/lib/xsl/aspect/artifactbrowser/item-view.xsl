@@ -758,6 +758,46 @@
 
 
 	<xsl:template match="dim:dim" mode="itemDetailView-DIM">
+
+	<xsl:if test="dim:field[@element='title'][not(@qualifier)]">
+		<xsl:choose>
+					<xsl:when
+						test="count(dim:field[@element='title'][not(@qualifier)]) &gt; 1">
+						<h3 id="item-title" class="item-name">
+							<xsl:value-of
+								select="dim:field[@element='title'][not(@qualifier)][1]/node()" />
+						</h3>
+						<div>
+							<span class="bold">
+								<i18n:text>xmlui.dri2xhtml.METS-1.0.item-title</i18n:text>
+							</span>
+							<span>
+								<xsl:for-each select="dim:field[@element='title'][not(@qualifier)]">
+									<xsl:value-of select="./node()" />
+									<xsl:if
+										test="count(following-sibling::dim:field[@element='title'][not(@qualifier)]) != 0">
+										<xsl:text>; </xsl:text>
+										<br />
+									</xsl:if>
+								</xsl:for-each>
+							</span>
+						</div>
+					</xsl:when>
+					<xsl:when test="count(dim:field[@element='title'][not(@qualifier)]) = 1">
+						<h3 style="border-bottom: 2px solid #F0F0F0; padding-bottom: 5px;">
+							<xsl:value-of
+								select="dim:field[@element='title'][not(@qualifier)][1]/node()" />
+						</h3>
+					</xsl:when>
+					<xsl:otherwise>
+						<h3>
+							<i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
+						</h3>
+					</xsl:otherwise>
+				</xsl:choose>
+	</xsl:if>
+
+
 		<xsl:if test="dim:field[@element='identifier' and @qualifier='uri']">
 				<div class="refbox">
 					<xsl:attribute name="handle">
