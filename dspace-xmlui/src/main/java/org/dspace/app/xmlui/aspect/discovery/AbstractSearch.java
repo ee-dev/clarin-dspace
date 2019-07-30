@@ -992,7 +992,7 @@ public abstract class AbstractSearch extends AbstractDSpaceTransformer implement
         Division searchControlsGear = div.addDivision("masked-page-control").addDivision("search-controls-gear", "controls-gear-wrapper");
         
 		//include regular search query if present
-        String url = "discover?" + ( getQuery() != null ? "q="+getQuery() : "" );
+        String url = "discover?" + ( getQuery() != null ? "query="+getQuery() : "" );
         String filterQueries = addFilterQueriesToUrl(url)+"&";
 
         /**
