@@ -277,6 +277,21 @@ public class SolrServiceTweaksPlugin implements SolrServiceIndexPlugin,
 
 										value = OTADate.clean(value);
 										log.info("Clean Date: "+value);
+									//MultiFormatDateParser needs a 4 digit year for now
+										switch(value.length())
+											{
+												case 3:
+												value = "0"+value;
+												break;
+												case 2:
+												value = "00"+value;
+												break;
+												case 1:
+												value = "000"+value;
+												break;
+												default:
+												value = value;
+											}
 									}
 						
 									if(value != null)
