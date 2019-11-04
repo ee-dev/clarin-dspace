@@ -1011,7 +1011,7 @@
     <message key="xmlui.ufal.UFALLicenceAgreementAgreed.trail_license_agreed">Licence Agreement</message>
     <message key="xmlui.ufal.UFALLicenceAgreementAgreed.agree_message">If you want to see the content you have to agree the licence(s) below:</message>
     <message key="xmlui.ufal.UFALLicenceAgreementAgreed.functionality_blocked">UFALLicenceAgreement functionality has been blocked at configuration file.</message>
-    <message key="xmlui.ufal.UFALLicenceAgreementAgreed.signer_message">By following this link I, SIGNER with above ID, agree with the <b>LICENSE</b> restricting the usage of the this BITSTREAM.</message>
+    <message key="xmlui.ufal.UFALLicenceAgreementAgreed.signer_message">By following this link I, SIGNER with above ID, agree with the <b>LICENCE</b> restricting the usage of the this BITSTREAM.</message>
     <message key="xmlui.ufal.UFALLicenceAgreementAgreed.user_login_error">User not logged in: UFALLicenceAgreement cannot continue!</message>
     <message key="xmlui.ufal.UFALLicenceAgreementAgreed.successful_signed_message">{0} Licence for bitstream {1} successfully signed by {2}.</message>
 	<message key="xmlui.ufal.UFALLicenceAgreementAgreed.continue_message">If your download doesn't start automatically, please click here.</message>
@@ -1162,23 +1162,23 @@
 
 	<!-- org.dspace.app.xmlui.Submission.submit.CCLicenseStep -->
         <message key="xmlui.Submission.submit.CCLicenseStep.ccws_error">An error occurred ... {0}</message>
-        <message key="xmlui.Submission.submit.CCLicenseStep.head">License Your Work</message>
-        <message key="xmlui.Submission.submit.CCLicenseStep.info1">If you wish, you may add a <a href="http://creativecommons.org/">Creative Commons</a> License to your item. <strong>Creative Commons licences govern what people who read your work may then do with it.</strong></message>
+        <message key="xmlui.Submission.submit.CCLicenseStep.head">Licence Your Work</message>
+        <message key="xmlui.Submission.submit.CCLicenseStep.info1">If you wish, you may add a <a href="http://creativecommons.org/">Creative Commons</a> Licence to your item. <strong>Creative Commons licences govern what people who read your work may then do with it.</strong></message>
         <message key="xmlui.Submission.submit.CCLicenseStep.submit_choose_creative_commons">Choose a licence</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.submit_to_creative_commons">Proceed to Creative Commons website to select a licence</message>
-        <message key="xmlui.Submission.submit.CCLicenseStep.license">License Type</message>
+        <message key="xmlui.Submission.submit.CCLicenseStep.license">Licence Type</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.select_change">Select or modify your licence ...</message>
-        <message key="xmlui.Submission.submit.CCLicenseStep.no_license">No Creative Commons License</message>
+        <message key="xmlui.Submission.submit.CCLicenseStep.no_license">No Creative Commons Licence</message>
         <message key="xmlui.Submission.submit.CCLicenseStep.save_changes">You must click Next to save your changes.</message>
-        <message key="xmlui.Submission.submit.CCLicenseStep.submit_remove">Remove this Creative Commons License</message>
+        <message key="xmlui.Submission.submit.CCLicenseStep.submit_remove">Remove this Creative Commons Licence</message>
 
 	<!-- org.dspace.app.xmlui.Submission.submit.LicenseStep -->
     <message key="xmlui.Submission.submit.LicenseStep.head">Licensing</message>
-    <message key="xmlui.Submission.submit.LicenseStep.info1">In order for Repository to reproduce, translate and distribute your submission worldwide, you must agree to the following terms by selecting 'I Grant the License'.</message>
+    <message key="xmlui.Submission.submit.LicenseStep.info1">In order for Repository to reproduce, translate and distribute your submission worldwide, you must agree to the following terms by selecting 'I Grant the Licence'.</message>
     <message key="xmlui.Submission.submit.LicenseStep.info2"></message>
     <message key="xmlui.Submission.submit.LicenseStep.info3">If you have questions regarding this licence please contact the <a class="helpdesk-tolink">Help Desk</a>.</message>
     <message key="xmlui.Submission.submit.LicenseStep.decision_label">Distribution agreement</message>
-	<message key="xmlui.Submission.submit.LicenseStep.decision_checkbox">By checking this box, you agree to the Distribution License Agreement for this repository to reproduce, translate and distribute your submissions worldwide.</message>
+	<message key="xmlui.Submission.submit.LicenseStep.decision_checkbox">By checking this box, you agree to the Distribution Licence Agreement for this repository to reproduce, translate and distribute your submissions worldwide.</message>
 	<message key="xmlui.Submission.submit.LicenseStep.decision_error">You must grant this licence to complete your submission. If you are unable to grant this licence at this time you may save your work and return later or remove the submission by clicking the 'Save &amp; Exit' button below.</message>
 
 
@@ -1190,12 +1190,12 @@
     <message key="xmlui.Submission.submit.LicenseStep.morelicense_line5">You will be able to continue the submission afterwards.</message>
 
     <message key="xmlui.Submission.submit.LicenseStep.distribution_license_head">Read and accept the </message>
-    <message key="xmlui.Submission.submit.LicenseStep.distribution_license_head_link">Distribution License Agreement</message>
+    <message key="xmlui.Submission.submit.LicenseStep.distribution_license_head_link">Distribution Licence Agreement</message>
     <message key="xmlui.Submission.submit.LicenseStep.license_list_alert">For the list of all supported licences and their details visit </message>
-    <message key="xmlui.Submission.submit.LicenseStep.license_list_alert_link">License List Page</message>
-    <message key="xmlui.Submission.submit.LicenseStep.resource_license_text"><i class='fa fa-3x fa-crosshairs  pull-left'> </i>The License Selector will provide you visual assistance to select the most appropriate licence for your data or software.</message>
+    <message key="xmlui.Submission.submit.LicenseStep.license_list_alert_link">Licence List Page</message>
+    <message key="xmlui.Submission.submit.LicenseStep.resource_license_text"><i class='fa fa-3x fa-crosshairs  pull-left'> </i>The Licence Selector will provide you visual assistance to select the most appropriate licence for your data or software.</message>
     <message key="xmlui.Submission.submit.LicenseStep.resource_license_text2">If you already know under which licence you want to distribute your work, please select from the dropdown below.</message>    
-    <message key="xmlui.Submission.submit.LicenseStep.license_selector_button">OPEN License Selector</message>
+    <message key="xmlui.Submission.submit.LicenseStep.license_selector_button">OPEN Licence Selector</message>
 
 
 	<!-- org.dspace.app.xmlui.Submission.submit.RemovedStep -->
@@ -1318,7 +1318,7 @@
     <message key="xmlui.administrative.Navigation.administrative_batch_import">Batch Import (ZIP)</message>
     <message key="xmlui.administrative.Navigation.administrative_import_metadata">Import Metadata</message>
     <message key="xmlui.administrative.Navigation.administrative_curation">Curation Tasks</message>
-    <message key="xmlui.administrative.Navigation.administrative_licenses">Licenses</message>
+    <message key="xmlui.administrative.Navigation.administrative_licenses">Licences</message>
     <message key="xmlui.administrative.Navigation.administrative_handles">Handles</message>
 	<message key="xmlui.administrative.Navigation.administrative_external_handles">External Handles</message>
 
@@ -1789,7 +1789,7 @@
 	<message key="xmlui.administrative.item.general.option_view">View Item</message>
         <message key="xmlui.administrative.item.general.option_curate">Curate</message>
         <message key="xmlui.administrative.item.general.option_queue">Queue</message>
-    <message key="xmlui.administrative.item.general.option_license">License</message>
+    <message key="xmlui.administrative.item.general.option_license">Licence</message>
     <message key="xmlui.administrative.item.general.option_embargo">Embargo</message>
     <message key="xmlui.administrative.item.general.option_services">Services</message>
 
@@ -1801,8 +1801,8 @@
 	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.ORIGINAL">Content Files (default)</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.METADATA">Metadata Files</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.THUMBNAIL">Thumbnails</message>
-	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.LICENSE">Licenses</message>
-	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.CC-LICENSE">Creative Commons Licenses</message>
+	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.LICENSE">Licences</message>
+	<message key="xmlui.administrative.item.AddBitstreamForm.bundle.CC-LICENSE">Creative Commons Licences</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.file_label">File</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.file_help">Please enter the name of the file on your computer corresponding to your item. If you click "Browse...", a new window will appear in which you can locate and select the file from your computer.</message>
 	<message key="xmlui.administrative.item.AddBitstreamForm.description_label">Description</message>
@@ -1948,19 +1948,19 @@
         <message key="xmlui.administrative.item.CurateItemForm.label_name">Task</message>
 
     <!-- cz.cuni.mff.ufal.administrative.EditItemLicenseForm -->
-    <message key="xmlui.administrative.item.EditItemLicenseForm.title">Item License</message>
-    <message key="xmlui.administrative.item.EditItemLicenseForm.trail">License</message>
-    <message key="xmlui.administrative.item.EditItemLicenseForm.head1">Current License</message>
+    <message key="xmlui.administrative.item.EditItemLicenseForm.title">Item Licence</message>
+    <message key="xmlui.administrative.item.EditItemLicenseForm.trail">Licence</message>
+    <message key="xmlui.administrative.item.EditItemLicenseForm.head1">Current Licence</message>
     <message key="xmlui.administrative.item.EditItemLicenseForm.no_license">No licence is attached with this item.</message>
-    <message key="xmlui.administrative.item.EditItemLicenseForm.remove_license">Remove License</message>
+    <message key="xmlui.administrative.item.EditItemLicenseForm.remove_license">Remove Licence</message>
     <message key="xmlui.administrative.item.EditItemLicenseForm.help">If you want to change the licence, select a new licence from the list and press update.</message>
-    <message key="xmlui.administrative.item.EditItemLicenseForm.updated_successfully">License updated successfully.</message>
+    <message key="xmlui.administrative.item.EditItemLicenseForm.updated_successfully">Licence updated successfully.</message>
     <message key="xmlui.administrative.item.EditItemLicenseForm.select_license">Please select a licence!</message>
-    <message key="xmlui.administrative.item.DefineLicenseForm.license_labels">License Labels</message>
+    <message key="xmlui.administrative.item.DefineLicenseForm.license_labels">Licence Labels</message>
     <message key="xmlui.administrative.item.DefineLicenseForm.license_required">Additional required user info</message>
     <message key="xmlui.administrative.item.DefineLicenseForm.login_error">Please login to perform this operation.</message>
-    <message key="xmlui.administrative.item.DefineLicenseForm.success_message">New License added successfully.</message>
-    <message key="xmlui.administrative.item.DefineLicenseForm.already_exists">License already exists.</message>
+    <message key="xmlui.administrative.item.DefineLicenseForm.success_message">New Licence added successfully.</message>
+    <message key="xmlui.administrative.item.DefineLicenseForm.already_exists">Licence already exists.</message>
     <message key="xmlui.administrative.item.DefineLicenseForm.unknown_error">Unable to add the licence.</message>
 
     <!-- cz.cuni.mff.ufal.administrative.EditItemServicesForm -->
@@ -1968,9 +1968,9 @@
     <message key="xmlui.administrative.item.EditItemServicesForm.trail">Services</message>
 
     <!-- cz.cuni.mff.ufal.administrative.LicenseForm -->
-    <message key="xmlui.administrative.LicenseForm.title">Repository Licenses</message>
-    <message key="xmlui.administrative.LicenseForm.trail">Licenses</message>
-    <message key="xmlui.administrative.LicenseForm.head1">Manage Licenses</message>
+    <message key="xmlui.administrative.LicenseForm.title">Repository Licences</message>
+    <message key="xmlui.administrative.LicenseForm.trail">Licences</message>
+    <message key="xmlui.administrative.LicenseForm.head1">Manage Licences</message>
 
     <!-- These keys will map to the labels for extra licence fields in LicenseForm -->
     <message key="xmlui.ExtraLicenseField.LicenseForm.SEND_TOKEN">The user will receive an email with download instructions.</message>
@@ -2150,7 +2150,7 @@
 	<message key="xmlui.administrative.collection.EditCollectionMetadataForm.label_introductory_text">Introductory text (HTML)</message>
 	<message key="xmlui.administrative.collection.EditCollectionMetadataForm.label_copyright_text">Copyright text (HTML)</message>
 	<message key="xmlui.administrative.collection.EditCollectionMetadataForm.label_side_bar_text">News (HTML)</message>
-	<message key="xmlui.administrative.collection.EditCollectionMetadataForm.label_license">License</message>
+	<message key="xmlui.administrative.collection.EditCollectionMetadataForm.label_license">Licence</message>
 	<message key="xmlui.administrative.collection.EditCollectionMetadataForm.label_provenance_description">Provenance</message>
 	<message key="xmlui.administrative.collection.EditCollectionMetadataForm.label_logo">Upload new logo</message>
 	<message key="xmlui.administrative.collection.EditCollectionMetadataForm.label_existing_logo">Current logo</message>
@@ -2650,7 +2650,7 @@
 	<message key="xmlui.dri2xhtml.structural.pagination-next">Next Page</message>
 
 	<message key="xmlui.dri2xhtml.structural.link_cc">Creative Commons</message>
-	<message key="xmlui.dri2xhtml.structural.link_original_license">Original License</message>
+	<message key="xmlui.dri2xhtml.structural.link_original_license">Original Licence</message>
 
 
 	<!-- DS-METS-1.0-MODS.xsl -->
