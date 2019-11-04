@@ -887,113 +887,14 @@
 				<li data-slide-to="2" data-target="#layerslider" />
 			</ol>
 			<div class="carousel-inner">
-				<div class="item active">
-					<div style="position: relative; height: 180px;">
-						<img style="width: 100px; position: absolute; left: 22%; top: 20%" src="{$context-path}/themes/UFALHome/lib/images/glass.png" />
-						<h3 style="left: 34%; position: absolute; top: 15%;"><i18n:text i18n:key="homepage.carousel.data_tools">Literary and linguistic resources</i18n:text></h3>
-						<h5 style="left: 40%; position: absolute; top: 40%;"><i18n:text i18n:key="homepage.carousel.find">Full text</i18n:text></h5>
-						<h5 style="left: 44%; position: absolute; top: 50%;"><i18n:text i18n:key="homepage.carousel.citation_support">Persistent and easy to cite</i18n:text></h5>
-					</div>
-				</div>
 
-                                <div class="item">
-                                        <div style="position: relative; height: 180px;">
-                                                <div style="position: absolute; width: 65%; top: 20%; left: 20%; line-height: 20px;">
-                                                        <blockquote>
-                                                                <strong>
-                                                                        <i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
-                                                                        <i18n:text i18n:key="homepage.carousel.quote">Truth is compared in Scripture to a streaming fountain; if her waters flow not in a perpetual progression, they into a muddy pool of conformity and tradition.”</i18n:text>
-                                                                </strong>
-                                                                <small>John Milton, Areopagitica, 1644</small>
-                                                        </blockquote>
-                                                </div>
-                                        </div>
-                                </div>
-
-
-                                <div class="item">
-                                        <div style="position: relative; height: 180px;">
-                                                <div style="position: absolute; width: 65%; top: 20%; left: 20%; line-height: 20px;">
-                                                        <blockquote>
-                                                                <strong>
-                                                                        <i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
-										<i18n:text i18n:key="homepage.carousel.quote">.........to make the best that has been thought and known in the world current everywhere; to make all men live in an atmosphere of sweetness and light...</i18n:text>
-									</strong>
-                                                                <small>Matthew Arnold, 1869</small>
-                                                        </blockquote>
-                                                </div>
-                                        </div>
-                                </div>
-
-				<div class="item">
-					<div style="position: relative; height: 180px;">
-                                                <img style="width: 70px; position: absolute; left: 12%; top: 20%" src="{$context-path}/themes/UFALHome/lib/images/winebeertobacco.png" />
-						<h3 style="left: 30%; position: absolute; top: 10%;"><i18n:text i18n:key="homepage.carousel.deposit">Full Text</i18n:text></h3>
-						<h5 style="left: 34%; position: absolute; top: 36%;"><i18n:text i18n:key="homepage.carousel.license">No trigger warnings</i18n:text></h5>
-						<h5 style="left: 38%; position: absolute; top: 48%;"><i18n:text i18n:key="homepage.carousel.easy_find">No safe spaces</i18n:text></h5>
-						<h5 style="left: 42%; position: absolute; top: 60%;"><i18n:text i18n:key="homepage.carousel.easy_cite">Just the text, from the historical sources</i18n:text></h5>
-					</div>
-				</div>
-
-                                <div class="item">
-                                        <div style="position: relative; height: 180px;">
-                                                <div style="position: absolute; width: 80%; top: 10%; left: 20%; line-height: 20px;">
-                                                        <blockquote>
-                                                                <strong>
-                                                                        <i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
-                                                                        <i18n:text i18n:key="homepage.carousel.quote">There are many short intervals in the day, between studies and pleasures; instead of sitting idle and yawning, in those intervals, snatch up some valuable book, and continue the reading of that book till you have got through it”</i18n:text>
-                                                                </strong>
-                                                                <small>Lord Chesterfield's advice to his son</small>
-                                                        </blockquote>
-                                                </div>
-                                        </div>
-                                </div>
-
-
-				<div class="item">
-					<div style="position: relative; height: 180px;">
-                                                <img style="width: 100px; position: absolute; left: 12%; top: 20%" src="{$context-path}/themes/UFALHome/lib/images/glass.png" />
-						<h3 style="left: 30%; position: absolute; top: 10%;"><i18n:text i18n:key="homepage.carousel.deposit">Free and Open Access to Scholarship</i18n:text></h3>
-						<h5 style="left: 34%; position: absolute; top: 36%;"><i18n:text i18n:key="homepage.carousel.license">Thousands of historical texts</i18n:text></h5>
-						<h5 style="left: 38%; position: absolute; top: 48%;"><i18n:text i18n:key="homepage.carousel.easy_find">Easy to Find</i18n:text></h5>
-						<h5 style="left: 42%; position: absolute; top: 60%;"><i18n:text i18n:key="homepage.carousel.easy_cite">Easy to Cite</i18n:text></h5>
-					</div>
-				</div>
-<!--
-				<div class="item">
-					<div style="position: relative; height: 180px;">
-						<div style="position: absolute; width: 80%; top: 10%; left: 20%; line-height: 20px;">
-							<blockquote>
-								<strong>
-									<i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
-									<i18n:text i18n:key="homepage.carousel.quote">“BEFORE we poll, the town I wiſh to ſound,
-And canvaſs for your votes and int'reſt round:
-No bribes I bring, to influence your voice,
-Our Candidate aims at, being Freedom's choice;
-If unſucceſsful, he aſſures this borough,
-He'll call no critic ſcrutiny to-morrow;
-The public judgment, he abides with awe,
-And owns your right to give the drama law.”</i18n:text>
-								</strong>
-								<small>The humours of an election: A farce, F. Pilon, 1780</small>
-							</blockquote>
-						</div>
-					</div>
--->
-				<div class="item">
-					<div style="position: relative; height: 180px;">
-						<div style="position: absolute; width: 80%; top: 10%; left: 20%; line-height: 20px;">
-							<blockquote>
-								<strong>
-									<i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
-									<i18n:text i18n:key="homepage.carousel.quote">It has been ſo long the practice to repreſent literature as declining, that every renewal of this complaint now comes with diminiſh'd influence..”</i18n:text>
-								</strong>
-								<small>Oliver Goldsmith, An enquiry into the present state of polite learning in Europe, 1759</small>
-							</blockquote>
-						</div>
-					</div>
-				</div>
-
+<div class="item active">
+	<div style="position: relative; height: 180px;">
+	<h1 style="left: 20%; position: absolute;"><span style="color: #ED204E">O</span>xford <span style="color: #ED204E">T</span>ext <span style="color: #ED204E">A</span>rchive</h1>
+	<h4 style="left: 20%; position: absolute; top: 35%;">A repository of full-text literary and linguistic resources.</h4>
+	<h4 style="left: 20%; position: absolute; top: 55%;">Thousands of texts in more than 25 languages.</h4>
+	</div>
+</div>
 
 			</div>
 		</div>

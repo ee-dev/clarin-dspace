@@ -4,12 +4,16 @@
     header
     banner
     search-panel
+    facet-box
+    	Discovery (Subject and date range)
+    	Collections
     main-contents
     	recent-items & top-items
     	side menu
     footer
     
-    Author: Amir Kamran
+    Author: Mark Rogerson
+    Date: 24th October 2019
 -->
 <xsl:stylesheet version="1.0" 
 	xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
@@ -22,10 +26,11 @@
 	xmlns:mods="http://www.loc.gov/mods/v3"
 	xmlns:confman="org.dspace.core.ConfigurationManager"
 	xmlns:util="org.dspace.app.xmlui.utils.XSLUtils"
+	xmlns:file="java.io.File"
 	xmlns:encoder="xalan://java.net.URLEncoder"
 	xmlns:solrClientUtils="org.apache.solr.client.solrj.util.ClientUtils"
 	xmlns="http://www.w3.org/1999/xhtml"
-	exclude-result-prefixes="i18n encoder solrClientUtils dri mets xlink xsl dim xhtml mods confman util">
+	exclude-result-prefixes="i18n encoder solrClientUtils dri mets xlink xsl dim xhtml mods confman util file">
 
 	<xsl:output indent="yes" />
 
@@ -296,8 +301,11 @@
 
 				<!-- Rest of the Body -->
 				<div class="row contents">
-				
-					<div id="main-contents" class="col-sm-9">																								
+
+					<!-- sidebar -->
+					<xsl:apply-templates select="/dri:document/dri:options" />
+
+					<div id="main-contents" class="col-sm-9">
 						<xsl:choose>
 							<xsl:when test="dri:div[@n='site-home']/dri:div[@n='site-recent-submission']/dri:referenceSet/dri:reference">
 								<xsl:call-template name="recent-submission" />
@@ -316,9 +324,6 @@
 						</xsl:choose>
 						-->
 					</div>
-					<!-- sidebar -->
-					<xsl:apply-templates select="/dri:document/dri:options" />
-										
 				</div>
 			</div>
 		</div>
@@ -329,14 +334,7 @@
 				<xsl:for-each select="/dri:document/dri:options/dri:list[@n='discovery']/dri:list">
 					<div>
 						<xsl:attribute name="class">
-							<xsl:choose>
-								<xsl:when test="position() = 1">
-									<xsl:text>col-md-offset-1 col-md-3 text-left</xsl:text>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:text>col-md-3 text-left</xsl:text>
-								</xsl:otherwise>
-							</xsl:choose>
+							<xsl:text>col-md-4 text-left</xsl:text>
 						</xsl:attribute>
 						<ul class="nav nav-list">
 						<li style="margin: 10px;">
@@ -369,8 +367,6 @@
 									</a>
 								</li>
 							</xsl:for-each>
-							
-							
 						</ul>
 						</li>
 						</ul>
@@ -378,36 +374,33 @@
 				</xsl:for-each>
 			<div>	
 				<xsl:attribute name="class">
-						<xsl:text>col-md-3 text-left</xsl:text>					
+						<xsl:text>col-md-4 text-left</xsl:text>
 				</xsl:attribute>
-						<ul class="nav nav-list">
-						<li style="margin: 10px;">
-						<strong>Collections
-						</strong>
-						<ul class="sublist">
-
-<xsl:for-each select="/dri:document/dri:body/dri:div[@n='comunity-browser']/dri:list/dri:list/dri:item">
-	<xsl:if test="not (dri:xref/text()='Highlights')">
-
-								<li>
-									<a>										
-										<xsl:attribute name="href">
-											<xsl:value-of select="dri:xref/@target" />
-										</xsl:attribute>
-										<span>
-											<strong class="truncate">
-												<xsl:apply-templates select="dri:xref/node()"/>
-											</strong>
-										</span>
-									</a>
-								</li>
-								</xsl:if>
-							</xsl:for-each>
-		
-						</ul>
-						</li>
-						</ul>
-</div>
+					<ul class="nav nav-list">
+					<li style="margin: 10px;">
+					<strong>Collections</strong>
+					<ul class="sublist">
+						<!-- Don't show Highlights collection -->
+						<xsl:for-each select="/dri:document/dri:body/dri:div[@n='comunity-browser']/dri:list/dri:list/dri:item">
+							<xsl:if test="not (dri:xref/text()='Highlights')">
+							<li>
+								<a>										
+									<xsl:attribute name="href">
+										<xsl:value-of select="dri:xref/@target" />
+									</xsl:attribute>
+									<span>
+										<strong>
+											<xsl:apply-templates select="dri:xref/node()"/>
+										</strong>
+									</span>
+								</a>
+							</li>
+							</xsl:if>
+						</xsl:for-each>
+					</ul>
+					</li>
+					</ul>
+			</div>
 
 
 			</div>
@@ -532,7 +525,7 @@
         	</div>
         </xsl:if>
 		
-		<img class="artifact-icon pull-right" alt="{dim:field[@element='type'][1]/node()}">
+		<img class="artifact-icon pull-right" alt="{dim:field[@element='type'][1]/node()}" onerror="this.src='{$theme-path}/images/mime/application-x-zerosize.png'">
 			<xsl:attribute name="src">
                                 <xsl:text>themes/OTAHome/lib/images/</xsl:text>
                                 <xsl:value-of
@@ -730,6 +723,23 @@
 			src="{concat($protocol, 'ajax.googleapis.com/ajax/libs/jquery/', $jqueryVersion ,'/jquery.min.js')}">&#160;</script>
 		<script type="text/javascript" src="{$theme-path}/lib/js/jquery-ui.js">&#160;</script>
 		<script type="text/javascript" src="{$theme-path}/lib/js/jquery.i18n.js">&#160;</script>
+		<script type="text/javascript">
+		    <xsl:variable name="currentLocale">
+		        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='currentLocale']"/>
+		    </xsl:variable>
+		    <xsl:attribute name="src">
+		        <xsl:variable name="localizedContextPath" select="concat($theme-path,'/lib/js/messages/messages_',$currentLocale,'.js')" />
+		        <xsl:variable name="localizedDiskPath" select="concat($theme-path-on-disk,'/lib/js/messages/messages_',$currentLocale,'.js')" />
+		        <xsl:variable name="path" select="file:new($localizedDiskPath)"/>
+		        <xsl:choose>
+		            <xsl:when test="file:isFile($path)">
+                                <xsl:value-of select="$localizedContextPath" />
+		            </xsl:when>
+		            <xsl:otherwise>
+                                <xsl:value-of select="concat($theme-path,'/lib/js/messages/messages.js')" />
+		            </xsl:otherwise>
+		        </xsl:choose>
+                    </xsl:attribute>&#160;</script>
 
         <script type="text/javascript" src="{concat($aaiURL, '/discojuice/discojuice-2.1.en.min.js')}">&#160;</script>
         <script type="text/javascript" src="{concat($aaiURL, '/aai.js')}">&#160;</script>
@@ -775,6 +785,11 @@
 				&#160;
 			</script>
 		</xsl:for-each>
+
+		<script type="text/javascript">
+			<xsl:attribute name="src">
+				<xsl:text>https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js</xsl:text>
+			</xsl:attribute>&#160;</script>
 
 		<!-- add "shared" javascript from static, path is relative to webapp root -->
 		<xsl:for-each
@@ -872,137 +887,30 @@
 	<xsl:template name="top-banner">
 	<div class="row hidden-xs">
 		<div style="height: 160px;" class="carousel col-xs-12 col-sm-12 col-md-7 col-lg-8" id="layerslider">
-			<ol class="carousel-indicators">
-				<li class="active" data-slide-to="0" data-target="#layerslider" />
-				<li data-slide-to="1" data-target="#layerslider" />
-				<li data-slide-to="2" data-target="#layerslider" />
-			</ol>
 			<div class="carousel-inner">
 				<div class="item active">
 					<div style="position: relative; height: 180px;">
-						<img style="width: 100px; position: absolute; left: 22%; top: 20%" src="{$context-path}/themes/OTAHome/lib/images/glass.png" />
-						<h3 style="left: 34%; position: absolute; top: 15%;"><i18n:text i18n:key="homepage.carousel.data_tools">Literary and linguistic resources</i18n:text></h3>
-						<h5 style="left: 40%; position: absolute; top: 40%;"><i18n:text i18n:key="homepage.carousel.find">Full text</i18n:text></h5>
-						<h5 style="left: 44%; position: absolute; top: 50%;"><i18n:text i18n:key="homepage.carousel.citation_support">Persistent and easy to cite</i18n:text></h5>
+					<h1 style="left: 20%; position: absolute;"><span style="color: #ED204E">O</span>xford <span style="color: #ED204E">T</span>ext <span style="color: #ED204E">A</span>rchive</h1>
+					<h4 style="left: 20%; position: absolute; top: 35%;">A repository of full-text literary and linguistic resources.</h4>
+					<h4 style="left: 20%; position: absolute; top: 55%;">Thousands of texts in more than 25 languages.</h4>
 					</div>
 				</div>
-
-                                <div class="item">
-                                        <div style="position: relative; height: 180px;">
-                                                <div style="position: absolute; width: 65%; top: 20%; left: 20%; line-height: 20px;">
-                                                        <blockquote>
-                                                                <strong>
-                                                                        <i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
-                                                                        <i18n:text i18n:key="homepage.carousel.quote">Truth is compared in Scripture to a streaming fountain; if her waters flow not in a perpetual progression, they into a muddy pool of conformity and tradition.”</i18n:text>
-                                                                </strong>
-                                                                <small>John Milton, Areopagitica, 1644</small>
-                                                        </blockquote>
-                                                </div>
-                                        </div>
-                                </div>
-
-
-                                <div class="item">
-                                        <div style="position: relative; height: 180px;">
-                                                <div style="position: absolute; width: 65%; top: 20%; left: 20%; line-height: 20px;">
-                                                        <blockquote>
-                                                                <strong>
-                                                                        <i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
-										<i18n:text i18n:key="homepage.carousel.quote">.........to make the best that has been thought and known in the world current everywhere; to make all men live in an atmosphere of sweetness and light...</i18n:text>
-									</strong>
-                                                                <small>Matthew Arnold, 1869</small>
-                                                        </blockquote>
-                                                </div>
-                                        </div>
-                                </div>
-
-				<div class="item">
-					<div style="position: relative; height: 180px;">
-                                                <img style="width: 70px; position: absolute; left: 12%; top: 20%" src="{$context-path}/themes/OTAHome/lib/images/winebeertobacco.png" />
-						<h3 style="left: 30%; position: absolute; top: 10%;"><i18n:text i18n:key="homepage.carousel.deposit">Full Text</i18n:text></h3>
-						<h5 style="left: 34%; position: absolute; top: 36%;"><i18n:text i18n:key="homepage.carousel.license">No trigger warnings</i18n:text></h5>
-						<h5 style="left: 38%; position: absolute; top: 48%;"><i18n:text i18n:key="homepage.carousel.easy_find">No safe spaces</i18n:text></h5>
-						<h5 style="left: 42%; position: absolute; top: 60%;"><i18n:text i18n:key="homepage.carousel.easy_cite">Just the text, from the historical sources</i18n:text></h5>
-					</div>
-				</div>
-
-                                <div class="item">
-                                        <div style="position: relative; height: 180px;">
-                                                <div style="position: absolute; width: 80%; top: 10%; left: 20%; line-height: 20px;">
-                                                        <blockquote>
-                                                                <strong>
-                                                                        <i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
-                                                                        <i18n:text i18n:key="homepage.carousel.quote">There are many short intervals in the day, between studies and pleasures; instead of sitting idle and yawning, in those intervals, snatch up some valuable book, and continue the reading of that book till you have got through it”</i18n:text>
-                                                                </strong>
-                                                                <small>Lord Chesterfield's advice to his son</small>
-                                                        </blockquote>
-                                                </div>
-                                        </div>
-                                </div>
-
-
-				<div class="item">
-					<div style="position: relative; height: 180px;">
-                                                <img style="width: 100px; position: absolute; left: 12%; top: 20%" src="{$context-path}/themes/OTAHome/lib/images/glass.png" />
-						<h3 style="left: 30%; position: absolute; top: 10%;"><i18n:text i18n:key="homepage.carousel.deposit">Free and Open Access to Scholarship</i18n:text></h3>
-						<h5 style="left: 34%; position: absolute; top: 36%;"><i18n:text i18n:key="homepage.carousel.license">Thousands of historical texts</i18n:text></h5>
-						<h5 style="left: 38%; position: absolute; top: 48%;"><i18n:text i18n:key="homepage.carousel.easy_find">Easy to Find</i18n:text></h5>
-						<h5 style="left: 42%; position: absolute; top: 60%;"><i18n:text i18n:key="homepage.carousel.easy_cite">Easy to Cite</i18n:text></h5>
-					</div>
-				</div>
-<!--
-				<div class="item">
-					<div style="position: relative; height: 180px;">
-						<div style="position: absolute; width: 80%; top: 10%; left: 20%; line-height: 20px;">
-							<blockquote>
-								<strong>
-									<i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
-									<i18n:text i18n:key="homepage.carousel.quote">“BEFORE we poll, the town I wiſh to ſound,
-And canvaſs for your votes and int'reſt round:
-No bribes I bring, to influence your voice,
-Our Candidate aims at, being Freedom's choice;
-If unſucceſsful, he aſſures this borough,
-He'll call no critic ſcrutiny to-morrow;
-The public judgment, he abides with awe,
-And owns your right to give the drama law.”</i18n:text>
-								</strong>
-								<small>The humours of an election: A farce, F. Pilon, 1780</small>
-							</blockquote>
-						</div>
-					</div>
--->
-				<div class="item">
-					<div style="position: relative; height: 180px;">
-						<div style="position: absolute; width: 80%; top: 10%; left: 20%; line-height: 20px;">
-							<blockquote>
-								<strong>
-									<i class="fa fa-quote-left fa-2x pull-left">&#160;</i>
-									<i18n:text i18n:key="homepage.carousel.quote">It has been ſo long the practice to repreſent literature as declining, that every renewal of this complaint now comes with diminiſh'd influence..”</i18n:text>
-								</strong>
-								<small>Oliver Goldsmith, An enquiry into the present state of polite learning in Europe, 1759</small>
-							</blockquote>
-						</div>
-					</div>
-				</div>
-
-
 			</div>
 		</div>
+
 		<div class="col-md-5 col-lg-4 hidden-xs hidden-sm">
 			<div class="row">
-				<div style="height: 160px; position: relative;" class="col-md-5 col-lg-5">
-				  <a href="https://ota.bodleian.ox.ac.uk/">
-			            <img src="/images/OTA-logo_112.png" style="position: absolute; height: 60%; top: 0px; bottom: 0px; margin: auto;" class="logo" alt="Oxford Text Archive" /></a>
+				<div style="height: 160px; position: relative;" class="col-md-7 col-lg-7">
+					<a href="https://www.bodleian.ox.ac.uk/">
+						<img src="{$context-path}/themes/OTA/images/oxford/bodleian_libraries_logo.jpg" style="position: absolute; height: 60%; top: 0px; bottom: 0px; margin: auto;" class="logo" alt="LINDAT/Bodley logo" /></a>
 				</div>
-		                <div style="height: 160px; position: relative;" class="col-md-5 col-lg-5">
-				    <a href="http://www.bodleian.ox.ac.uk/">
-		                    <img src="/images/bodleian_libraries_logo_140.png" style="position: absolute; height: 70%; top: 0px; bottom: 0px; margin: auto;" class="logo" alt="Bodliean Libraries" /></a>
-		                </div>
+				<div style="height: 160px; position: relative;" class="col-md-5 col-lg-5">
+					<a href="https://www.ox.ac.uk/">
+						<img src="{$context-path}/themes/OTA/images/oxford/oxford-logo.png" style="position: absolute; height: 70%; top: 0px; bottom: 0px; margin: auto;" class="logo" alt="University of Oxford logo" /></a>
+				</div>
 			</div>
-        </div>		
+		</div>
+
 	</div>	
 	</xsl:template>
 </xsl:stylesheet>
-
-
-
