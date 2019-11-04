@@ -33,7 +33,7 @@ public class LicensePage extends AbstractDSpaceTransformer {
     public void addPageMeta(PageMeta pageMeta) throws SAXException, WingException, UIException, SQLException, IOException, AuthorizeException {
     	pageMeta.addMetadata("title").addContent("Available Licenses");
         pageMeta.addTrailLink(contextPath + "/",T_dspace_home);
-        pageMeta.addTrail().addContent("Available Licenses");
+        pageMeta.addTrail().addContent("Available Licences");
     }
 
     @Override
@@ -44,7 +44,7 @@ public class LicensePage extends AbstractDSpaceTransformer {
   		
     	Division division = body.addDivision("licenses");
     	
-    	division.setHead("Available Licenses");
+    	division.setHead("Available Licences");
   		
   		for (LicenseDefinition license_def : license_defs) {
   			org.dspace.app.xmlui.wing.element.List license = division.addList("license_" + license_def.getID());

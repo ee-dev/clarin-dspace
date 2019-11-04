@@ -68,6 +68,11 @@ collections / items / and bitstreams.
                 <map:serialize type="xml"/>
             </map:match>
 
+            <map:match pattern="page/licences">
+                <map:transform type="LicensePage"/>
+                <map:serialize type="xml"/>
+            </map:match>
+
             <map:match pattern="page/contract">
                 <map:transform type="ContractPage" />
                 <map:serialize type="xml" />
