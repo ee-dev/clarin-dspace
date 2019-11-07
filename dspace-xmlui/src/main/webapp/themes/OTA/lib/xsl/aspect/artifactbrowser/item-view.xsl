@@ -1121,7 +1121,7 @@
 								</xsl:variable>  						  							
   								<xsl:choose>
   									<xsl:when test="@MIMETYPE='text/plain'">
-			  							<xsl:value-of select="$files" disable-output-escaping="yes" /> . . . 			  							
+			  							<xsl:value-of select="$files" disable-output-escaping="no" /> . . . 			  							
 		  							</xsl:when>
 									<xsl:otherwise>
 										<xsl:value-of select="ft:parse($files)" disable-output-escaping="yes" />
